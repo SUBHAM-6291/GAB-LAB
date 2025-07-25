@@ -3,7 +3,7 @@ import "./private.css";
 
 const PrivateGroup = () => {
   return (
-    <div className="bg-[#121212] text-white py-8 sm:py-12 px-4 sm:px-6  md:px-2 lg:px-10 2xl:px-24 flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-12 transition-all duration-300">
+    <div className="bg-[#121212] text-white py-8 sm:py-12 px-4 sm:px-6  md:px-2 lg:px-10 2xl:px-24 flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300">
       
       {/* Left Side - Images */}
       <div className="relative w-full md:w-1/2 h-auto min-h-[320px] md:h-[550px] lg:h-[380px] xl:h-[500px] 2xl:h-[580px]">
@@ -13,12 +13,12 @@ const PrivateGroup = () => {
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/paellaand_sangria_private_group_event_gastronomic_arts_barcelona.avif"
             alt="Paella Event"
-            className="w-full h-60 sm:h-60   object-fill rounded-xl shadow-lg mb-4 sm:mb-0"
+            className="w-full h-60 sm:h-60   object-cover rounded-xl shadow-lg mb-4 sm:mb-0"
           />
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/guests_on_rooftop_party_gastronomic_arts_barcelona_overlooking_city.avif"
             alt="Rooftop Party"
-            className="w-full sm:w-1/2 h-60 sm:h-60 object-fill rounded-xl shadow-lg"
+            className="w-full sm:w-1/2 h-60 sm:h-60 object-cover rounded-xl shadow-lg"
           />
         </div>
 
@@ -47,7 +47,7 @@ const PrivateGroup = () => {
     <img
       src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/GabLab_BCN_Dec2023_1907.avif"
       alt="Group Cooking"
-      className="h-60 w-full object-cover rounded-xl shadow-md"
+      className="h-62 w-full object-cover rounded-xl shadow-md"
     />
   </div>
 </div>
@@ -57,7 +57,7 @@ const PrivateGroup = () => {
         <img
           src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/GabLab_BCN_Dec2023_1907.avif"
           alt="Group Cooking"
-          className="block md:hidden w-full h-60 sm:h-60 object-fill rounded-xl shadow-lg mt-4"
+          className="block md:hidden w-full h-60 sm:h-60 object-cover rounded-xl shadow-lg mt-4"
         />
 
         {/* lg layout: small overlapping images */}
@@ -100,7 +100,7 @@ const PrivateGroup = () => {
       </div>
 
       {/* Right Side - Text */}
-      <div className="text-center md:text-left w-full md:w-1/2">
+      <div className="text-left w-full md:w-1/2">
         <p className="text-sm sm:text-base md:text-2xl lg:text-sm xl:text-2xl">
           Unforgettable Events, Perfectly Crafted
         </p>
