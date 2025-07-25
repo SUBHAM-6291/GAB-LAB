@@ -39,7 +39,7 @@ const Navbar = () => {
         </nav>
 
         {/* Contact Us Button */}
-        <button className="relative hidden lg:inline-block text-white text-[16px] font-medium px-5 py-2 rounded-md border border-white hover:border-yellow-300 overflow-hidden group cursor-pointer">
+        <button className="relative hidden lg:inline-block text-white text-[16px] font-medium px-5 py-2 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer">
           <span className="btn_text">
             Contact Us
           </span>

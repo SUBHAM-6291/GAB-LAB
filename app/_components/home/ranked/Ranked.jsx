@@ -62,7 +62,7 @@ const Ranked = () => {
         <h2 className="text-white subHeding mt-5">
           We are Barcelona’s #1 cooking class with more than 4,000 five-star
           reviews
-          <br className="hidden sm:block" />
+          <br className="hidden xl:block" />
           and in 2025, ranked among the top 10 culinary experiences in Europe!
         </h2>
       </div>
