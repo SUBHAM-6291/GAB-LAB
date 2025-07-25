@@ -19,44 +19,53 @@ const fadeUp = {
 
 const Discover = () => {
   return (
-    <section className="bg-black text-white py-20 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-        {/* Left Text Section */}
+    <section className="bg-black text-white py-24 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        {/* Text Section - Order 1 on mobile */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="space-y-6"
+          className="space-y-6 order-1 lg:order-1"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            Discover <span className="text-[#FFD700]">The GAB LAB</span>
+            Discover{" "}
+            <span className="bg-gradient-to-r from-yellow-400 to-orange-300 text-transparent bg-clip-text">
+              The GAB LAB
+            </span>
           </h2>
-          <p className="text-gray-300 leading-relaxed">
-            Welcome to the GAB LAB — an innovative culinary playground located just steps from La Rambla.
+
+          <p className="text-gray-300 leading-[1.8] text-base md:text-lg">
+            Welcome to the GAB LAB — an innovative culinary playground located
+            just steps from La Rambla.
           </p>
-          <p className="text-gray-400">
-            Featuring over 192sqm of gastronomic creativity, we offer dual sunlit kitchens, a sleek bar, intimate dining, and surprises at every corner.
+          <p className="text-gray-400 text-base leading-relaxed">
+            Featuring over 192sqm of gastronomic creativity, we offer dual
+            sunlit kitchens, a sleek bar, intimate dining, and surprises at
+            every corner.
           </p>
-          <p className="text-gray-400">
-            Join a journey where food meets art, and Barcelona’s soul blends with global flavors.
+          <p className="text-gray-400 text-base leading-relaxed">
+            Join a journey where food meets art, and Barcelona’s soul blends
+            with global flavors.
           </p>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-black px-6 py-3 rounded-lg font-semibold shadow-md transition"
+            className="bg-gradient-to-r from-yellow-300 to-orange-400 text-black px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-yellow-400/40 transition"
           >
             Let&apos;s Talk
           </motion.button>
         </motion.div>
 
-        {/* Center Image */}
+        {/* Image Section - Order 2 on all screens */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true }}
-          className="flex justify-center"
+          className="flex justify-center order-2 lg:order-2"
         >
           <Image
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/discover/faketeamphoto.avif"
@@ -67,13 +76,13 @@ const Discover = () => {
           />
         </motion.div>
 
-        {/* Right Cards */}
+        {/* Card Section - Order 3 on mobile, right on large screens */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 order-3 lg:order-3"
         >
           {[
             {
@@ -105,16 +114,17 @@ const Discover = () => {
           ].map(({ icon, title, text, full }, index) => (
             <motion.div
               key={index}
-              className={`bg-[#111] rounded-2xl p-5 border border-gray-700 backdrop-blur-sm bg-opacity-70 ${
+              className={`rounded-2xl p-5 border border-white/10 bg-white/5 backdrop-blur-lg shadow-md hover:shadow-yellow-400/10 transition-all duration-300 ${
                 full ? "sm:col-span-2" : ""
               }`}
               custom={index + 1}
               variants={fadeUp}
+              whileHover={{ scale: 1.03 }}
             >
               <h4 className="text-lg font-bold mb-2">
                 {icon} {title}
               </h4>
-              <p className="text-gray-400">{text}</p>
+              <p className="text-gray-400 text-sm">{text}</p>
             </motion.div>
           ))}
         </motion.div>

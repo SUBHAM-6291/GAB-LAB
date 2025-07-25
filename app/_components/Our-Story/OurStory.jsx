@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from './Banner/Banner'
 
-import OurTeam from './Our Team/OurTeam'
+
 
 
 import TripAdvisor from './2024 TripAdvisor/TripAdvisor'
@@ -10,6 +10,8 @@ import Aboutus from './About-us/Aboutus'
 import Discover from './Discover/Discover'
 import Dis from './Discover our feuture/Dis'
 import Why from './Why Choose/Why'
+import OurTeam from './Our Team/OurTeam'
+
 
 
 const OurStory = () => {
@@ -23,8 +25,11 @@ const OurStory = () => {
         
       
         <OurTeam/>
+        
+        <Why/>
       
-       <Why/>
+      
+      
         
       
     </div>
