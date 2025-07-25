@@ -8,13 +8,13 @@ import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
 // Menu items as object
 const navData = {
   menu: [
-    { label: "Our Classes", href: "#" },
-    { label: "Private Group", href: "#" },
-    { label: "Our Story", href: "#" },
-    { label: "Partnership", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Faq", href: "#" },
-    { label: "Gift Cards", href: "#" },
+    { label: "Our Classes", href: "/our-class" },
+    { label: "Private Group", href: "/private-group" },
+    { label: "Our Story", href: "/our-story" },
+    { label: "Partnership", href: "/partnership" },
+    { label: "Blog", href: "/blog" },
+    { label: "Faq", href: "/faq" },
+    { label: "Gift Cards", href: "/gift-cards" },
   ],
 };
 
