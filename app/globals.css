@@ -8,13 +8,14 @@ body {
     @apply max-w-[1820px] mx-auto px-5 md:px-14 lg:px-[80px] xl:px-[100px];
   }
   .heding {
-    @apply text-[60px] font-bold leading-[72px] pb-6;
+    @apply text-[30px] md:text-[40px] lg:text-[60px] font-bold md:leading-[50px] lg:leading-[72px] lg:pb-6;
   }
   .desc {
-    @apply text-[16px] pb-6;
+    @apply  md:text-[14px] lg:text-[16px] lg:pb-6;
   }
   .yellow-desc {
     @apply text-[18px];
   }
+  
 
 }
