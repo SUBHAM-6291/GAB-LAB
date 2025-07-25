@@ -3,31 +3,64 @@ import "./private.css";
 
 const PrivateGroup = () => {
   return (
-    <div className="bg-[#121212] text-white py-8 sm:py-12 px-4 sm:px-6 lg:px-10 2xl:px-24 flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-12 transition-all duration-300">
+    <div className="bg-[#121212] text-white py-8 sm:py-12 px-4 sm:px-6  md:px-2 lg:px-10 2xl:px-24 flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-12 transition-all duration-300">
+      
       {/* Left Side - Images */}
       <div className="relative w-full md:w-1/2 h-auto min-h-[320px] md:h-[550px] lg:h-[380px] xl:h-[500px] 2xl:h-[580px]">
+        
         {/* Mobile & sm screens: stacked full-width images */}
         <div className="flex flex-col sm:flex-row sm:gap-4 md:hidden">
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/paellaand_sangria_private_group_event_gastronomic_arts_barcelona.avif"
             alt="Paella Event"
-            className="w-full  h-52 sm:h-60 object-cover rounded-xl shadow-lg mb-4 sm:mb-0"
+            className="w-full h-60 sm:h-60   object-fill rounded-xl shadow-lg mb-4 sm:mb-0"
           />
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/guests_on_rooftop_party_gastronomic_arts_barcelona_overlooking_city.avif"
             alt="Rooftop Party"
-            className="w-full sm:w-1/2 h-52 sm:h-60 object-cover rounded-xl shadow-lg"
+            className="w-full sm:w-1/2 h-60 sm:h-60 object-fill rounded-xl shadow-lg"
           />
         </div>
 
-        {/* Extra image for sm screens */}
+        {/* md layout: 2 images on top row, 1 full-width below */}
+       <div className="hidden md:block lg:hidden w-full space-y-4">
+  {/* Top Row: 1st and 2nd images */}
+  <div className="flex gap-4">
+    <div className="w-1/2">
+      <img
+        src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/paellaand_sangria_private_group_event_gastronomic_arts_barcelona.avif"
+        alt="Paella Event"
+        className="h-60 w-full object-cover rounded-xl shadow-md"
+      />
+    </div>
+    <div className="w-1/2">
+      <img
+        src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/guests_on_rooftop_party_gastronomic_arts_barcelona_overlooking_city.avif"
+        alt="Rooftop Party"
+        className="h-60 w-full object-cover rounded-xl shadow-md"
+      />
+    </div>
+  </div>
+
+  {/* Bottom Row: 3rd image full width */}
+  <div className="w-full">
+    <img
+      src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/GabLab_BCN_Dec2023_1907.avif"
+      alt="Group Cooking"
+      className="h-60 w-full object-cover rounded-xl shadow-md"
+    />
+  </div>
+</div>
+
+
+        {/* Extra image for sm screens only */}
         <img
           src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/GabLab_BCN_Dec2023_1907.avif"
           alt="Group Cooking"
-          className="block md:hidden w-full h-52 sm:h-60 object-cover rounded-xl shadow-lg mt-4"
+          className="block md:hidden w-full h-60 sm:h-60 object-fill rounded-xl shadow-lg mt-4"
         />
 
-        {/* lg layout: small overlap images */}
+        {/* lg layout: small overlapping images */}
         <div className="hidden lg:block xl:hidden">
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/paellaand_sangria_private_group_event_gastronomic_arts_barcelona.avif"
@@ -51,24 +84,24 @@ const PrivateGroup = () => {
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/paellaand_sangria_private_group_event_gastronomic_arts_barcelona.avif"
             alt="Paella Event"
-            className="absolute w-44 2xl:w-56 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-0 left-0 z-30"
+            className="absolute w-44 2xl:w-53 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-0 left-0 z-30"
           />
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/guests_on_rooftop_party_gastronomic_arts_barcelona_overlooking_city.avif"
             alt="Rooftop Party"
-            className="absolute w-44 2xl:w-56 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-36 left-48 2xl:top-40 2xl:left-56 z-20"
+            className="absolute w-44 2xl:w-53 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-36 left-48 2xl:top-40 2xl:left-56 z-20"
           />
           <img
             src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Private%20%20group/GabLab_BCN_Dec2023_1907.avif"
             alt="Group Cooking"
-            className="absolute w-44 2xl:w-56 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-72 left-96 2xl:top-80 2xl:left-[28rem] z-10"
+            className="absolute w-44 2xl:w-53 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-72 left-96 2xl:top-80 2xl:left-[28rem] z-10"
           />
         </div>
       </div>
 
       {/* Right Side - Text */}
       <div className="text-center md:text-left w-full md:w-1/2">
-        <p className="text-sm sm:text-base md:text-2xl lg:text-sm xl:text-base">
+        <p className="text-sm sm:text-base md:text-2xl lg:text-sm xl:text-2xl">
           Unforgettable Events, Perfectly Crafted
         </p>
         <h2 className="text-3xl sm:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 leading-tight">
