@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+
+
+.test{      
+    @apply text-3xl text-white font-bold 
+}
