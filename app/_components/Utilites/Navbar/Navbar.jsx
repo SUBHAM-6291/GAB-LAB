@@ -40,10 +40,10 @@ const Navbar = () => {
 
         {/* Contact Us Button */}
         <button className="relative hidden lg:inline-block text-white text-[16px] font-medium px-5 py-2 rounded-md border border-white hover:border-yellow-300 overflow-hidden group cursor-pointer">
-          <span className="relative z-10 transition duration-300 group-hover:text-black">
+          <span className="btn_text">
             Contact Us
           </span>
-          <span className="absolute left-0 top-0 h-full w-0 bg-yellow-300 transition-all duration-300 group-hover:w-full z-0"></span>
+          <span className="btn_bg "></span>
         </button>
 
         {/* Mobile Menu Button */}
