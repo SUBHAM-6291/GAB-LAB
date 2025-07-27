@@ -2,8 +2,8 @@ import React from 'react'
 
 const Giftcard = () => {
   return (
-    <div>
-      dh
+    <div className='text-white'>
+    cddd
     </div>
   )
 }

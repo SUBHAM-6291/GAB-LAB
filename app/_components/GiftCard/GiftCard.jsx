@@ -3,7 +3,7 @@ import Giftcard from './GiftCard/Giftcard'
 const GiftCard = () => {
   return (
     <div>
-    <GiftCard/>
+   <Giftcard/>
     </div>
   )
 }
