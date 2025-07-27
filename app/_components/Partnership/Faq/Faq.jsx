@@ -1,11 +1,14 @@
 import React from 'react'
 
-const Tailored = () => {
+const Faq = () => {
   return (
     <div>
-      
+
+      <Faq/>
+
+
     </div>
   )
 }
 
-export default Tailored
+export default Faq
