@@ -64,7 +64,7 @@ const fadeInDown = {
   },
 };
 
-export default function Dis() {
+export default function Explore () {
   return (
     <section className="bg-[#0b0b0b] text-white py-20 px-4 md:px-20">
       <div className="text-center mb-14">

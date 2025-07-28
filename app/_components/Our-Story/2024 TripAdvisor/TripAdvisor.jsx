@@ -1,7 +1,18 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+
+// Animation Variant
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const logos = [
   {
@@ -36,43 +47,36 @@ const logos = [
 
 export default function TripAdvisor() {
   return (
-    <div
-      className="relative w-full bg-black py-6 px-4 overflow-hidden"
-      style={{ position: "relative" }}
-    >
-      <h2 className="text-center text-yellow-400 font-semibold text-3xl mb-20">
-        ★★ 2024 TripAdvisor Travellers&apos; Choice Award Winner ★★
-      </h2>
+    <div className="relative w-full max-w-6xl mx-auto bg-black py-6 px-2 overflow-hidden">
+      {/* Award Heading Animation */}
+     {/* Award Heading Animation */}
+<motion.h2
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-center text-yellow-400 font-semibold text-2xl mb-4 drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+>
+  2024 TripAdvisor Travellers&apos; Choice Award Winner
+</motion.h2>
+
+{/* Short Description */}
+<motion.p
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-sm md:text-base leading-relaxed"
+>
+  We’re proud to be recognized by global platforms like TripAdvisor, Airbnb, and Google for our commitment to excellence and unforgettable guest experiences.
+</motion.p>
+
 
       {/* Left Gradient Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          top: 0,
-          bottom: 0,
-          width: "80px",
-          background: "linear-gradient(to right, black, transparent)",
-          zIndex: 10,
-          pointerEvents: "none",
-          animation: "fadeInLeft 2s ease-in-out",
-        }}
-      />
+      <div className="absolute left-0 top-0 bottom-0 w-[50px] z-10 pointer-events-none animate-fadeInLeft bg-gradient-to-r from-black to-transparent" />
 
       {/* Right Gradient Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: "80px",
-          background: "linear-gradient(to left, black, transparent)",
-          zIndex: 10,
-          pointerEvents: "none",
-          animation: "fadeInRight 2s ease-in-out",
-        }}
-      />
+      <div className="absolute right-0 top-0 bottom-0 w-[50px] z-10 pointer-events-none animate-fadeInRight bg-gradient-to-l from-black to-transparent" />
 
       <style>{`
         @keyframes fadeInLeft {
@@ -83,8 +87,15 @@ export default function TripAdvisor() {
           0% { opacity: 0; transform: translateX(20px); }
           100% { opacity: 1; transform: translateX(0); }
         }
+        .animate-fadeInLeft {
+          animation: fadeInLeft 2s ease-in-out;
+        }
+        .animate-fadeInRight {
+          animation: fadeInRight 2s ease-in-out;
+        }
       `}</style>
 
+      {/* Marquee Logos */}
       <Marquee
         gradient={false}
         speed={50}
@@ -96,15 +107,15 @@ export default function TripAdvisor() {
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="mx-4 bg-white/5 p-4 rounded-xl flex items-center justify-center min-w-[120px] h-[80px] backdrop-blur-sm border border-white/10 shadow transition-transform duration-300"
+            className="mx-2 bg-white/5 p-3 rounded-lg flex items-center justify-center min-w-[90px] h-[70px] backdrop-blur-sm border border-white/10 shadow transition-transform duration-300"
           >
             <Image
               src={logo.src}
               alt={logo.alt}
               width={100}
-              height={50}
+              height={40}
               unoptimized
-              className="object-contain max-h-full w-auto"
+              className="object-contain max-h-full w-full"
             />
           </div>
         ))}

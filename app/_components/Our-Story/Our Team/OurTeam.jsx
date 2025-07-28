@@ -8,14 +8,15 @@ import { motion } from "framer-motion";
 const team = [
   {
     name: "Meet Maria",
-   
+
     description:
       "A Culinary Artist with a Passion for Flavor.",
     image:
-      " https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/team/Meet%20Maria.avif",},
+      " https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/team/Meet%20Maria.avif",
+  },
   {
     name: "Meet Simón",
-  
+
     description:
       "A Culinary Explorer and Cultural Visionary",
     image:
@@ -23,7 +24,7 @@ const team = [
   },
   {
     name: "Meet Raquel",
-    
+
     description:
       "A Chef with Heart, Tradition, and a Sweet Tooth",
     image:
@@ -31,7 +32,7 @@ const team = [
   },
   {
     name: "Meet Hugo",
-   
+
     description:
       "Culinary Expert and Joyful Host",
     image:
@@ -39,7 +40,7 @@ const team = [
   },
   {
     name: 'Meet Paloma a.k.a. "Lola"',
-    
+
     description:
       "A Culinary Artist with a Flair for Fusion",
     image:
@@ -47,7 +48,7 @@ const team = [
   },
   {
     name: "Meet Alberto",
-   
+
     description:
       "An Eclectic Chef with a Love for Cheese and Laughter",
     image:
@@ -55,7 +56,7 @@ const team = [
   },
   {
     name: "Meet the other Maria",
-  
+
     description:
       "Your Go-To Expert for Everything",
     image:
@@ -63,7 +64,7 @@ const team = [
   },
   {
     name: "Meet Ryan",
-    
+
     description:
       "The Visionary with a Flair for Fun",
     image:
@@ -72,11 +73,18 @@ const team = [
 ];
 
 export default function OurTeam() {
-  const [hovered, setHovered] = useState(null); // ✅ FIXED (no TypeScript types in .jsx)
+  const [hovered, setHovered] = useState(null);
 
   return (
     <section className="bg-black px-6 py-16 md:px-20">
       <div className="max-w-7xl mx-auto text-center mb-12">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-block bg-[#1a1a1a] text-white px-6 py-2 rounded-full font-medium shadow hover:shadow-yellow-300/50 transition mb-2"
+        >
+          Our Team
+        </motion.button>
         <h2 className="text-white text-4xl md:text-5xl font-semibold leading-tight mb-4">
           OUR TEAM
         </h2>
@@ -121,7 +129,7 @@ export default function OurTeam() {
                 >
                   {member.name}
                 </motion.h3>
-                
+
                 <motion.p
                   className="text-sm mt-2 text-gray-300"
                   initial={{ y: 20, opacity: 0 }}
@@ -136,7 +144,7 @@ export default function OurTeam() {
                   animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
                   transition={{ delay: 0.25 }}
                 >
-             
+
                 </motion.div>
               </motion.div>
 
