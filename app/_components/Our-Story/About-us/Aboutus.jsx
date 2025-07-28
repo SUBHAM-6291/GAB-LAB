@@ -50,9 +50,23 @@ const AboutUs = () => {
           variants={fadeInUp}
           custom={1}
         >
+          {/* Discover Button */}
+           <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-[#1a1a1a] text-white px-6 py-2 rounded-full font-medium shadow hover:shadow-yellow-300/50 transition mb-2"
+                >
+                  About Us
+                </motion.button>
+
           <h2 className="text-5xl font-bold">About Us</h2>
 
-          <motion.div className="space-y-4" variants={fadeInUp} custom={2}>
+          {/* Description Text */}
+          <motion.div
+            className="space-y-4 text-gray-300"
+            variants={fadeInUp}
+            custom={2}
+          >
             <h3 className="text-xl font-semibold text-white">
               Discover Authentic Culinary Experiences in Barcelona
             </h3>
@@ -74,9 +88,7 @@ const AboutUs = () => {
               and curious souls, our unique gastronomic adventures will leave
               you inspired and craving more.
             </p>
-            <p>
-              📍 Taste the magic of Barcelona — one delicious bite at a time.
-            </p>
+            <p>📍 Taste the magic of Barcelona — one delicious bite at a time.</p>
           </motion.div>
         </motion.div>
       </div>
