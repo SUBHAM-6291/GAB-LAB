@@ -12,6 +12,8 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import {OutlineBtn, BgBtn} from "../../Utilites/BtnComponent/MyBtn";
+
 
 const NextArrow = ({ onClick }) => (
   <div
@@ -122,7 +124,7 @@ const HeroSection = () => {
       <Slider {...settings}>
         {gablab.map((item) => (
           <div key={item.id} className="md:px-6">
-            <div className="relative lg:rounded-2xl overflow-hidden shadow-lg h-[600px] md:h-[500px] lg:h-[580px]">
+            <div className="relative lg:rounded-2xl overflow-hidden shadow-lg h-[650px] md:h-[500px] lg:h-[580px]">
               <Image
                 src={item.img}
                 alt={item.title}
@@ -133,32 +135,22 @@ const HeroSection = () => {
 
               <div className="absolute inset-0 flex flex-col max-w-[1820px] mx-auto justify-center px-4 sm:px-6 md:px-10 text-white z-10">
                 <div className="w-full md:max-w-md lg:max-w-3xl xl:max-w-4xl space-y-5 px-2 md:px-0 xl:px-8">
-                  <h2 className="heding text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                    {item.title}
-                  </h2>
-                  <p className="desc text-sm sm:text-base md:text-lg">
-                    {item.sublineText}
-                  </p>
+                  <h2 className="heding">{item.title}</h2>
+                  <p className="desc">{item.sublineText}</p>
                   <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                    <button className="relative text-black text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer">
-                      <span className="relative z-10 transition duration-300 group-hover:text-white">
-                        {item.bookBtn}
-                      </span>
-                      <span className="absolute left-0 top-0 h-full w-full bg-yellow-300 transition-all duration-300 group-hover:w-0 z-0"></span>
-                    </button>
-
-                    <button className="relative text-white text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer">
-                      <span className="relative z-10 transition duration-300 group-hover:text-black">
-                        {item.eventBtn}
-                      </span>
-                      <span className="absolute left-0 top-0 h-full w-0 bg-yellow-300 transition-all duration-300 group-hover:w-full z-0"></span>
-                    </button>
+                   <BgBtn label='Book Now' type="button" onClick={()=> console.log("button clicked")}/>
+                    <OutlineBtn
+                      label="Plane a Group Event"
+                      type="button"
+                      onClick={() => console.log("Button clicked!")}
+                    />
+                    
                   </div>
                 </div>
 
                 {/* Social Sidebar */}
-                <div className="hidden md:flex w-[60px] h-[350px] backdrop-blur-2xl bg-black/40 flex-col justify-between items-center rounded-full absolute right-[20px] xl:right-[3.75rem] top-1/2 -translate-y-1/2 border border-white/20">
-                  <div className="rotate-90 whitespace-nowrap pl-[9rem] font-bold text-white text-[18px]">
+                <div className="hidden md:flex w-[60px] h-[350px] backdrop-blur-2xl bg-yellow-300 flex-col justify-between items-center rounded-full absolute right-[20px] xl:right-[3.75rem] top-1/2 -translate-y-1/2 border border-white/20">
+                  <div className="rotate-90 whitespace-nowrap pl-[9rem] font-bold text-black text-[18px]">
                     Follow now
                   </div>
                   <div className="flex flex-col items-center gap-5 py-4 ">
@@ -169,7 +161,7 @@ const HeroSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={link.name}
-                        className="text-white hover:text-white transition duration-300 hover:scale-110 hover:drop-shadow-[0_0_5px_#000000]"
+                        className="text-black hover:text-black transition duration-300 hover:scale-110 hover:drop-shadow-[0_0_1px_#000000]"
                       >
                         {link.icon}
                       </a>

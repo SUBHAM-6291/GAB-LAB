@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 import Image from "next/image";
 import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
+import {OutlineBtn} from "../BtnComponent/MyBtn";
 
 // Menu items as object
 const navData = {
@@ -39,12 +40,11 @@ const Navbar = () => {
         </nav>
 
         {/* Contact Us Button */}
-        <button className="relative hidden lg:inline-block text-white text-[16px] font-medium px-5 py-2 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer">
-          <span className="btn_text">
-            Contact Us
-          </span>
-          <span className="btn_bg "></span>
-        </button>
+        <OutlineBtn
+          label="Contact Us"
+          type="button"
+          onClick={() => console.log("Button clicked!")}
+        />
 
         {/* Mobile Menu Button */}
         <button

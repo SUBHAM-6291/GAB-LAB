@@ -57,10 +57,10 @@ const Ranked = () => {
   };
 
   return (
-    <div className="myContainer pt-[80px]">
+    <div className="myContainer mt-[100px]">
       <div className="flex flex-col items-center text-center gap-2">
         <StarRating rating={5} />
-        <h2 className="text-white subHeding mt-5">
+        <h2 className="subHeding">
           We are Barcelona’s #1 cooking class with more than 4,000 five-star
           reviews
           <br className="hidden xl:block" />
