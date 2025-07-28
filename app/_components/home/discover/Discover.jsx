@@ -1,7 +1,8 @@
-'use client';
+"use client";
 import React from "react";
 import Image from "next/image";
 import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
 
 const content = [
   {
@@ -27,22 +28,20 @@ const Discover = () => {
             priority
           />
 
-          {/* Top & Bottom Gradient Overlay */}
-          {/* <div className="absolute top-0 left-0 w-full h-full z-[1] pointer-events-none">
-            <div className="absolute top-0 w-full h-[600px] md:h-[100px] bg-gradient-to-b from-black via-transparent"></div>
-            <div className="absolute bottom-0 w-full h-[600px] md:h-[100px] bg-gradient-to-t from-black via-transparent"></div>
-          </div> */}
-
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-center items-center md:text-center h-full py-4 lg:py-8 px-4 md:px-6 lg:px-10">
-            <h2 className="text-[24px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold md:leading-[50px] lg:leading-[72px] pb-6 text-yellow-300 max-w-5xl">
-              {item.heading}
-            </h2>
-            <p className="desc max-w-5xl">{item.description}</p>
+            <SectionContent
+              heading={item.heading}
+              hedingClass=" text-yellow-300 max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+              desCription={item.description}
+              desCriptionClass=" text-white max-w-5xl"
+            />
+
             <OutlineBtn
               label="Join Our Classes"
               type="button"
               onClick={() => console.log("Join Our Classes")}
+              className="mt-8"
             />
           </div>
         </div>

@@ -3,6 +3,7 @@ import HeroSection from './heroSection/HeroSection'
 import Ranked from './ranked/Ranked'
 import LiveFlamencoShows from './liveFlamencoShows/LiveFlamencoShows'
 import Discover from './discover/Discover'
+import ContactUs from './contactUs/ContactUs'
 
 const homepage = () => {
   return (
@@ -11,6 +12,7 @@ const homepage = () => {
       <Ranked/>
       <LiveFlamencoShows/>
       <Discover/>
+      <ContactUs/>
       
     </div>
   )
