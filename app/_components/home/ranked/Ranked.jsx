@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
+import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar } from "react-icons/fa6";
+import Marquee from "react-fast-marquee";
 
 const awards = [
   "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Awards/award-one.avif",
@@ -44,21 +46,20 @@ const Ranked = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     beforeChange: (_, next) => setCurrent(next),
-    responsive:[
+    responsive: [
       {
-        breakpoint:640,
-        settings:{
-          slidesToShow:3,
-        }
-      }
-    ]
-    
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
 
   return (
     <div className="myContainer pt-[80px]">
       <div className="flex flex-col items-center text-center gap-2">
-        <StarRating rating={5}/>
+        <StarRating rating={5} />
         <h2 className="text-white subHeding mt-5">
           We are Barcelona’s #1 cooking class with more than 4,000 five-star
           reviews
@@ -67,7 +68,7 @@ const Ranked = () => {
         </h2>
       </div>
 
-      <div className="mt-4">
+      <div className="my-10">
         <Slider {...settings}>
           {awards.map((src, idx) => (
             <div key={idx} className="lg:px-2">
@@ -87,6 +88,68 @@ const Ranked = () => {
             </div>
           ))}
         </Slider>
+      </div>
+      <div className="">
+        <Marquee
+          speed={30}
+          gradient={true}
+          gradientColor="black"
+          autoFill={true}
+          pauseOnHover={true}
+        >
+          <Link
+            href="https://www.tripadvisor.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            asChild
+          >
+            <img
+              className="px-8 h-[60px]"
+              src="/tripadvisorfivestarrating.avif"
+              alt="tripadvisor"
+            />
+          </Link>
+
+          <Link
+            href="https://www.viator.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            asChild
+          >
+            <img className="px-8 h-[60px]" src="/viator.avif" alt="viator" />
+          </Link>
+
+          <Link
+            href="https://www.google.com/maps"
+            target="_blank"
+            rel="noopener noreferrer"
+            asChild
+          >
+            <img
+              className="px-8 h-[60px]"
+              src="/5stargooglewhitemin.avif"
+              alt="google reviews"
+            />
+          </Link>
+
+          <Link
+            href="https://www.airbnb.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            asChild
+          >
+            <img className="px-8 h-[60px]" src="/aribnb.avif" alt="airbnb" />
+          </Link>
+
+          <Link
+            href="https://www.cookly.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            asChild
+          >
+            <img className="px-8 h-[60px]" src="/cookly.png" alt="cookly" />
+          </Link>
+        </Marquee>
       </div>
     </div>
   );
