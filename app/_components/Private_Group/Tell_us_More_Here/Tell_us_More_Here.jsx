@@ -33,7 +33,7 @@ const FormInput = ({ label, name, type = 'text', placeholder, required, onChange
       type={type}
       value={value}
       onChange={onChange}
-      className={`bg-dark-card border border-gray-600 text-white px-4 py-3 rounded-md focus:ring-2 focus:ring-amber-400 transition-all duration-200 ${error ? 'border-red-500' : ''}`}
+      className={`bg-dark-card border border-gray-600 text-white px-4 py-3 rounded-md focus:ring-1 focus:ring-amber-400 transition-all duration-200 ${error ? 'border-red-500' : ''}`}
       placeholder={placeholder}
       aria-required={required}
       aria-invalid={!!error}
