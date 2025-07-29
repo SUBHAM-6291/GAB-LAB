@@ -110,7 +110,7 @@ const HeroSection = () => {
       },
       {
         breakpoint: 1280,
-        settings: { slidesToShow: 1, centerPadding: "160px" },
+        settings: { slidesToShow: 1, centerPadding: "60px" },
       },
       {
         breakpoint: 1024,
