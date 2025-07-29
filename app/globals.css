@@ -5,6 +5,13 @@
 body {
   background-color: #000000;
 }
+@layer utilities {
+  @media (min-width: 1024px) and (max-width: 1370px) {
+    .h-1224-1370 {
+      height: 410px; /* ← Set your desired height here */
+    }
+  }
+}
 
 @layer utilities {
   .myContainer {
@@ -30,6 +37,9 @@ body {
   }
   .formInput {
     @apply w-full  bg-[#484848] border-1 outline-0 text-white border-gray-400 rounded-md px-4 py-3 focus:outline-none;
+  }
+  .mbg{
+    @apply bg-[#1b1b1b];
   }
 }
 
