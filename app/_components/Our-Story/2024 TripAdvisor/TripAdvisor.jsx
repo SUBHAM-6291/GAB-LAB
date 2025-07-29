@@ -47,9 +47,9 @@ const logos = [
 
 export default function TripAdvisor() {
   return (
-    <div className="relative w-full max-w-6xl mx-auto bg-black py-6 px-2 overflow-hidden">
+    <div className="relative w-full  max-w-6xl mx-auto bg-black py-6 px-2 overflow-hidden">
       {/* Award Heading Animation */}
-     {/* Award Heading Animation */}
+    
 <motion.h2
   variants={fadeInUp}
   initial="hidden"

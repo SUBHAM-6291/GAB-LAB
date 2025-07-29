@@ -3,6 +3,8 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -19,8 +21,8 @@ const fadeUp = {
 
 const Discover = () => {
   return (
-    <section className="bg-black text-white py-24 px-6 md:px-12 xl:px-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <section className="myContainer  topContainer">
+      <div className=" mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* Left Content */}
         <motion.div
           initial="hidden"
@@ -30,40 +32,42 @@ const Discover = () => {
           className="space-y-6 text-left"
         >
           {/* Discover Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-[#1a1a1a] text-white px-6 py-2 rounded-full font-medium shadow hover:shadow-yellow-300/50 transition mb-2"
-          >
-            Discover
+          <motion.button >
+            <SectionContent
+  hedingClass="hidden"
+  heading="hidden"
+  tooltrip="Discover"
+  tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+  desCription="hidden"
+  desCriptionClass="hidden"
+/>
+
+
+           
           </motion.button>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-400 drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]">
             Discover The GAB LAB
           </h2>
 
-          <p className="text-gray-300 text-base leading-relaxed">
+          <p className="subHeding">
             Welcome to the GAB LAB — an innovative culinary playground located
             just steps from La Rambla.
           </p>
 
-          <p className="text-gray-400 text-base leading-relaxed">
+          <p className="text-gray-200 text-base leading-relaxed">
             Featuring over 192sqm of gastronomic creativity, we offer dual
             sunlit kitchens, a sleek bar, intimate dining, and surprises at
             every corner.
           </p>
 
-          <p className="text-gray-400 text-base leading-relaxed">
+          <p className="text-gray-200 text-base leading-relaxed">
             Join a journey where food meets art, and Barcelona’s soul blends
             with global flavors.
           </p>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-6 inline-block bg-gradient-to-r from-yellow-300 to-orange-400 text-black px-7 py-3 rounded-full font-semibold shadow-lg hover:shadow-yellow-400/50 transition"
-          >
-            Let&apos;s Talk
+          <motion.button>
+            <OutlineBtn  label='Request a Quote' type='button' onClick={()=>console.log("button clicked")}  />
           </motion.button>
         </motion.div>
 
