@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.footer-container {
+  @apply bg-[#1a1a1a] text-white py-12 px-4;
+}
+.footer-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10;
+}

@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
+import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { RiArrowRightDoubleFill } from "react-icons/ri";
 
 const content = [
   {
@@ -29,15 +30,18 @@ const Discover = () => {
           />
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col justify-center items-center md:text-center h-full py-4 lg:py-8 px-4 md:px-6 lg:px-10">
+          <div className="relative z-10 grid place-items-center text-center py-4 lg:py-8 px-4 md:px-6 lg:px-10">
             <SectionContent
+            icon={RiArrowRightDoubleFill}
+              tooltrip="Discover Choice"
+              tooltripClass="border border-yellow-300 text-yellow-300 flex justify-center inline-center"
               heading={item.heading}
-              hedingClass=" text-yellow-300 max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+              hedingClass="text-yellow-300 max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
               desCription={item.description}
               desCriptionClass=" text-white max-w-5xl"
             />
 
-            <OutlineBtn
+            <BgBtn
               label="Join Our Classes"
               type="button"
               onClick={() => console.log("Join Our Classes")}

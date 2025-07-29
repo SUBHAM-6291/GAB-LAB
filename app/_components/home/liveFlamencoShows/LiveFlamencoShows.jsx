@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { FiPlay } from "react-icons/fi";
+import { RiArrowRightDoubleFill } from "react-icons/ri";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import {OutlineBtn} from "../../Utilites/BtnComponent/MyBtn";
 
@@ -12,8 +13,8 @@ const LiveFlamencoShows = () => {
         <div className="flex-1 flex flex-col justify-between">
 
           <SectionContent
-            tooltrip=" Feel the Rhythm, Taste the Tradition" tooltripClass=" bg-yellow-300 text-black  border-yellow-300"
-            icon={FiPlay}
+            tooltrip=" Feel the Rhythm, Taste the Tradition" tooltripClass=" bg-yellow-300 text-black border border-yellow-300"
+            icon={RiArrowRightDoubleFill}
             heading="Paella Cooking Class & LIVE Flamenco Show" hedingClass="text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
           />
 
