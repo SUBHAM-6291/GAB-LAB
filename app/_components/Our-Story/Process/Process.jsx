@@ -43,7 +43,7 @@ const stats = [
 const Process = () => {
   return (
     <section className="bg-black text-white py-24 px-6 md:px-12 xl:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-16">
         {/* Left Side: Cards */}
         <motion.div
           initial="hidden"
