@@ -1,10 +1,17 @@
 import React from 'react'
-import Contactus from './Contactus/Contactus'
+import CAntactus from './Header/Header'
+import CookingHeroSection from './Contactcards/Contactcards'
+import ContactSection from './ContactUS_information/Contact_information'
+
 
 const Contactus = () => {
   return (
-    <div>
-        <Contactus/>
+    <div  >
+        <CAntactus/>
+        <CookingHeroSection/>
+        <ContactSection/>
+    
+        
       
     </div>
   )

@@ -1,10 +1,18 @@
 import React from 'react'
 import HeroSection from './heroSection/HeroSection'
+import Ranked from './ranked/Ranked'
+import LiveFlamencoShows from './liveFlamencoShows/LiveFlamencoShows'
+import Discover from './discover/Discover'
+import ContactUs from './contactUs/ContactUs'
 
 const homepage = () => {
   return (
     <div>
       <HeroSection/>
+      <Ranked/>
+      <LiveFlamencoShows/>
+      <Discover/>
+      <ContactUs/>
       
     </div>
   )

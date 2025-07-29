@@ -10,26 +10,26 @@ body {
   .myContainer {
     @apply max-w-[1820px] mx-auto px-5 md:px-14 lg:px-[80px] xl:px-[100px];
   }
+  .topContainer {
+    @apply mt-[80px] lg:mt-[120px] xl:mt-[150px];
+  }
   .heding {
-    @apply text-[30px] md:text-[40px] lg:text-[60px] font-bold md:leading-[50px] lg:leading-[72px] lg:pb-6;
+    @apply text-[24px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold md:leading-[50px] lg:leading-[72px] pb-6 text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)];
   }
   .subHeding {
-    @apply text-base lg:text-[28px] font-bold lg:pb-6;
+    @apply text-base lg:text-[28px] text-white font-bold lg:pb-6;
   }
   .desc {
-    @apply md:text-sm lg:text-[16px] lg:pb-6;
+    @apply md:text-sm lg:text-[16px] lg:pb-6 text-gray-200;
   }
   .yellow-desc {
-    @apply text-[18px];
+    @apply text-sm font-medium bg-yellow-300 text-black mb-2 border rounded-full px-4 py-1 border-yellow-300 inline-block;
   }
-  /* .btn_group {
-    @apply relative hidden lg:inline-block text-white text-[16px] font-medium px-5 py-2 rounded-md border border-white hover:border-yellow-300 overflow-hidden group cursor-pointer;
-  } */
-  .btn_text {
-    @apply relative z-10 transition duration-300 group-hover:text-black;
+  .formLabel {
+    @apply block mb-2 text-[18px] font-medium text-gray-100;
   }
-  .btn_bg {
-    @apply  bg-yellow-300 transition-all duration-300 group-hover:w-full left-0 top-0 h-full w-0 z-0 absolute;
+  .formInput {
+    @apply w-full  bg-[#484848] border-0 outline-0 text-white border-gray-300 rounded-md px-4 py-3 focus:outline-none;
   }
 }
 

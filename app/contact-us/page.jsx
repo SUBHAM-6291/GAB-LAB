@@ -1,11 +1,11 @@
 import React from 'react'
-import Homepage from './_components/home/homepage'
+import Contactus from '../_components/Contactus/Contactus'
+
 
 const page = () => {
   return (
     <div>
-      <Homepage/>
-      
+    <Contactus/>
     </div>
   )
 }
