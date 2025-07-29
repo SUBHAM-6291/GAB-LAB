@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 import Image from "next/image";
 import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
-import {OutlineBtn} from "../BtnComponent/MyBtn";
+import { OutlineBtn } from "../BtnComponent/MyBtn";
+import Link from "next/link";
 
 // Menu items as object
 const navData = {
@@ -27,7 +28,9 @@ const Navbar = () => {
       <div className="myContainer pt-6 md:pt-8 pb-2 flex justify-between items-center ">
         {/* Left: Logo */}
         <div className="flex items-center">
-          <Image src={logo} alt="Logo" width={100} height={0} priority />
+          <Link href="/">
+            <Image src={logo} alt="Logo" width={100} height={0} priority className="cursor-pointer" />
+          </Link>
         </div>
 
         {/* Center: Menu (Desktop) */}
@@ -40,11 +43,9 @@ const Navbar = () => {
         </nav>
 
         {/* Contact Us Button */}
-        <OutlineBtn
-          label="Contact Us"
-          type="button"
-          onClick={() => console.log("Button clicked!")}
-        />
+        <Link href="/contact">
+          <OutlineBtn label="Contact Us" type="button" />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
