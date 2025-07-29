@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { RiArrowRightDoubleFill } from "react-icons/ri";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
@@ -17,10 +18,12 @@ const ContactUs = () => {
         {/* Left Side: Contact Form */}
         <div className="bg-[#202020] rounded-xl p-4 md:p-10">
           <SectionContent
+            icon={RiArrowRightDoubleFill}
             tooltrip="Contact us"
-            tooltripClass="border-yellow-300 text-yellow-300"
+            tooltripClass="border border-yellow-300 bg-yellow-300 text-black"
             heading="Get In Touch"
-            hedingClass="text-white text-[10px]"
+            hedingClass="text-white"
+            desCriptionClass='hidden'
           />
           <form className="space-y-4 mt-6">
             <div>
@@ -48,7 +51,7 @@ const ContactUs = () => {
                 value={phone}
                 onChange={setPhone}
                 containerClass="!w-full"
-                inputClass="!bg-[#484848] !text-white !w-full !rounded-lg !pl-12 !h-12 !border-none !outline-none !shadow-none focus:!outline-none focus:!ring-0"
+                inputClass="!bg-[#484848] !text-white !w-full !rounded-lg !pl-12 !h-12 !border-1 !border-gray-400 !outline-none !shadow-none focus:!outline-none focus:!ring-0"
                 buttonClass="!bg-yellow-300 !rounded-l-lg !border-none !outline-none  !hover:bg-yellow-300 !focus:outline-none"
               />
             </div>
@@ -75,44 +78,63 @@ const ContactUs = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-6">
             {/* Phone */}
-            <div className="flex flex-col items-center text-center gap-2">
-              <FiPhone className="text-yellow-500 text-[42px]" />
+            <div
+              className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              onClick={() => (window.location.href = "tel:+1234567890")}
+            >
+              <FiPhone className="text-yellow-500 text-[32px]" />
               <div>
-                <h5 className="font-semibold text-white text-2xl">Phone Number</h5>
-                <p className="text-gray-400 text-xl">+1 234 567 890</p>
+                <h5 className="font-semibold text-white text-xl">
+                  Phone Number
+                </h5>
+                <p className="text-gray-400 text-lg">+1 234 567 890</p>
               </div>
             </div>
 
             {/* Email */}
-            <div className="flex flex-col items-center text-center gap-2">
-              <FiMail className="text-yellow-500 text-[42px]" />
+            <div
+              className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              onClick={() =>
+                (window.location.href = "mailto:contact@example.com")
+              }
+            >
+              <FiMail className="text-yellow-500 text-[32px]" />
               <div>
-                <h5 className="font-semibold text-white text-2xl">Email Address</h5>
-                <p className="text-gray-400 text-xl">contact@example.com</p>
+                <h5 className="font-semibold text-white text-xl">
+                  Email Address
+                </h5>
+                <p className="text-gray-400 text-lg">contact@example.com</p>
               </div>
             </div>
 
             {/* WhatsApp */}
-            <div className="flex flex-col items-center text-center gap-2">
-              <FaWhatsapp className="text-yellow-500 text-[42px]" />
+            <div
+              className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              onClick={() =>
+                (window.location.href = "https://wa.me/19876543210")
+              }
+            >
+              <FaWhatsapp className="text-yellow-500 text-[32px]" />
               <div>
-                <h5 className="font-semibold text-white text-2xl">WhatsApp</h5>
-                <p className="text-gray-400 text-xl">+1 987 654 3210</p>
+                <h5 className="font-semibold text-white text-xl">WhatsApp</h5>
+                <p className="text-gray-400 text-lg">+1 987 654 3210</p>
               </div>
             </div>
 
             {/* Office */}
-            <div className="flex flex-col items-center text-center gap-2">
-              <FiMapPin className="text-yellow-500 text-[42px]" />
+            <div className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300">
+              <FiMapPin className="text-yellow-500 text-[32px]" />
               <div>
-                <h5 className="font-semibold text-white text-2xl">Our Office</h5>
-                <p className="text-gray-400 text-xl">123 Barcelona Street, Spain</p>
+                <h5 className="font-semibold text-white text-xl">Our Office</h5>
+                <p className="text-gray-400 text-lg">
+                  123 Barcelona Street, Spain
+                </p>
               </div>
             </div>
           </div>
 
           {/* Google Map */}
-          <div className="w-full h-[350px] mt-4 rounded-md overflow-hidden">
+          <div className="w-full h-[300px] lg:h-[200px] xl:h-[300px] mt-4 rounded-md overflow-hidden">
             <iframe
               title="Google Map"
               className="w-full h-full border-0"
