@@ -79,11 +79,19 @@ const TellUsMoreHere = () => {
   });
   const [errors, setErrors] = useState({});
 
-  // Video configuration
-  const videoSource = useMemo(
+  // Video configurations
+  const videoSources = useMemo(
     () => ({
-      src: '/2795388-uhd_2560_1440_25fps.mp4',
-      className: 'w-full object-cover lg:mt-70 rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[80vh] xl:h-[62vh]   2xl:h-[62vh]',
+      page1: {
+        src: '/2795388-uhd_2560_1440_25fps.mp4',
+        className: 'w-full object-cover lg:mt-70 rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[80vh] xl:h-[62vh] 2xl:h-[62vh]',
+        poster: '/video-poster.jpg',
+      },
+      page2: {
+        src: '/3201691-hd_1920_1080_25fps.mp4', // Ensure this file exists in public/
+        className: 'w-full object-cover lg:mt-70  xl:mt-68  2xl:mt-112 rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[42vh] xl:h-[48vh] 2xl:h-[36vh]',
+        poster: '/second-video-poster.jpg', // Use a valid image file
+      },
     }),
     []
   );
@@ -162,8 +170,8 @@ const TellUsMoreHere = () => {
 
   if (isSubmitted) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-dark-bg text-white p-6">
-        <div className="text-center p-8 bg-dark-card rounded-xl shadow-2xl max-w-md w-full">
+      <div className="flex items-center justify-center min-h-screen bg-dark-bg text-white px-6 py-6">
+        <div className="text-center px-8 py-8 bg-dark-card rounded-xl shadow-2xl max-w-md w-full">
           <Image
             src="/Gastronmic_Arts_Barcelona_Logo.avif"
             alt="Gastronomic Arts Barcelona Logo"
@@ -192,22 +200,39 @@ const TellUsMoreHere = () => {
   return (
     <div className="flex flex-col lg:flex-row-reverse min-h-screen bg-dark-bg text-white">
       <div className="flex-1 relative">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={videoSource.className}
-          poster="/video-poster.jpg"
-          loading="lazy"
-        >
-          <source src={videoSource.src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {currentPage === 0 ? (
+          <video
+            key="page1-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={videoSources.page1.className}
+            poster={videoSources.page1.poster}
+            loading="lazy"
+          >
+            <source src={videoSources.page1.src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <video
+            key="page2-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className={videoSources.page2.className}
+            poster={videoSources.page2.poster}
+            loading="lazy"
+          >
+            <source src={videoSources.page2.src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />
       </div>
 
-      <div className="flex-1 p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
+      <div className="flex-1 px-6 py-6 sm:px-10 sm:py-10 lg:px-12 lg:py-12 flex flex-col justify-center">
         <div className="max-w-2xl mx-auto w-full">
           <Image
             src="/Gastronmic_Arts_Barcelona_Logo.avif"
