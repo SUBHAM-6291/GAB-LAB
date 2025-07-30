@@ -32,7 +32,7 @@ const testimonials = [
   {
     name: "Robin",
     quote:
-      "My friends and I came to Barcelona and decided to do this for our friend's 40th birthday. We learned so many neat and exciting things, which I won't spoil here – check it out for yourself! If you're looking for something exclusive and different from the many other tourist activities you can find in Barcelona, this is worth checking out!",
+      "Superb masterclass! I’ve attended other cooking classes before, but this one exceeded all my expectations. A lovely and cozy setup, high-quality ingredients, and the best vibe from the host and his wife. 100% recommended!",
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/What%20Our%20Guests%20Say/Robin%20.avif",
     date: "May 2024",
@@ -108,7 +108,7 @@ const Testimonial = () => {
           {testimonials.map((item, idx) => (
             <div key={idx} className="lg:px-3">
               <div
-                className={`mbg rounded-xl shadow-lg p-6 lg:h-[330px] h-1024-1370 border border-gray-600 transition-all duration-500 ${
+                className={`mbg rounded-xl shadow-lg p-6 border min-h-[320px] border-gray-600 transition-all duration-500 ${
                   currentSlide === idx
                     ? "scale-100 opacity-100"
                     : "scale-85 opacity-60"
@@ -137,7 +137,7 @@ const Testimonial = () => {
                 </div>
 
                 {/* Quote */}
-                <div className="text-gray-100 text-sm mb-4">
+                <div className="text-gray-100 text-sm mb-4 line-clamp-8">
                   <FaQuoteLeft className="inline-block text-yellow-400 mr-2" />
                   {item.quote}
                 </div>

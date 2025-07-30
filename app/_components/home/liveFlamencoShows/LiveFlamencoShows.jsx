@@ -19,7 +19,7 @@ const LiveFlamencoShows = () => {
             desCriptionClass="hidden"
           />
 
-          <div className="w-full h-[250px] md:h-[300px] lg:h-[400px] mt-6 relative rounded-lg overflow-hidden">
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[500px] xl:h-[400px] xl:mt-6 relative rounded-lg overflow-hidden">
             <Image
               src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/join%20cooking%20class/slide-one.jpg"
               alt="Flamenco Show"
