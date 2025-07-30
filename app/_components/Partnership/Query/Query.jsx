@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Toaster, toast } from 'sonner';
 import Image from 'next/image';
 import PhoneInput from 'react-phone-number-input';
@@ -7,6 +7,7 @@ import 'react-phone-number-input/style.css';
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
+// Define FormInput
 const FormInput = ({ label, name, type = 'text', placeholder, value, onChange, required, error }) => (
   <div className="flex flex-col gap-2 group transition-all duration-300">
     <label htmlFor={name} className="text-sm font-semibold text-white tracking-wide">
@@ -32,6 +33,7 @@ const FormInput = ({ label, name, type = 'text', placeholder, value, onChange, r
   </div>
 );
 
+// Define FormTextarea
 const FormTextarea = ({ label, name, placeholder, value, onChange, error }) => (
   <div className="flex flex-col gap-2 group transition-all duration-300">
     <label htmlFor={name} className="text-sm font-semibold text-white tracking-wide">
@@ -55,6 +57,7 @@ const FormTextarea = ({ label, name, placeholder, value, onChange, error }) => (
   </div>
 );
 
+// Define FormSelect
 const FormSelect = ({ label, name, value, onChange, options, required, error }) => (
   <div className="flex flex-col gap-2 group transition-all duration-300 relative">
     <label htmlFor={name} className="text-sm font-semibold text-white tracking-wide">
@@ -92,6 +95,7 @@ const FormSelect = ({ label, name, value, onChange, options, required, error }) 
   </div>
 );
 
+// Define ThankYou
 const ThankYou = () => (
   <div className="relative min-h-screen w-full bg-[#0b0b0b] text-white font-serif overflow-hidden myContainer topContainer">
     <div className="absolute inset-0 z-0">
@@ -131,6 +135,7 @@ const ThankYou = () => (
   </div>
 );
 
+// Define QuestionnaireForm
 const QuestionnaireForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -149,6 +154,16 @@ const QuestionnaireForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth >= 640 && window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const validatePage = (page) => {
     const newErrors = {};
@@ -231,7 +246,6 @@ const QuestionnaireForm = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-[#0b0b0b] text-white font-serif overflow-hidden myContainer topContainer">
-      {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1549921296-3a6b3b10b2e5?auto=format&fit=crop&w=1600&q=80"
@@ -241,8 +255,6 @@ const QuestionnaireForm = () => {
         />
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       </div>
-
-      {/* Form Container */}
       <div className="relative z-10">
         <div className="flex justify-center w-full sm:flex sm:justify-center sm:text-center">
           <SectionContent
@@ -254,10 +266,8 @@ const QuestionnaireForm = () => {
             desCriptionClass="desc max-w-4xl mx-auto text-center mb-14"
           />
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-          {/* Personal Info (Page 1 for sm to md) */}
-          {(currentPage === 0 || window.innerWidth < 640 || window.innerWidth >= 768) && (
+          {(currentPage === 0 || !isMobile) && (
             <div className="p-8 bg-[#1a1a1ad9] border border-[#2b2b2b] rounded-2xl shadow-lg space-y-8 transition hover:shadow-[#2a2a2a]">
               <h2 className="subHeding text-amber-400 border-b border-amber-400/30 pb-3">
                 Personal Information
@@ -326,9 +336,7 @@ const QuestionnaireForm = () => {
               />
             </div>
           )}
-
-          {/* Business Details (Page 2 for sm to md) */}
-          {(currentPage === 1 || window.innerWidth < 640 || window.innerWidth >= 768) && (
+          {(currentPage === 1 || !isMobile) && (
             <div className="p-8 bg-[#1a1a1ad9] border border-[#2b2b2b] rounded-2xl shadow-lg space-y-8 transition hover:shadow-[#2a2a2a]">
               <h2 className="subHeding text-amber-400 border-b border-amber-400/30 pb-3">
                 Business Details
@@ -416,10 +424,8 @@ const QuestionnaireForm = () => {
             </div>
           )}
         </div>
-
-        {/* Navigation Buttons */}
         <div className="mt-16 flex justify-center gap-4">
-          {window.innerWidth >= 640 && window.innerWidth < 768 && currentPage === 0 && (
+          {isMobile && currentPage === 0 && (
             <OutlineBtn
               label="Next"
               type="button"
@@ -427,7 +433,7 @@ const QuestionnaireForm = () => {
               className="cursor-pointer"
             />
           )}
-          {window.innerWidth >= 640 && window.innerWidth < 768 && currentPage === 1 && (
+          {isMobile && currentPage === 1 && (
             <>
               <OutlineBtn
                 label="Previous"
@@ -443,7 +449,7 @@ const QuestionnaireForm = () => {
               />
             </>
           )}
-          {(window.innerWidth < 640 || window.innerWidth >= 768) && (
+          {!isMobile && (
             <OutlineBtn
               label="Submit Form"
               type="button"
@@ -453,7 +459,6 @@ const QuestionnaireForm = () => {
           )}
         </div>
       </div>
-
       <Toaster richColors position="top-right" />
     </div>
   );
