@@ -1,19 +1,21 @@
 'use client';
 
 import React from 'react';
+import { FaUtensils, FaHandshake } from 'react-icons/fa'; // Added for section icons
 import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
 const CulinaryPartnershipSection = () => {
   return (
     <div className="bg-black text-white myContainer topContainer">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-between h-full">
           <div>
             <SectionContent
+              icon={FaUtensils} // Icon for culinary experiences
               tooltrip="Crafted Experiences"
-              tooltripClass="yellow-desc"
+              tooltripClass="border-yellow-300 bg-yellow-300 text-black" // Customized for premium theme
               heading="Culinary Journeys Designed for Your Clients"
               hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
               desCription="Unlock a variety of hands-on cooking adventures rooted in authentic Spanish and Mediterranean cuisine — all tailored to delight your clients.\nFrom the award-winning Paella Class to sweet baking escapes and vibrant market-to-plate experiences, every journey is chef-led and unforgettable."
@@ -48,8 +50,9 @@ const CulinaryPartnershipSection = () => {
         <div className="flex flex-col justify-between h-full">
           <div>
             <SectionContent
+              icon={FaHandshake} // Icon for partnerships
               tooltrip="Let’s Collaborate"
-              tooltripClass="yellow-desc"
+              tooltripClass="border-yellow-300 bg-yellow-300 text-black" // Customized for premium theme
               heading="Why Partner with Gastronomic Arts?"
               hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
               desCription="Offer your clients more than just a meal — deliver curated culinary moments they’ll never forget. Our partnerships help you create tailored, cultural, chef-led experiences."

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa6';
+import { FaQuestionCircle } from 'react-icons/fa'; // Added for FAQ icon
 import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
 
 const faqData = [
@@ -102,8 +103,9 @@ export default function FAQ() {
       <div className="box-border">
         <div className="text-center mb-12 group relative">
           <SectionContent
+            icon={FaQuestionCircle} // Added icon for FAQ theme
             tooltrip="Frequently Asked Questions"
-            tooltripClass="yellow-desc w-fit mx-auto text-center md:mx-auto md:text-center sm:mx-0 sm:text-left"
+            tooltripClass="border-blue-300 bg-blue-300 text-black" // Customized for premium theme
             heading="FAQ"
             hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
             desCription="Here are the most commonly asked questions about our classes and services."

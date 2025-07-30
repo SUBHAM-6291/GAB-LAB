@@ -1,8 +1,10 @@
-'use client'
+'use client';
+
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FaUtensils } from 'react-icons/fa';
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 
 const privateClassesData = [
@@ -43,8 +45,9 @@ const Private_Classes = () => {
       {/* Title & Description */}
       <div className="text-center mb-10">
         <SectionContent
+          icon={FaUtensils}
           tooltrip="Private Classes"
-          tooltripClass="yellow-desc w-fit mx-auto text-center md:mx-auto md:text-center sm:mx-0 sm:text-left"
+          tooltripClass="border-yellow-300 bg-yellow-300 text-black"
           heading="A Unique and Memorable Experience for Any Occasion"
           hedingClass="heding"
           desCription="At Gastronomic Arts Barcelona, we understand that every event is different. That’s why we offer customizable options to meet your specific needs. Whether you’re celebrating a birthday, planning a team building activity, or looking for a pre-wedding event, we can tailor our offerings to fit your occasion. Want to add premium tapas or participate in dessert making? We’ve got you covered. We want to make sure your event is exactly how you envision it."
@@ -59,7 +62,7 @@ const Private_Classes = () => {
           <Slider {...settings}>
             {privateClassesData.map((item) => (
               <div key={item.id}>
-                <div className="bg-[#0f0f0f] border border-[#2a2a2a] p-6 sm:p-8 rounded-xl shadow-sm transition-all duration-300 mt-4">
+                <div className="bg-[#0f0f0f] border cursor-pointer border-[#2a2a2a] p-6 sm:p-8 rounded-xl shadow-sm transition-all duration-300 mt-4">
                   <h3 className="subHeding">{item.title}</h3>
                   <p className="desc mb-2">{item.description}</p>
                   <p className="yellow-desc">{item.bookingText}</p>
@@ -74,7 +77,8 @@ const Private_Classes = () => {
           <img
             src={privateClassesData[0].image}
             alt="Private Class"
-            className="rounded-lg w-full h-auto object-cover transition-all duration-300 hover:scale-105"
+            className="rounded-lg cursor-pointer w-full h-auto object-cover transition-all duration-300 hover:scale-105" // cursor-pointer can be added here if needed
+            // className="rounded-lg w-full h-auto object-cover transition-all duration-300 hover:scale-105 cursor-pointer"
             loading="lazy"
           />
         </div>
