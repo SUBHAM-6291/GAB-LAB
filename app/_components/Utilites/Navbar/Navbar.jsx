@@ -43,7 +43,7 @@ const Navbar = () => {
         </nav>
 
         {/* Contact Us Button */}
-        <Link href="/contact">
+        <Link href="/contact-us">
           <OutlineBtn label="Contact Us" type="button" />
         </Link>
 
