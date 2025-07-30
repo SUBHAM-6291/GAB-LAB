@@ -3,6 +3,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -17,38 +18,55 @@ const fadeInUp = {
   }),
 };
 
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 export default function ContactSection() {
   return (
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
-      className="bg-[#0f0f0f] text-white px-6 md:px-12 py-20"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={staggerContainer}
+      className="bg-[#0f0f0f] myContainer text-white py-20"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Left Info */}
-        <div className="space-y-10">
+        <motion.div
+          variants={staggerContainer}
+          className="space-y-10"
+        >
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl font-bold text-yellow-400"
+            className="text-5xl heding font-bold text-yellow-400"
           >
             Contact Information
           </motion.h2>
 
-          {/* Contact Items */}
-          {[{
-            Icon: FaMapMarkerAlt,
-            label: "Address",
-            content: "Gastronomic Arts Barcelona\nCarrer de Lancaster, 10, Bajo 1a, Barcelona, Spain, 08001",
-          }, {
-            Icon: FaPhoneAlt,
-            label: "Phone",
-            content: "+34 946 41 53 99",
-          }, {
-            Icon: FaEnvelope,
-            label: "Email",
-            content: "hello@gastronomicartsbarcelona.com",
-          }].map(({ Icon, label, content }, i) => (
+          {[
+            {
+              Icon: FaMapMarkerAlt,
+              label: "Address",
+              content:
+                "Gastronomic Arts Barcelona\nCarrer de Lancaster, 10, Bajo 1a, Barcelona, Spain, 08001",
+            },
+            {
+              Icon: FaPhoneAlt,
+              label: "Phone",
+              content: "+34 946 41 53 99",
+            },
+            {
+              Icon: FaEnvelope,
+              label: "Email",
+              content: "hello@gastronomicartsbarcelona.com",
+            },
+          ].map(({ Icon, label, content }, i) => (
             <motion.div
               key={label}
               custom={i + 1}
@@ -57,7 +75,9 @@ export default function ContactSection() {
             >
               <Icon className="text-yellow-400 text-2xl mt-1 group-hover:scale-110 transition-transform duration-200" />
               <div>
-                <h4 className="font-semibold uppercase text-white mb-1">{label}:</h4>
+                <h4 className="font-semibold uppercase text-white mb-1">
+                  {label}:
+                </h4>
                 <p className="text-gray-300 leading-relaxed whitespace-pre-line">
                   {content}
                 </p>
@@ -65,12 +85,8 @@ export default function ContactSection() {
             </motion.div>
           ))}
 
-          {/* Live Map */}
-          <motion.div
-            variants={fadeInUp}
-            custom={4}
-            className="pt-4"
-          >
+          {/* Map */}
+          <motion.div variants={fadeInUp} custom={4} className="pt-4">
             <div className="rounded-lg border border-yellow-500 overflow-hidden shadow-[0_0_30px_#fde68a40] w-full max-w-md hover:scale-[1.01] transition-transform duration-300">
               <iframe
                 title="Gastronomic Arts Barcelona Location"
@@ -84,16 +100,27 @@ export default function ContactSection() {
               ></iframe>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Right Form */}
         <motion.div
-          variants={fadeInUp}
-          custom={5}
+          variants={staggerContainer}
           className="space-y-8"
         >
-          <h2 className="text-3xl font-bold text-white">Contact Us</h2>
-          <form className="space-y-6">
+          <motion.h2
+            variants={fadeInUp}
+            custom={5}
+            className="text-3xl font-bold heding text-white"
+          >
+            Contact Us
+          </motion.h2>
+
+          <motion.form
+            className="space-y-6"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <motion.input
                 type="text"
@@ -138,15 +165,19 @@ export default function ContactSection() {
               custom={10}
             ></motion.textarea>
 
-            <motion.button
-              type="submit"
-              className="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 shadow-md hover:shadow-yellow-500/40 transition-all duration-300"
+            <motion.div
               variants={fadeInUp}
               custom={11}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Submit
-            </motion.button>
-          </form>
+              <OutlineBtn
+                label="Request a Quote"
+                type="button"
+                onClick={() => console.log("button clicked")}
+              />
+            </motion.div>
+          </motion.form>
         </motion.div>
       </div>
     </motion.section>

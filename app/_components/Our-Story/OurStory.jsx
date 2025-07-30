@@ -1,5 +1,5 @@
 import React from 'react'
-// import Banner from './Banner/Banner'
+
 
 
 
@@ -20,7 +20,7 @@ import Process from './Process/Process'
 const OurStory = () => {
   return (
     <div>
-        {/* <Banner/> */}
+        
         <TripAdvisor/>
         <Explore/>
         
