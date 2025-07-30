@@ -24,7 +24,7 @@ const privateGroupImages = [
 
 const PrivateGroup = () => {
   return (
-    <div className="bg-[#121212] text-white myContainer  py-8 sm:py-12 flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300">
+    <div className="bg-[#121212] text-white myContainer topContainer flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300">
       {/* Left Side - Images */}
       <div className="relative w-full md:w-1/2 h-auto min-h-[320px] md:h-[550px] lg:h-[380px] xl:h-[500px] 2xl:h-[580px]">
         {/* Mobile & sm screens: stacked full-width images */}

@@ -98,16 +98,16 @@ export default function FAQ() {
   };
 
   return (
-    <div className="bg-black text-white myContainer topContainer ">
-      <div className="  box-border">
+    <div className="bg-black text-white myContainer topContainer">
+      <div className="box-border">
         <div className="text-center mb-12 group relative">
           <SectionContent
             tooltrip="Frequently Asked Questions"
-            tooltripClass="yellow-desc"
+            tooltripClass="yellow-desc w-fit mx-auto text-center md:mx-auto md:text-center sm:mx-0 sm:text-left"
             heading="FAQ"
             hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
             desCription="Here are the most commonly asked questions about our classes and services."
-            desCriptionClass="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300 "
+            desCriptionClass="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300"
           />
         </div>
 

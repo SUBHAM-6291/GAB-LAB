@@ -39,10 +39,12 @@ const settings = {
 
 const Private_Classes = () => {
   return (
-    <div className="bg-black text-white myContainer transition-all duration-300">
+    <div className="bg-black text-white myContainer transition-all topContainer duration-300">
       {/* Title & Description */}
       <div className="text-center mb-10">
         <SectionContent
+          tooltrip="Private Classes"
+          tooltripClass="yellow-desc w-fit mx-auto text-center md:mx-auto md:text-center sm:mx-0 sm:text-left"
           heading="A Unique and Memorable Experience for Any Occasion"
           hedingClass="heding"
           desCription="At Gastronomic Arts Barcelona, we understand that every event is different. That’s why we offer customizable options to meet your specific needs. Whether you’re celebrating a birthday, planning a team building activity, or looking for a pre-wedding event, we can tailor our offerings to fit your occasion. Want to add premium tapas or participate in dessert making? We’ve got you covered. We want to make sure your event is exactly how you envision it."
