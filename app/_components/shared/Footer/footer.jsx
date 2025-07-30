@@ -6,8 +6,10 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
-import "./footer.css"; 
+import "./footer.css";
+import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 
 // Quick Links Array
 const quickLinks = [
@@ -29,15 +31,17 @@ const socialIcons = [
 
 const Footer = () => {
   return (
-    <footer className="myContainer topContainer footer-container">
+    <footer className="topContainer bg-[#1a1a1a] pt-20">
       {/* Main Grid */}
-      <div className="footer-grid">
+      <div className="myContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-15 md:gap-10">
         {/* Logo & Description */}
         <div>
           <div className="flex items-center w-full mb-4">
-            <Image src={logo} alt="Logo" width={220} height={0} priority />
+            <Link href="/">
+              <Image src={logo} alt="Logo" width={220} height={0} priority />
+            </Link>
           </div>
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-300 text-base mb-4">
             Authentic cooking classes in the heart of Barcelona. Learn
             traditional Spanish recipes with our expert chefs.
           </p>
@@ -57,9 +61,11 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="pl-10">
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-gray-400">
+        <div className="md:pl-10">
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            Quick Links
+          </h3>
+          <ul className="space-y-3 text-gray-300 text-base">
             {quickLinks.map((link, idx) => (
               <li key={idx}>
                 <a href={link.href} className="hover:text-yellow-300">
@@ -72,45 +78,40 @@ const Footer = () => {
 
         {/* Contact Us */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-          <p className="text-gray-400 mb-2">
+          <h3 className="text-2xl font-semibold text-white mb-6">Contact Us</h3>
+          <p className="text-gray-300 text-base mb-4">
             <strong>Address:</strong>
             <br />
             Carrer de Lancaster, 10, Bajo 1a,
             <br />
             08001, Barcelona
           </p>
-          <p className="text-gray-400">
-            <strong>Phone:</strong> +34 ‪936 41 53 99
+          <p className="text-gray-300">
+            <strong>Phone:</strong> +91 7797756092
           </p>
         </div>
 
         {/* Newsletter */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">
-            Subscribe to Our Newsletter
+        <div className="md:pl-10 lg:pl-0">
+          <h3 className="text-2xl font-semibold text-white mb-6">
+            Subscribe Newsletter
           </h3>
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-300 text-base mb-4">
             Stay updated with the latest classes and fitness tips.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3">
+          <form className="flex flex-col gap-3 w-full">
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-300 w-full"
+              className="w-full px-4 py-3 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-300"
             />
-            <button
-              type="submit"
-              className="bg-yellow-300 text-black px-4 py-2 rounded-md hover:bg-yellow-400 transition-all font-medium"
-            >
-              Subscribe
-            </button>
+            <BgBtn label="Subscribe" type="submit" className="w-full" />
           </form>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="mt-20 text-center text-gray-500 text-sm">
+      <div className="mt-15 pb-4 text-center text-gray-300 text-base border-t border-gray-700 pt-6">
         © Gastronomic Arts Barcelona 2025 | Designed and Developed by{" "}
         <span className="text-yellow-300 font-semibold">Ethicaldan</span>
       </div>

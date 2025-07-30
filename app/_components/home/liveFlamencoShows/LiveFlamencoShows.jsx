@@ -13,9 +13,10 @@ const LiveFlamencoShows = () => {
         <div className="flex-1 flex flex-col justify-between">
 
           <SectionContent
-            tooltrip=" Feel the Rhythm, Taste the Tradition" tooltripClass=" bg-yellow-300 text-black border border-yellow-300"
+            tooltrip=" Feel the Rhythm, Taste the Tradition" tooltripClass="bg-yellow-300 text-black border border-yellow-300"
             icon={RiArrowRightDoubleFill}
             heading="Paella Cooking Class & LIVE Flamenco Show" hedingClass="text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+            desCriptionClass="hidden"
           />
 
           <div className="w-full h-[250px] md:h-[300px] lg:h-[400px] mt-6 relative rounded-lg overflow-hidden">

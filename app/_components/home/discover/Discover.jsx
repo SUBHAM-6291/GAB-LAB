@@ -38,7 +38,7 @@ const Discover = () => {
               heading={item.heading}
               hedingClass="text-yellow-300 max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
               desCription={item.description}
-              desCriptionClass=" text-white max-w-5xl"
+              desCriptionClass="text-white max-w-5xl"
             />
 
             <BgBtn
