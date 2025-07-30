@@ -3,6 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { FaUtensils } from "react-icons/fa";
+
 
 const containerVariants = {
   hidden: {},
@@ -54,7 +56,7 @@ export default function CookingHeroSection() {
     <section className="bg-gradient-to-b from-[#0f0f0f] to-[#1c1c1c] myContainer   text-white   py-24 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60vw] h-[60vw] bg-yellow-400/10 rounded-full blur-[150px] z-0"></div>
 
-      <div className="relative  mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
+      <div className="relative  mx-auto grid grid-cols-1 xl:grid-cols-2  gap-16 items-center z-10">
         {/* Left Side */}
         <motion.div
           initial="hidden"
@@ -65,13 +67,19 @@ export default function CookingHeroSection() {
         >
           <motion.button>
             <SectionContent
-              hedingClass="hidden"
-              heading="hidden"
-              tooltrip="Learn cooking"
-              tooltripClass="bg-yellow-300 text-black border border-yellow-300"
-              desCription="hidden"
-              desCriptionClass="hidden"
-            />
+  hedingClass="hidden"
+  heading="hidden"
+  tooltrip={
+    <>
+      <FaUtensils className="inline-block mr-1" />
+      Learn Cooking
+    </>
+  }
+  tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+  desCription="hidden"
+  desCriptionClass="hidden"
+/>
+
 
           </motion.button>
 
@@ -100,26 +108,28 @@ export default function CookingHeroSection() {
         </motion.div>
 
         {/* Right Side Cards */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {cards.map((card, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="group bg-[#1a1a1a] rounded-2xl p-6 border border-yellow-800/30 hover:border-yellow-500 shadow-md hover:shadow-[0_0_30px_#fde68a] transition-all duration-300 hover:scale-[1.03]"
-            >
-              <h3 className="text-xl font-semibold mb-2 text-yellow-400">
-                {card.title}
-              </h3>
-              <p className="text-gray-400 text-sm">{card.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+     {/* Right Side Cards */}
+<motion.div
+  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-6 w-full max-w-6xl mx-auto mt-10"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+>
+  {cards.map((card, i) => (
+    <motion.div
+      key={i}
+      variants={fadeUp}
+      className="group bg-[#1a1a1a] rounded-2xl p-6 border border-yellow-800/30 hover:border-yellow-500 shadow-md hover:shadow-[0_0_30px_#fde68a] transition-all duration-300 hover:scale-[1.03]"
+    >
+      <h3 className="text-xl font-semibold mb-2 text-yellow-400">
+        {card.title}
+      </h3>
+      <p className="text-gray-400 text-sm">{card.desc}</p>
+    </motion.div>
+  ))}
+</motion.div>
+
       </div>
     </section>
   );

@@ -64,10 +64,10 @@ const fadeInDown = {
   },
 };
 
-export default function Explore () {
+export default function Explore() {
   return (
-    <section className=" topContainer myContainer">
-      <div className="text-center mb-14">
+    <section className="topContainer myContainer">
+      <div className="sm:text-center text-left mb-14">
         {/* Subtitle Animation */}
         <motion.p
           variants={fadeInDown}
@@ -85,7 +85,7 @@ export default function Explore () {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="heding text-yellow-400 "
+          className="heding text-yellow-400"
         >
           Explore Our Flavor-Packed Features
         </motion.h2>
@@ -96,7 +96,7 @@ export default function Explore () {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-gray-300 mt-4 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+          className="text-gray-300 mt-4 text-base md:text-lg max-w-2xl sm:mx-auto leading-relaxed"
         >
           From live masterclasses to printable recipes, our platform brings the world of cooking right to your kitchen with hands-on guidance and unforgettable flavors.
         </motion.p>
