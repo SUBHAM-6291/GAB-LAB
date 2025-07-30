@@ -16,7 +16,7 @@ const ContactUs = () => {
     <section className="myContainer topContainer">
       <div className="grid lg:grid-cols-2 gap-[20px] lg:gap-[60px] xl:gap-[80px]">
         {/* Left Side: Contact Form */}
-        <div className="bg-[#202020] rounded-xl p-4 md:p-10">
+        <div className="mbg rounded-xl p-4 md:p-10">
           <SectionContent
             icon={RiArrowRightDoubleFill}
             tooltrip="Contact us"
@@ -71,7 +71,7 @@ const ContactUs = () => {
 
         {/* Right Side: Contact Info + Map */}
         <div className="flex flex-col gap-6 my-6">
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-200 text-lg">
             We'd love to hear from you! Reach out to us through any of the
             methods below or visit our office.
           </p>
@@ -79,7 +79,7 @@ const ContactUs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-6">
             {/* Phone */}
             <div
-              className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
               onClick={() => (window.location.href = "tel:+1234567890")}
             >
               <FiPhone className="text-yellow-500 text-[32px]" />
@@ -93,7 +93,7 @@ const ContactUs = () => {
 
             {/* Email */}
             <div
-              className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
               onClick={() =>
                 (window.location.href = "mailto:contact@example.com")
               }
@@ -109,7 +109,7 @@ const ContactUs = () => {
 
             {/* WhatsApp */}
             <div
-              className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
               onClick={() =>
                 (window.location.href = "https://wa.me/19876543210")
               }
@@ -122,7 +122,7 @@ const ContactUs = () => {
             </div>
 
             {/* Office */}
-            <div className="flex flex-col items-center text-center gap-2 bg-[#484848] p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300">
+            <div className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300">
               <FiMapPin className="text-yellow-500 text-[32px]" />
               <div>
                 <h5 className="font-semibold text-white text-xl">Our Office</h5>

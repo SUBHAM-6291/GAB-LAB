@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -42,8 +43,8 @@ const stats = [
 
 const Process = () => {
   return (
-    <section className="bg-black text-white py-24 px-6 md:px-12 xl:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-16">
+    <section className="myContainer  topContainer">
+      <div className=" mx-auto flex flex-col lg:flex-row items-start justify-between gap-16">
         {/* Left Side: Cards */}
         <motion.div
           initial="hidden"
@@ -89,9 +90,16 @@ const Process = () => {
           <motion.button
             variants={fadeUp}
             custom={5}
-            className="px-5 py-2 bg-yellow-500 text-black rounded-full font-semibold shadow-md hover:bg-yellow-400 transition-all"
-          >
-            Start Cooking
+            >
+            <SectionContent
+            hedingClass="hidden"
+            heading="hidden"
+            desCription="hidden"
+            desCriptionClass="hidden"
+            tooltrip="Our Team"
+            tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+
+          />
           </motion.button>
 
           <motion.h2
@@ -105,7 +113,7 @@ const Process = () => {
           <motion.p
             variants={fadeUp}
             custom={7}
-            className="text-base text-gray-400"
+            className="text-base desc text-gray-200"
           >
             Follow these steps to explore your culinary creativity from home.
           </motion.p>

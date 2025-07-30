@@ -1,22 +1,21 @@
+'use client';
+
 import React from 'react';
-import {
-  FaBox,
-  FaGuitar,
-  FaMoneyBillWave,
-  FaCrown,
-  FaHandsHelping
-} from 'react-icons/fa';
+import { FaBox, FaGuitar, FaMoneyBillWave, FaCrown, FaHandsHelping } from 'react-icons/fa';
+import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
 
 const Benifits = () => {
   return (
-    <div className="bg-black text-white py-20 px-4 text-center">
+    <div className="bg-black text-white myContainer topContainer  text-center">
       {/* Heading */}
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-        Partnership Benefits
-      </h1>
-      <p className="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300">
-        Perfect for solo travelers, couples, and private groups looking for a hands-on culinary adventure in the heart of Barcelona.
-      </p>
+      <SectionContent
+        tooltrip="Partner Benefits"
+        tooltripClass="yellow-desc"
+        heading="Partnership Benefits"
+        hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
+        desCription="Perfect for solo travelers, couples, and private groups looking for a hands-on culinary adventure in the heart of Barcelona."
+        desCriptionClass="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300"
+      />
 
       {/* First Row of Cards */}
       <div className="grid md:grid-cols-3 gap-6 mb-6 px-4">
@@ -80,7 +79,10 @@ const Benifits = () => {
       </div>
 
       {/* CTA Button */}
-      <button className="bg-[#111] text-white border border-gray-500 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-md transition font-medium">
+      <button
+        className="bg-[#111] text-white border border-gray-500 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-md transition font-medium cursor-pointer"
+        onClick={() => console.log('Join Partnership Program clicked')}
+      >
         Join Our Partnership Program
       </button>
     </div>

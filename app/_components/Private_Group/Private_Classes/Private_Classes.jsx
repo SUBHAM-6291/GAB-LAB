@@ -3,6 +3,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import SectionContent from '../../Utilites/SectionContent/SectionContent';
 
 const privateClassesData = [
   {
@@ -38,18 +39,17 @@ const settings = {
 
 const Private_Classes = () => {
   return (
-    <div className="bg-black text-white px-6 py-10 lg:px-20 lg:py-20 transition-all duration-300">
+    <div className="bg-black text-white myContainer transition-all topContainer duration-300">
       {/* Title & Description */}
       <div className="text-center mb-10">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 ">
-          A Unique and Memorable Experience for Any Occasion
-        </h2>
-        <p className="max-w-4xl mx-auto text-sm sm:text-base text-gray-300 leading-relaxed group relative">
-          At Gastronomic Arts Barcelona, we understand that every event is different. That’s why we offer customizable options to meet your
-          specific needs. Whether you’re celebrating a birthday, planning a team building activity, or looking for a pre-wedding event,
-          we can tailor our offerings to fit your occasion. Want to add premium tapas or participate in dessert making? We’ve got you covered.
-          We want to make sure your event is exactly how you envision it.
-        </p>
+        <SectionContent
+          tooltrip="Private Classes"
+          tooltripClass="yellow-desc w-fit mx-auto text-center md:mx-auto md:text-center sm:mx-0 sm:text-left"
+          heading="A Unique and Memorable Experience for Any Occasion"
+          hedingClass="heding"
+          desCription="At Gastronomic Arts Barcelona, we understand that every event is different. That’s why we offer customizable options to meet your specific needs. Whether you’re celebrating a birthday, planning a team building activity, or looking for a pre-wedding event, we can tailor our offerings to fit your occasion. Want to add premium tapas or participate in dessert making? We’ve got you covered. We want to make sure your event is exactly how you envision it."
+          desCriptionClass="desc max-w-4xl mx-auto leading-relaxed"
+        />
       </div>
 
       {/* Shared Layout Across All Devices */}
@@ -60,11 +60,9 @@ const Private_Classes = () => {
             {privateClassesData.map((item) => (
               <div key={item.id}>
                 <div className="bg-[#0f0f0f] border border-[#2a2a2a] p-6 sm:p-8 rounded-xl shadow-sm transition-all duration-300 mt-4">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white">{item.title}</h3>
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-2">
-                    {item.description}
-                  </p>
-                  <p className="text-gray-400 text-xs sm:text-sm">{item.bookingText}</p>
+                  <h3 className="subHeding">{item.title}</h3>
+                  <p className="desc mb-2">{item.description}</p>
+                  <p className="yellow-desc">{item.bookingText}</p>
                 </div>
               </div>
             ))}
