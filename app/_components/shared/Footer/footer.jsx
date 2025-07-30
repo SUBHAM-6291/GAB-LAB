@@ -36,9 +36,9 @@ const Footer = () => {
       <div className="myContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-15 md:gap-10">
         {/* Logo & Description */}
         <div>
-          <div className="flex items-center w-full mb-4">
+          <div className="relative w-full mb-4">
             <Link href="/">
-              <Image src={logo} alt="Logo" width={220} height={0} priority />
+              <Image src={logo} alt="Logo" width={180} height={0} priority className="object-cover" />
             </Link>
           </div>
           <p className="text-gray-300 text-base mb-4">
