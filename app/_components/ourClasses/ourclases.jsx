@@ -1,6 +1,7 @@
 import React from 'react'
 import OurClassesBanner from './banner/banner'
-import Courses from './courses/Courses'
+import Courses from './courses/courses'
+
 
 const Ourclases = () => {
   return (

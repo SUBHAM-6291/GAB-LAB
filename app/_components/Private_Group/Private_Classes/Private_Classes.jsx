@@ -62,7 +62,7 @@ const Private_Classes = () => {
           <Slider {...settings}>
             {privateClassesData.map((item) => (
               <div key={item.id}>
-                <div className="bg-[#0f0f0f] border cursor-pointer border-[#2a2a2a] p-6 sm:p-8 rounded-xl shadow-sm transition-all duration-300 mt-4">
+                <div className="bg-[#0f0f0f] border  border-[#2a2a2a] p-6 sm:p-8 rounded-xl shadow-sm transition-all duration-300 mt-4">
                   <h3 className="subHeding">{item.title}</h3>
                   <p className="desc mb-2">{item.description}</p>
                   <p className="yellow-desc">{item.bookingText}</p>
