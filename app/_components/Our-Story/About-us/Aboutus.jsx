@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -19,8 +20,8 @@ const fadeInUp = {
 
 const AboutUs = () => {
   return (
-    <section className="bg-black text-white py-12 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+    <section className="myContainer topContainer">
+      <div className=" mx-auto flex flex-col md:flex-row items-center gap-10">
         
         {/* Left Image */}
         <motion.div
@@ -50,16 +51,18 @@ const AboutUs = () => {
           variants={fadeInUp}
           custom={1}
         >
-          {/* Discover Button */}
-           <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-block bg-[#1a1a1a] text-white px-6 py-2 rounded-full font-medium shadow hover:shadow-yellow-300/50 transition mb-2"
-                >
-                  About Us
-                </motion.button>
+      
+           
+          <SectionContent
+          heading="About Us"
+          hedingClass="heding text-yellow-400"
+          tooltrip="About Us"
+          tooltripClass="yellow-desc"
+          desCription="hidden"
+          desCriptionClass="hidden"
 
-          <h2 className="text-5xl font-bold">About Us</h2>
+
+          />
 
           {/* Description Text */}
           <motion.div
@@ -67,9 +70,10 @@ const AboutUs = () => {
             variants={fadeInUp}
             custom={2}
           >
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="subHeding">
               Discover Authentic Culinary Experiences in Barcelona
             </h3>
+            <div className="desc">
             <p>
               Welcome to The GAB LAB – Gastronomic Arts Barcelona. Embark on a
               flavorful journey through the heart of Barcelona with The GAB LAB.
@@ -89,6 +93,7 @@ const AboutUs = () => {
               you inspired and craving more.
             </p>
             <p>📍 Taste the magic of Barcelona — one delicious bite at a time.</p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

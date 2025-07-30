@@ -1,26 +1,24 @@
 'use client';
+
 import React from 'react';
+import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
+import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
 const CulinaryPartnershipSection = () => {
   return (
-    <div className="bg-black text-white py-20 px-4 md:px-12 lg:px-24">
+    <div className="bg-black text-white myContainer topContainer">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
-        
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-between h-full">
           <div>
-            <p className="text-yellow-400 uppercase text-sm font-semibold tracking-wider mb-3">
-              Crafted Experiences
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Culinary Journeys Designed for Your Clients
-            </h2>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-4">
-              Unlock a variety of hands-on cooking adventures rooted in authentic Spanish and Mediterranean cuisine — all tailored to delight your clients.
-            </p>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-6">
-              From the award-winning Paella Class to sweet baking escapes and vibrant market-to-plate experiences, every journey is chef-led and unforgettable.
-            </p>
+            <SectionContent
+              tooltrip="Crafted Experiences"
+              tooltripClass="yellow-desc"
+              heading="Culinary Journeys Designed for Your Clients"
+              hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
+              desCription="Unlock a variety of hands-on cooking adventures rooted in authentic Spanish and Mediterranean cuisine — all tailored to delight your clients.\nFrom the award-winning Paella Class to sweet baking escapes and vibrant market-to-plate experiences, every journey is chef-led and unforgettable."
+              desCriptionClass="text-base md:text-lg text-gray-300 leading-relaxed mb-6"
+            />
           </div>
 
           <div>
@@ -36,7 +34,8 @@ const CulinaryPartnershipSection = () => {
               ].map((text, i) => (
                 <button
                   key={i}
-                  className="w-full bg-[#111] border border-gray-600 hover:border-yellow-400 hover:bg-yellow-400 hover:text-black text-left px-5 py-3 rounded-md text-sm md:text-base font-medium transition"
+                  className="w-full bg-[#111] border border-gray-600 hover:border-yellow-400 hover:bg-yellow-400 hover:text-black text-left px-5 py-3 rounded-md text-sm md:text-base font-medium transition cursor-pointer"
+                  onClick={() => console.log(`Download: ${text}`)}
                 >
                   {text}
                 </button>
@@ -48,16 +47,14 @@ const CulinaryPartnershipSection = () => {
         {/* RIGHT SIDE */}
         <div className="flex flex-col justify-between h-full">
           <div>
-            <p className="text-yellow-400 uppercase text-sm font-semibold tracking-wider mb-2">
-              Let’s Collaborate
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Why Partner with Gastronomic Arts?
-            </h2>
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-10">
-              Offer your clients more than just a meal — deliver curated culinary moments they’ll never forget.
-              Our partnerships help you create tailored, cultural, chef-led experiences.
-            </p>
+            <SectionContent
+              tooltrip="Let’s Collaborate"
+              tooltripClass="yellow-desc"
+              heading="Why Partner with Gastronomic Arts?"
+              hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
+              desCription="Offer your clients more than just a meal — deliver curated culinary moments they’ll never forget. Our partnerships help you create tailored, cultural, chef-led experiences."
+              desCriptionClass="text-gray-300 text-base md:text-lg leading-relaxed mb-10"
+            />
 
             <div className="space-y-8">
               {[
@@ -88,9 +85,12 @@ const CulinaryPartnershipSection = () => {
           </div>
 
           <div className="mt-10">
-            <button className="w-full md:w-auto bg-yellow-400 text-black px-6 py-3 rounded-md font-semibold hover:bg-yellow-300 transition">
-              Join Our Partner Program
-            </button>
+            <OutlineBtn
+              label="Join Our Partner Program"
+              type="button"
+              onClick={() => console.log("button clicked")}
+              className="cursor-pointer"
+            />
           </div>
         </div>
       </div>

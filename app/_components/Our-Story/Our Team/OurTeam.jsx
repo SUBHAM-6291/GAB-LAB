@@ -4,6 +4,7 @@ import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
 
 const team = [
   {
@@ -76,19 +77,26 @@ export default function OurTeam() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section className="bg-black px-6 py-16 md:px-20">
-      <div className="max-w-7xl mx-auto text-center mb-12">
+    <section className="myContainer topContainer">
+      <div className=" mx-auto text-center mb-12">
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-block bg-[#1a1a1a] text-white px-6 py-2 rounded-full font-medium shadow hover:shadow-yellow-300/50 transition mb-2"
+
         >
-          Our Team
+          <SectionContent
+            hedingClass="hidden"
+            heading="hidden"
+            desCription="hidden"
+            desCriptionClass="hidden"
+            tooltrip="Our Team"
+            tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+
+          />
+
         </motion.button>
-        <h2 className="text-white text-4xl md:text-5xl font-semibold leading-tight mb-4">
+        <h2 className="heding text-yellow-400">
           OUR TEAM
         </h2>
-        <p className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+        <p className="text-gray-200 max-w-2xl mx-auto text-base md:text-lg">
           From culinary innovators to precision-focused engineers, our diverse team shares one goal — crafting the smartest, sleekest, and most reliable modern kitchen solutions.
         </p>
       </div>

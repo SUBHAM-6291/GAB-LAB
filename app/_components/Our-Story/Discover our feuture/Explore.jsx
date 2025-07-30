@@ -66,7 +66,7 @@ const fadeInDown = {
 
 export default function Explore () {
   return (
-    <section className="bg-[#0b0b0b] text-white py-20 px-4 md:px-20">
+    <section className=" topContainer myContainer">
       <div className="text-center mb-14">
         {/* Subtitle Animation */}
         <motion.p
@@ -85,7 +85,7 @@ export default function Explore () {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-yellow-400 drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+          className="heding text-yellow-400 "
         >
           Explore Our Flavor-Packed Features
         </motion.h2>
