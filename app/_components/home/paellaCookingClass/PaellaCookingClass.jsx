@@ -9,6 +9,9 @@ const marqueeImages = [
   "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/join%20cooking%20class/slide-two.jpeg",
   "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/join%20cooking%20class/slide-three.jpg",
   "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/join%20cooking%20class/slide-four.jpg",
+  "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/join%20cooking%20class/slide-five.jpg",
+  "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/join%20cooking%20class/slide-six.jpg",
+  "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/Why%20Choose/why%20choose%20us.avif",
 ];
 
 const contentData = [
@@ -21,13 +24,14 @@ const contentData = [
     desCription:
       "Discover our most popular experience - The Ultimate Paella Cooking Class! Start with a visit to La Boqueria market, where our chef will pick the freshest ingredients for your paella. Then back to the kitchen to join our Sangria-Making Workshop to craft the perfect Traditional Spanish drink while enjoying our Tapas Tasting. Then grab your apron for our award-winning Paella Cooking Class. Finish with a family-style meal sharing stories, laughter, and dessert with fellow food enthusiasts.",
     desCriptionClass: "text-white",
+    desCription2:"Join us for three hours of exploration, discovery, and indulgence. Reserve your spot today and create lasting memories!",
   },
 ];
 
 const PaellaCookingClass = () => {
   return (
     <div className="myContainer topContainer">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left - Marquee Section */}
         <div className="w-full lg:w-1/2">
           {[1, 2].map((_, idx) => (
@@ -71,8 +75,7 @@ const PaellaCookingClass = () => {
                 desCriptionClass={item.desCriptionClass}
               />
               <p className="desc text-white mt-2">
-                Join us for three hours of exploration, discovery, and
-                indulgence. Reserve your spot today and create lasting memories!
+                {item.desCription2}
               </p>
               <div className="mt-4">
                 <BgBtn label="Learn More" type="button" />

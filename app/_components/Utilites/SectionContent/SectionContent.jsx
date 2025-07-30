@@ -10,7 +10,7 @@ const SectionContent = ({
   icon: Icon,
 }) => {
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col">
       <div>
         <div
           className={`inline-flex items-center gap-2 text-sm font-medium rounded-full px-4 py-1 w-fit ${tooltripClass}`}
@@ -20,11 +20,11 @@ const SectionContent = ({
         </div>
       </div>
       <h2
-        className={`text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold md:leading-[50px] lg:leading-[72px] ${hedingClass}`}
+        className={`text-[28px] md:text-[35px] lg:text-[35px] xl:text-[45px] 2xl:text-[50px] font-bold mt-5 mb-7 ${hedingClass}`}
       >
         {heading}
       </h2>
-      <p className={`md:text-sm lg:text-[16px] lg:pb-6 ${desCriptionClass}`}>
+      <p className={`text-sm lg:text-[16px] ${desCriptionClass}`}>
         {desCription}
       </p>
     </div>
