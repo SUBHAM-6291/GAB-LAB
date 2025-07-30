@@ -21,7 +21,7 @@ body {
     @apply mt-[80px] lg:mt-[120px] xl:mt-[150px];
   }
   .heding {
-    @apply text-[24px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold md:leading-[50px] lg:leading-[72px] pb-6 text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)];
+    @apply text-[24px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold pb-6 text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)];
   }
   .subHeding {
     @apply text-base lg:text-[28px] text-white font-bold lg:pb-6;
@@ -158,3 +158,42 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.custom-rgb-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 200% 100%;
+  animation: unique-rgb-wave 4s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes unique-rgb-wave {
+  0% {
+    left: -150%;
+    transform: skewX(-20deg);
+  }
+  50% {
+    left: 0%;
+    transform: skewX(20deg);
+  }
+  100% {
+    left: -150%;
+    transform: skewX(-20deg);
+  }
+}
+
