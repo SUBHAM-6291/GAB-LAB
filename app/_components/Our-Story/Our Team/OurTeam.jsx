@@ -1,6 +1,7 @@
 'use client';
 
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+import { FaUsers } from "react-icons/fa";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -13,7 +14,7 @@ const team = [
     description:
       "A Culinary Artist with a Passion for Flavor.",
     image:
-      " https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/team/Meet%20Maria.avif",
+      "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/team/Meet%20Maria.avif",
   },
   {
     name: "Meet Simón",
@@ -79,20 +80,30 @@ export default function OurTeam() {
   return (
     <section className="myContainer topContainer">
       <div className=" mx-auto text-center mb-12">
-        <motion.button
 
-        >
-          <SectionContent
-            hedingClass="hidden"
-            heading="hidden"
-            desCription="hidden"
-            desCriptionClass="hidden"
-            tooltrip="Our Team"
-            tooltripClass="bg-yellow-300 text-black border border-yellow-300"
 
-          />
 
-        </motion.button>
+
+
+
+<motion.div >
+  <SectionContent
+    hedingClass="hidden"
+    heading="hidden"
+    desCription="hidden"
+    desCriptionClass="hidden"
+    tooltrip={
+      <span className="flex items-center gap-2">
+        <FaUsers className="text-base" /> Our Team
+      </span>
+    }
+    tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+  />
+</motion.div>
+
+
+
+
         <h2 className="heding text-yellow-400">
           OUR TEAM
         </h2>
