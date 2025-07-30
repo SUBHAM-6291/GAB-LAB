@@ -6,6 +6,8 @@ import Discover from './discover/Discover'
 import ContactUs from './contactUs/ContactUs'
 import Testimonial from './testimonial/Testimonial'
 import PaellaCookingClass from './paellaCookingClass/PaellaCookingClass'
+import DelightTheSenses from './delightTheSenses/DelightTheSenses'
+import LeaveUsReview from './leaveUsReview/LeaveUsReview'
 
 const homepage = () => {
   return (
@@ -15,6 +17,8 @@ const homepage = () => {
       <LiveFlamencoShows/>
       <PaellaCookingClass/>
       <Discover/>
+      <DelightTheSenses/>
+      <LeaveUsReview/>
       <Testimonial/>
       <ContactUs/>
       

@@ -49,7 +49,7 @@ export default function TripAdvisor() {
   return (
     <div className="relative w-full  max-w-6xl mx-auto bg-black py-6 px-2 overflow-hidden">
       {/* Award Heading Animation */}
-    
+ <div>   
 <motion.h2
   variants={fadeInUp}
   initial="hidden"
@@ -70,6 +70,7 @@ export default function TripAdvisor() {
 >
   We’re proud to be recognized by global platforms like TripAdvisor, Airbnb, and Google for our commitment to excellence and unforgettable guest experiences.
 </motion.p>
+</div>
 
 
       {/* Left Gradient Overlay */}

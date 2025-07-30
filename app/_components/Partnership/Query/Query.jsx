@@ -1,9 +1,11 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Toaster, toast } from 'sonner';
 import Image from 'next/image';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import { FaFileSignature, FaCheckCircle } from 'react-icons/fa'; // Added for section icons
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
@@ -116,8 +118,9 @@ const ThankYou = () => (
         className="mx-auto mb-6"
       />
       <SectionContent
+        icon={FaCheckCircle} // Icon for submission success
         tooltrip="Thank You!"
-        tooltripClass="text-sm font-medium bg-[#111] text-yellow-300 mb-2 border border-yellow-300 rounded-full px-4 py-1 inline-block w-fit mx-auto sm:mx-auto text-center !mx-auto"
+        tooltripClass="border-blue-300 bg-blue-300 text-black" // Customized for premium theme
         heading="Submission Successful"
         hedingClass="heding text-center text-white tracking-tight drop-shadow-lg !mx-auto"
         desCription="Thank you for completing the client questionnaire. We'll review your information and get back to you soon!"
@@ -127,7 +130,7 @@ const ThankYou = () => (
         <OutlineBtn
           label="Back to Home"
           type="button"
-          onClick={() => (window.location.href = '/')}
+          onClick={() => (window.location.href = 'partnership')}
           className="cursor-pointer"
         />
       </div>
@@ -258,8 +261,9 @@ const QuestionnaireForm = () => {
       <div className="relative z-10">
         <div className="flex justify-center w-full sm:flex sm:justify-center sm:text-center">
           <SectionContent
+            icon={FaFileSignature} // Icon for client survey
             tooltrip="Client Survey"
-            tooltripClass="yellow-desc"
+            tooltripClass="border-yellow-300 bg-yellow-300 text-black" // Customized for premium theme
             heading="Client Questionnaire"
             hedingClass="heding text-center text-white tracking-tight drop-shadow-lg !mx-auto"
             desCription="Please provide us with some information to better understand your needs and help us tailor our services for you."

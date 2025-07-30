@@ -1,5 +1,7 @@
-'use client'
+'use client';
+
 import React from 'react';
+import { FaUtensils } from 'react-icons/fa';
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import './private.css';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
@@ -24,11 +26,14 @@ const privateGroupImages = [
 
 const PrivateGroup = () => {
   return (
-    <div className="bg-[#121212] text-white myContainer topContainer flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300">
+    <div className="bg-gradient-to-b from-[#0f0f0f] to-[#1c1c1c] text-white w-full 2xl:w-full pb-12 sm:pb-0 min-h-[750px] md:min-h-[600px] myContainer topContainer flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300 relative overflow-hidden">
+      {/* Blurred Yellow Circle */}
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60vw] h-[60vw] bg-yellow-400/10 rounded-full blur-[150px] z-0"></div>
+
       {/* Left Side - Images */}
-      <div className="relative w-full md:w-1/2 h-auto min-h-[320px] md:h-[550px] lg:h-[380px] xl:h-[500px] 2xl:h-[580px]">
+      <div className="relative w-full md:w-1/2 h-auto min-h-[350px] sm:py-0 md:h-[550px] lg:h-[380px] xl:h-[500px] 2xl:h-[580px]">
         {/* Mobile & sm screens: stacked full-width images */}
-        <div className="flex flex-col sm:flex-row sm:gap-4 md:hidden">
+        <div className="flex py-8 flex-col sm:flex-row sm:gap-4 md:hidden">
           <img
             src={privateGroupImages[0].src}
             alt={privateGroupImages[0].alt}
@@ -72,28 +77,27 @@ const PrivateGroup = () => {
         <img
           src={privateGroupImages[2].src}
           alt={privateGroupImages[2].alt}
-          className="block md:hidden w-full h-60 sm:h-60 object-cover rounded-xl shadow-lg mt-4"
+          className="block md:hidden w-full h-60 sm:h-60 object-cover rounded-xl shadow-lg -mt-3"
         />
 
-      {/* lg layout: small overlapping images */}
-<div className="hidden lg:block xl:hidden relative">
-  <img
-    src={privateGroupImages[0].src}
-    alt={privateGroupImages[0].alt}
-    className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-[-16px] left-0 z-30"
-  />
-  <img
-    src={privateGroupImages[1].src}
-    alt={privateGroupImages[1].alt}
-    className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-18 left-36 z-20"
-  />
-  <img
-    src={privateGroupImages[2].src}
-    alt={privateGroupImages[2].alt}
-    className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-44 left-72 z-10"
-  />
-</div>
-
+        {/* lg layout: small overlapping images */}
+        <div className="hidden lg:block xl:hidden relative">
+          <img
+            src={privateGroupImages[0].src}
+            alt={privateGroupImages[0].alt}
+            className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-[-16px] left-0 z-30"
+          />
+          <img
+            src={privateGroupImages[1].src}
+            alt={privateGroupImages[1].alt}
+            className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-18 left-36 z-20"
+          />
+          <img
+            src={privateGroupImages[2].src}
+            alt={privateGroupImages[2].alt}
+            className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-44 left-72 z-10"
+          />
+        </div>
 
         {/* xl & 2xl layout: larger overlapping images */}
         <div className="hidden xl:block">
@@ -118,8 +122,9 @@ const PrivateGroup = () => {
       {/* Right Side - Text */}
       <div className="text-left w-full md:w-1/2">
         <SectionContent
+          icon={FaUtensils}
           tooltrip="Unforgettable Events"
-          tooltripClass="yellow-desc"
+          tooltripClass="border-yellow-300 bg-yellow-300 text-black"
           heading="Experience Matters – And We’ve Got Plenty"
           hedingClass="heding"
           desCription="We've done this more than once, and we know exactly how to put on an exceptional event. From start to finish, our team ensures every detail is expertly managed, leaving you free to enjoy the experience. Let us make your next event truly unforgettable!"

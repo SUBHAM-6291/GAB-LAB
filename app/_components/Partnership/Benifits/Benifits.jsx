@@ -1,16 +1,18 @@
 'use client';
 
 import React from 'react';
-import { FaBox, FaGuitar, FaMoneyBillWave, FaCrown, FaHandsHelping } from 'react-icons/fa';
+import { FaBox, FaPaintBrush, FaMoneyBillWave, FaCrown, FaHandsHelping, FaHandshake } from 'react-icons/fa';
 import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
+import { OutlineBtn } from '../../Private_Group/Tell_us_More_Here/Tell_us_More_Here';
 
 const Benifits = () => {
   return (
-    <div className="bg-black text-white myContainer topContainer  text-center">
+    <div className="bg-black text-white myContainer topContainer text-center">
       {/* Heading */}
       <SectionContent
+        icon={FaHandshake} // Changed to FaHandshake for partnership
         tooltrip="Partner Benefits"
-        tooltripClass="yellow-desc"
+      tooltripClass="border-yellow-300 bg-yellow-300 text-black" 
         heading="Partnership Benefits"
         hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
         desCription="Perfect for solo travelers, couples, and private groups looking for a hands-on culinary adventure in the heart of Barcelona."
@@ -33,7 +35,7 @@ const Benifits = () => {
         {/* Card 2 */}
         <div className="border border-gray-600 rounded-lg p-6 text-left bg-[#111] hover:border-yellow-400 transition">
           <div className="flex items-center gap-2 mb-2 text-yellow-400">
-            <FaGuitar />
+            <FaPaintBrush /> {/* Changed to FaPaintBrush for customization */}
             <h3 className="text-lg font-semibold">Flexible Customization:</h3>
           </div>
           <p className="text-sm text-gray-300">
@@ -78,13 +80,11 @@ const Benifits = () => {
         </div>
       </div>
 
-      {/* CTA Button */}
-      <button
-        className="bg-[#111] text-white border border-gray-500 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-md transition font-medium cursor-pointer"
-        onClick={() => console.log('Join Partnership Program clicked')}
-      >
-        Join Our Partnership Program
-      </button>
+      <OutlineBtn
+        label="Join Our Partnership Program"
+        type="button"
+        onClick={() => console.log("button clicked")}
+      />
     </div>
   );
 };

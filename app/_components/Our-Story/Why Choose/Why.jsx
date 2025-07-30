@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { FaQuestionCircle } from "react-icons/fa";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -28,17 +29,19 @@ export default function WhyChooseUs() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="space-y-6"
-        >
+          className="space-y-6" >
           {/* "Our Team" Button */}
           <SectionContent
             hedingClass="hidden"
             heading="hidden"
             desCription="hidden"
             desCriptionClass="hidden"
-            tooltrip="whychoose us"
+            tooltrip={
+              <span className="flex items-center gap-2">
+                <FaQuestionCircle className="text-base" /> Why Choose Us
+              </span>
+            }
             tooltripClass="bg-yellow-300 text-black border border-yellow-300"
-
           />
 
 

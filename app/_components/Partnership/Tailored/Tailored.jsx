@@ -1,19 +1,29 @@
 'use client';
 
 import React from 'react';
+import { FaUtensils, FaHandshake } from 'react-icons/fa';
 import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
 const CulinaryPartnershipSection = () => {
+  // Define the PDF links for each document
+  const pdfLinks = [
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_2332150d9ccb402797fb4a0e41b27b89.pdf', // Partnership Incentive Program – English
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_30c79d5edb7e444ab720891a43cb3ba6.pdf', // Programa de Incentivos para Asociaciones – Castillano
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_27e3da2359cf42f4a43d387b75dc3312.pdf', // Ultimate Paella Class Experience Guide – English
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_4cc06932d921407db9607c1290fd6345.pdf', // Guía de Experiencias de Clases de Paella – Castillano
+  ];
+
   return (
     <div className="bg-black text-white myContainer topContainer">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-between h-full">
           <div>
             <SectionContent
+              icon={FaUtensils}
               tooltrip="Crafted Experiences"
-              tooltripClass="yellow-desc"
+              tooltripClass="border-yellow-300 bg-yellow-300 text-black"
               heading="Culinary Journeys Designed for Your Clients"
               hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
               desCription="Unlock a variety of hands-on cooking adventures rooted in authentic Spanish and Mediterranean cuisine — all tailored to delight your clients.\nFrom the award-winning Paella Class to sweet baking escapes and vibrant market-to-plate experiences, every journey is chef-led and unforgettable."
@@ -35,7 +45,7 @@ const CulinaryPartnershipSection = () => {
                 <button
                   key={i}
                   className="w-full bg-[#111] border border-gray-600 hover:border-yellow-400 hover:bg-yellow-400 hover:text-black text-left px-5 py-3 rounded-md text-sm md:text-base font-medium transition cursor-pointer"
-                  onClick={() => console.log(`Download: ${text}`)}
+                  onClick={() => window.open(pdfLinks[i], '_blank')} // Open PDF in new tab
                 >
                   {text}
                 </button>
@@ -48,8 +58,9 @@ const CulinaryPartnershipSection = () => {
         <div className="flex flex-col justify-between h-full">
           <div>
             <SectionContent
+              icon={FaHandshake}
               tooltrip="Let’s Collaborate"
-              tooltripClass="yellow-desc"
+              tooltripClass="border-yellow-300 bg-yellow-300 text-black"
               heading="Why Partner with Gastronomic Arts?"
               hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
               desCription="Offer your clients more than just a meal — deliver curated culinary moments they’ll never forget. Our partnerships help you create tailored, cultural, chef-led experiences."
