@@ -109,7 +109,7 @@ export const BgBtn = ({
 
 // ThankYou Component
 const ThankYou = () => (
-  <div className="relative min-h-screen w-full bg-dark-bg text-white font-serif overflow-hidden myContainer topContainer">
+  <div className="relative w-full bg-dark-bg text-white font-serif overflow-hidden myContainer topContainer">
     <div className="absolute inset-0 z-0">
       <Image
         src="https://images.unsplash.com/photo-1549921296-3a6b3b10b2e5?auto=format&fit=crop&w=1600&q=80"
@@ -166,12 +166,12 @@ const TellUsMoreHere = () => {
     () => ({
       page1: {
         src: '/2795388-uhd_2560_1440_25fps.mp4',
-        className: 'w-full object-cover lg:mt-92 rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[56vh] xl:h-[55vh] 2xl:h-[38vh]',
+        className: 'w-full object-cover lg:mt-73 xl:mt-80  2xl:mt-78  rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[52vh] xl:h-[55vh] 2xl:h-[34vh]',
         poster: '/video-poster.jpg',
       },
       page2: {
         src: '/3201691-hd_1920_1080_25fps.mp4',
-        className: 'w-full object-cover lg:mt-94 xl:mt-90 2xl:mt-94 rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[38vh] xl:h-[50vh] 2xl:h-[33vh]',
+        className: 'w-full object-cover lg:mt-74 xl:mt-90 2xl:mt-78 rounded-b-3xl h-[40vh] sm:h-[60vh] md:h-[70vh] lg:rounded-xl sm:rounded-md lg:h-[38vh] xl:h-[50vh] 2xl:h-[33vh]',
         poster: '/second-video-poster.jpg',
       },
     }),
