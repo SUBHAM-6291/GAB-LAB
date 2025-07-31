@@ -1,23 +1,21 @@
 'use client';
 
 import React from 'react';
-import { FaUtensils, FaHandshake } from 'react-icons/fa';
-import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
+import { FaUtensils, FaHandshake, FaLink } from 'react-icons/fa';
+import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
 const CulinaryPartnershipSection = () => {
-  // Define the PDF links for each document
   const pdfLinks = [
-    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_2332150d9ccb402797fb4a0e41b27b89.pdf', // Partnership Incentive Program – English
-    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_30c79d5edb7e444ab720891a43cb3ba6.pdf', // Programa de Incentivos para Asociaciones – Castillano
-    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_27e3da2359cf42f4a43d387b75dc3312.pdf', // Ultimate Paella Class Experience Guide – English
-    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_4cc06932d921407db9607c1290fd6345.pdf', // Guía de Experiencias de Clases de Paella – Castillano
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_2332150d9ccb402797fb4a0e41b27b89.pdf',
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_30c79d5edb7e444ab720891a43cb3ba6.pdf',
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_27e3da2359cf42f4a43d387b75dc3312.pdf',
+    'https://www.gastronomicartsbarcelona.com/_files/ugd/b35a91_4cc06932d921407db9607c1290fd6345.pdf',
   ];
 
   return (
     <div className="bg-black text-white myContainer topContainer">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
-        {/* LEFT SIDE */}
         <div className="flex flex-col justify-between h-full">
           <div>
             <SectionContent
@@ -45,7 +43,7 @@ const CulinaryPartnershipSection = () => {
                 <button
                   key={i}
                   className="w-full bg-[#111] border border-gray-600 hover:border-yellow-400 hover:bg-yellow-400 hover:text-black text-left px-5 py-3 rounded-md text-sm md:text-base font-medium transition cursor-pointer"
-                  onClick={() => window.open(pdfLinks[i], '_blank')} // Open PDF in new tab
+                  onClick={() => window.open(pdfLinks[i], '_blank')}
                 >
                   {text}
                 </button>
@@ -54,7 +52,6 @@ const CulinaryPartnershipSection = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
         <div className="flex flex-col justify-between h-full">
           <div>
             <SectionContent
@@ -97,7 +94,12 @@ const CulinaryPartnershipSection = () => {
 
           <div className="mt-10">
             <OutlineBtn
-              label="Join Our Partner Program"
+              label={
+                <div className="flex items-center gap-2">
+                  <FaLink className="text-amber-400" />
+                  <span>Join Our Partner Program</span>
+                </div>
+              }
               type="button"
               onClick={() => console.log("button clicked")}
               className="cursor-pointer"

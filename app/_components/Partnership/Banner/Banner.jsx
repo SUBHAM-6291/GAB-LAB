@@ -3,8 +3,7 @@
 import React from 'react';
 import { FaHandshake } from 'react-icons/fa6';
 import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
-import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
- // Adjust the import path as needed
+import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn'; // Adjust the import path as needed
 
 const Banner = () => {
   return (
@@ -21,7 +20,12 @@ const Banner = () => {
           icon={FaHandshake}
         />
         <OutlineBtn
-          label="Partner With Us"
+          label={
+            <div className="flex items-center gap-2">
+              <FaHandshake className="text-amber-400" />
+              <span>Partner With Us</span>
+            </div>
+          }
           type="button"
           onClick={() => console.log("Partner With Us clicked")}
         />

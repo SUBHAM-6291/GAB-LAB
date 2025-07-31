@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FaBox, FaPaintBrush, FaMoneyBillWave, FaCrown, FaHandsHelping, FaHandshake } from 'react-icons/fa';
-import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
+import { FaBox, FaPaintBrush, FaMoneyBillWave, FaCrown, FaHandsHelping, FaHandshake, FaUsers } from 'react-icons/fa';
+import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import { OutlineBtn } from '../../Private_Group/Tell_us_More_Here/Tell_us_More_Here';
 
 const Benifits = () => {
@@ -10,9 +10,9 @@ const Benifits = () => {
     <div className="bg-black text-white myContainer topContainer text-center">
       {/* Heading */}
       <SectionContent
-        icon={FaHandshake} // Changed to FaHandshake for partnership
+        icon={FaHandshake}
         tooltrip="Partner Benefits"
-      tooltripClass="border-yellow-300 bg-yellow-300 text-black" 
+        tooltripClass="border-yellow-300 bg-yellow-300 text-black" 
         heading="Partnership Benefits"
         hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
         desCription="Perfect for solo travelers, couples, and private groups looking for a hands-on culinary adventure in the heart of Barcelona."
@@ -35,7 +35,7 @@ const Benifits = () => {
         {/* Card 2 */}
         <div className="border border-gray-600 rounded-lg p-6 text-left bg-[#111] hover:border-yellow-400 transition">
           <div className="flex items-center gap-2 mb-2 text-yellow-400">
-            <FaPaintBrush /> {/* Changed to FaPaintBrush for customization */}
+            <FaPaintBrush />
             <h3 className="text-lg font-semibold">Flexible Customization:</h3>
           </div>
           <p className="text-sm text-gray-300">
@@ -81,7 +81,12 @@ const Benifits = () => {
       </div>
 
       <OutlineBtn
-        label="Join Our Partnership Program"
+        label={
+          <div className="flex items-center gap-2">
+            <FaUsers className="text-amber-400" />
+            <span>Join Our Partnership Program</span>
+          </div>
+        }
         type="button"
         onClick={() => console.log("button clicked")}
       />
