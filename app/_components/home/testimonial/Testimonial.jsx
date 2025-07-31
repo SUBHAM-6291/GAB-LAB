@@ -10,7 +10,7 @@ import { IoStar } from "react-icons/io5";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { TiUser } from "react-icons/ti";
 
 const testimonials = [
   {
@@ -86,7 +86,7 @@ const Testimonial = () => {
         <div className="flex justify-center mb-6">
           <div className="lg:text-center">
             <SectionContent
-              icon={RiArrowRightDoubleFill}
+              icon={TiUser}
               tooltrip={"Testimonials"}
               tooltripClass={
                 "bg-yellow-300 text-black border border-yellow-300"
