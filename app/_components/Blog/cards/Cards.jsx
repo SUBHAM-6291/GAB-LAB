@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FaUtensils } from 'react-icons/fa';
+import { FaUtensils, FaArrowsAltV } from 'react-icons/fa'; // Added FaArrowsAltV
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 import cardData from './cardData'; // Import the cardData
@@ -10,6 +10,7 @@ const Cards = ({
   heading = 'Why Choose Gastronomic Arts Barcelona',
   subheading = 'Unrivaled Culinary Excellence',
   icon = FaUtensils,
+  slug = 'cards', // Added default slug prop
 }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -87,12 +88,16 @@ const Cards = ({
 
       {/* Show More/Less Button */}
       {filteredCards.length > 3 && (
-        <div className="text-center mt-12">
+        <div className="flex justify-end mt-12"> {/* Shifted to right */}
           <OutlineBtn
             label={showAll ? 'Show Less' : 'Show All Reasons'}
             type="button"
-            onClick={() => setShowAll(!showAll)}
+            onClick={() => {
+              setShowAll(!showAll);
+              console.log(`Navigated to slug: ${slug}`); // Example slug usage
+            }}
             className="border-2 border-yellow-300 text-yellow-300 px-6 py-2 rounded-lg font-medium hover:bg-yellow-300 hover:text-black transition-all duration-300"
+            icon={<FaArrowsAltV />}
           />
         </div>
       )}

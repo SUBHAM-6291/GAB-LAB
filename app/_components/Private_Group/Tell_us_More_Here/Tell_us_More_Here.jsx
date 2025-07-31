@@ -16,7 +16,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
-import { FaCalendarAlt, FaUtensils, FaCheckCircle } from 'react-icons/fa'; // Updated icons
+import { FaCalendarAlt, FaUtensils, FaCheckCircle, FaArrowRight, FaArrowLeft, FaPaperPlane, FaHome } from 'react-icons/fa'; // Updated icons
 import { Toaster, toast } from 'sonner';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
@@ -78,7 +78,10 @@ export const OutlineBtn = ({
       onClick={onClick}
       className={`relative text-white text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer ${className}`}
     >
-      <span className="relative z-10 transition duration-300 group-hover:text-black">
+      <span className="relative z-10 transition duration-300 group-hover:text-black flex items-center gap-2">
+        {label === "Next" && <FaArrowRight />}
+        {label === "Back" && <FaArrowLeft />}
+        {label === "Back to Home" && <FaHome />}
         {label}
       </span>
       <span className="absolute left-0 top-0 h-full w-0 bg-yellow-300 transition-all duration-300 group-hover:w-full z-0"></span>
@@ -99,7 +102,8 @@ export const BgBtn = ({
       onClick={onClick}
       className={`relative text-black text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer ${className}`}
     >
-      <span className="relative z-10 transition duration-300 group-hover:text-white">
+      <span className="relative z-10 transition duration-300 group-hover:text-white flex items-center gap-2">
+        {label === "Submit" && <FaPaperPlane />}
         {label}
       </span>
       <span className="absolute left-0 top-0 h-full w-full bg-yellow-300 transition-all duration-300 group-hover:w-0 z-0"></span>

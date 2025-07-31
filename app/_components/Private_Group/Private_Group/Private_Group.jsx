@@ -26,14 +26,14 @@ const privateGroupImages = [
 
 const PrivateGroup = () => {
   return (
-    <div className="bg-gradient-to-b from-[#0f0f0f] to-[#1c1c1c] text-white w-full 2xl:w-full pb-12 sm:pb-0 min-h-[750px] md:min-h-[600px] myContainer topContainer flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300 relative overflow-hidden">
+    <div className="bg-gradient-to-b from-[#0f0f0f] to-[#1c1c1c] text-white w-full 2xl:w-full md:py-16 py-14 myContainer topContainer flex flex-col md:flex-row items-center gap-8 sm:gap-6 lg:gap-6 2xl:gap-20 transition-all duration-300 relative overflow-hidden">
       {/* Blurred Yellow Circle */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60vw] h-[60vw] bg-yellow-400/10 rounded-full blur-[150px] z-0"></div>
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2  bg-yellow-400/10 rounded-full blur-[150px] z-0"></div>
 
       {/* Left Side - Images */}
       <div className="relative w-full md:w-1/2 h-auto min-h-[350px] sm:py-0 md:h-[550px] lg:h-[380px] xl:h-[500px] 2xl:h-[580px]">
         {/* Mobile & sm screens: stacked full-width images */}
-        <div className="flex py-8 flex-col sm:flex-row sm:gap-4 md:hidden">
+        <div className="flex  flex-col sm:flex-row sm:gap-4 md:hidden">
           <img
             src={privateGroupImages[0].src}
             alt={privateGroupImages[0].alt}
@@ -68,7 +68,7 @@ const PrivateGroup = () => {
             <img
               src={privateGroupImages[2].src}
               alt={privateGroupImages[2].alt}
-              className="h-62 w-full object-cover rounded-xl shadow-md"
+              className="h-74 w-full object-cover rounded-xl shadow-md"
             />
           </div>
         </div>
@@ -77,7 +77,7 @@ const PrivateGroup = () => {
         <img
           src={privateGroupImages[2].src}
           alt={privateGroupImages[2].alt}
-          className="block md:hidden w-full h-60 sm:h-60 object-cover rounded-xl shadow-lg -mt-3"
+          className="block md:hidden w-full h-60 mt-4 sm:h-60 object-cover rounded-xl shadow-lg "
         />
 
         {/* lg layout: small overlapping images */}
@@ -85,7 +85,7 @@ const PrivateGroup = () => {
           <img
             src={privateGroupImages[0].src}
             alt={privateGroupImages[0].alt}
-            className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-[-16px] left-0 z-30"
+            className="absolute w-32 h-40 object-cover rounded-xl shadow-lg top-[-22px] left-0 z-30"
           />
           <img
             src={privateGroupImages[1].src}
@@ -114,7 +114,7 @@ const PrivateGroup = () => {
           <img
             src={privateGroupImages[2].src}
             alt={privateGroupImages[2].alt}
-            className="absolute w-44 2xl:w-53 h-52 2xl:h-64 object-cover rounded-xl shadow-lg top-72 left-96 2xl:top-80 2xl:left-[28rem] z-10"
+            className="absolute w-44 2xl:w-53 h-53 2xl:h-65 object-cover rounded-xl shadow-lg top-72 left-96 2xl:top-80 2xl:left-[28rem] z-10"
           />
         </div>
       </div>
