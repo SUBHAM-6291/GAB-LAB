@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { GiChefToque, GiMeal, GiCookingPot } from "react-icons/gi";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { FiCompass } from "react-icons/fi";
 
 // Feature data
 const features = [
@@ -69,15 +71,23 @@ export default function Explore() {
     <section className="topContainer myContainer">
       <div className="sm:text-center text-left mb-14">
         {/* Subtitle Animation */}
-        <motion.p
-          variants={fadeInDown}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-sm md:text-base text-yellow-200 uppercase tracking-widest mb-3 font-medium"
-        >
-          Designed For Food Lovers
-        </motion.p>
+      <motion.div
+  variants={fadeInDown}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-sm md:text-base text-yellow-200 uppercase tracking-widest mb-3 font-medium"
+>
+  <SectionContent
+    tooltrip={
+      <>
+        <FiCompass className="inline-block mr-1" /> Explore
+      </>
+    }
+    tooltripClass="bg-yellow-300 text-black border border-yellow-300"/>
+  Designed For Food Lovers
+</motion.div>
+
 
         {/* Heading Animation */}
         <motion.h2
