@@ -105,7 +105,7 @@ export default function OurTeam() {
 
 
         <h2 className="heding text-yellow-400">
-          OUR TEAM
+          Our Team
         </h2>
         <p className="text-gray-200 max-w-2xl mx-auto text-base md:text-lg">
           From culinary innovators to precision-focused engineers, our diverse team shares one goal — crafting the smartest, sleekest, and most reliable modern kitchen solutions.

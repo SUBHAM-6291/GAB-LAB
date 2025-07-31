@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
 import { FaCompass } from "react-icons/fa";
+import { FiSend } from "react-icons/fi"; 
+
+
 
 
 const fadeUp = {
@@ -72,13 +75,19 @@ const Discover = () => {
           </p>
 
           {/* Button */}
-          <motion.button className="pt-2">
-            <OutlineBtn
-              label="Request a Quote"
-              type="button"
-              onClick={() => console.log("button clicked")}
-            />
-          </motion.button>
+        <motion.button className="pt-2">
+  <OutlineBtn
+    label={
+      <span className="flex items-center gap-2">
+        <FiSend className="inline-block text-yellow-300" />
+        Request a Quote
+      </span>
+    }
+    type="button"
+    onClick={() => console.log("button clicked")}
+  />
+</motion.button>
+
         </motion.div>
 
         {/* Right Image */}

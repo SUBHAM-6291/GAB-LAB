@@ -47,30 +47,32 @@ const logos = [
 
 export default function TripAdvisor() {
   return (
-    <div className="relative w-full  max-w-6xl mx-auto bg-black py-6 px-2 overflow-hidden">
-      {/* Award Heading Animation */}
- <div>   
-<motion.h2
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="text-center text-yellow-400 font-semibold text-2xl mb-4 drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
->
-  2024 TripAdvisor Travellers&apos; Choice Award Winner
-</motion.h2>
+<div className="relative w-full max-w-6xl mx-auto bg-black py-6 overflow-hidden">
+  {/* Award Heading Animation */}
+  <div className="myContainer ">
+    <motion.h2
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="text-center text-yellow-400 font-semibold text-2xl mb-4 drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+    >
+      2024 TripAdvisor Travellers&apos; Choice Award Winner
+    </motion.h2>
 
-{/* Short Description */}
-<motion.p
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-sm md:text-base leading-relaxed"
->
-  We’re proud to be recognized by global platforms like TripAdvisor, Airbnb, and Google for our commitment to excellence and unforgettable guest experiences.
-</motion.p>
-</div>
+    {/* Short Description */}
+    <motion.p
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-sm md:text-base leading-relaxed"
+    >
+      We’re proud to be recognized by global platforms like TripAdvisor, Airbnb, and Google for our commitment to excellence and unforgettable guest experiences.
+    </motion.p>
+  </div>
+
+
 
 
       {/* Left Gradient Overlay */}
