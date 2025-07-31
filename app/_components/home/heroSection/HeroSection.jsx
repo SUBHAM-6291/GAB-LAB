@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { GiCookingPot } from "react-icons/gi";
+import { BsBookmarkHeartFill } from "react-icons/bs";
 import {
   FaFacebookF,
   FaInstagram,
@@ -138,8 +140,9 @@ const HeroSection = () => {
                   <h2 className="heding">{item.title}</h2>
                   <p className="desc">{item.sublineText}</p>
                   <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-                   <BgBtn label='Book Now' type="button" onClick={()=> console.log("button clicked")}/>
+                   <BgBtn icon={BsBookmarkHeartFill} label='Book Now' type="button" onClick={()=> console.log("button clicked")}/>
                     <OutlineBtn
+                    icon={GiCookingPot}
                       label="Plane a Group Event"
                       type="button"
                       onClick={() => console.log("Button clicked!")}

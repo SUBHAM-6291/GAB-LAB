@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { FiPlay } from "react-icons/fi";
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { MdLiveTv } from "react-icons/md";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import {OutlineBtn} from "../../Utilites/BtnComponent/MyBtn";
 
@@ -12,12 +12,16 @@ const LiveFlamencoShows = () => {
       <div className="flex flex-col lg:flex-row gap-[20px] lg:gap-[60px] xl:gap-[80px]">
         <div className="flex-1 flex flex-col justify-between">
 
-          <SectionContent
-            tooltrip=" Feel the Rhythm, Taste the Tradition" tooltripClass="bg-yellow-300 text-black border border-yellow-300"
-            icon={RiArrowRightDoubleFill}
-            heading="Paella Cooking Class & LIVE Flamenco Show" hedingClass="text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+          <div className="flex justify-center md:text-center lg:text-left">
+            <SectionContent
+            tooltrip="Taste the Tradition"
+            tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+            icon={MdLiveTv}
+            heading="Paella Cooking Class & LIVE Flamenco Show"
+            hedingClass="text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
             desCriptionClass="hidden"
           />
+          </div>
 
           <div className="w-full h-[250px] md:h-[300px] lg:h-[500px] xl:h-[400px] xl:mt-6 relative rounded-lg overflow-hidden">
             <Image

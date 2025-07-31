@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { LiaCcDiscover } from "react-icons/lia";
 
 const content = [
   {
@@ -32,7 +32,7 @@ const Discover = () => {
           {/* Content */}
           <div className="relative z-10 grid place-items-center text-center py-4 lg:py-8 px-4 md:px-6 lg:px-10">
             <SectionContent
-            icon={RiArrowRightDoubleFill}
+            icon={LiaCcDiscover}
               tooltrip="Discover Choice"
               tooltripClass="border border-yellow-300 text-yellow-300 flex justify-center inline-center"
               heading={item.heading}
