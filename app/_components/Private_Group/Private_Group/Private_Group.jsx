@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FaUtensils } from 'react-icons/fa';
+import { FaUtensils, FaQuoteRight } from 'react-icons/fa'; // Added FaQuoteRight
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import './private.css';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
@@ -131,7 +131,11 @@ const PrivateGroup = () => {
           desCriptionClass="desc mb-6"
         />
         <OutlineBtn
-          label="Request a Quote"
+          label={
+            <>
+              <FaQuoteRight className="inline-block mr-2" /> Request a Quote
+            </>
+          }
           type="button"
           onClick={() => console.log("button")}
         />
