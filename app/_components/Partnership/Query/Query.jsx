@@ -5,11 +5,11 @@ import { Toaster, toast } from 'sonner';
 import Image from 'next/image';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import { FaFileSignature, FaCheckCircle } from 'react-icons/fa'; // Added for section icons
+import { FaFileSignature, FaCheckCircle, FaArrowRight, FaArrowLeft, FaPaperPlane, FaHome } from 'react-icons/fa';
 import SectionContent from '../../Utilites/SectionContent/SectionContent';
 import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn';
 
-// Define FormInput
+// FormInput, FormTextarea, FormSelect remain unchanged
 const FormInput = ({ label, name, type = 'text', placeholder, value, onChange, required, error }) => (
   <div className="flex flex-col gap-2 group transition-all duration-300">
     <label htmlFor={name} className="text-sm font-semibold text-white tracking-wide">
@@ -35,7 +35,6 @@ const FormInput = ({ label, name, type = 'text', placeholder, value, onChange, r
   </div>
 );
 
-// Define FormTextarea
 const FormTextarea = ({ label, name, placeholder, value, onChange, error }) => (
   <div className="flex flex-col gap-2 group transition-all duration-300">
     <label htmlFor={name} className="text-sm font-semibold text-white tracking-wide">
@@ -59,7 +58,6 @@ const FormTextarea = ({ label, name, placeholder, value, onChange, error }) => (
   </div>
 );
 
-// Define FormSelect
 const FormSelect = ({ label, name, value, onChange, options, required, error }) => (
   <div className="flex flex-col gap-2 group transition-all duration-300 relative">
     <label htmlFor={name} className="text-sm font-semibold text-white tracking-wide">
@@ -97,7 +95,6 @@ const FormSelect = ({ label, name, value, onChange, options, required, error }) 
   </div>
 );
 
-// Define ThankYou
 const ThankYou = () => (
   <div className="relative min-h-screen w-full bg-[#0b0b0b] text-white font-serif overflow-hidden myContainer topContainer">
     <div className="absolute inset-0 z-0">
@@ -118,9 +115,9 @@ const ThankYou = () => (
         className="mx-auto mb-6"
       />
       <SectionContent
-        icon={FaCheckCircle} // Icon for submission success
+        icon={FaCheckCircle}
         tooltrip="Thank You!"
-        tooltripClass="border-blue-300 bg-blue-300 text-black" // Customized for premium theme
+        tooltripClass="border-blue-300 bg-blue-300 text-black"
         heading="Submission Successful"
         hedingClass="heding text-center text-white tracking-tight drop-shadow-lg !mx-auto"
         desCription="Thank you for completing the client questionnaire. We'll review your information and get back to you soon!"
@@ -128,7 +125,12 @@ const ThankYou = () => (
       />
       <div className="mt-8 flex justify-center">
         <OutlineBtn
-          label="Back to Home"
+          label={
+            <div className="flex items-center gap-2">
+              <FaHome className="text-amber-400" />
+              <span>Back to Home</span>
+            </div>
+          }
           type="button"
           onClick={() => (window.location.href = 'partnership')}
           className="cursor-pointer"
@@ -138,7 +140,6 @@ const ThankYou = () => (
   </div>
 );
 
-// Define QuestionnaireForm
 const QuestionnaireForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -261,9 +262,9 @@ const QuestionnaireForm = () => {
       <div className="relative z-10">
         <div className="flex justify-center w-full sm:flex sm:justify-center sm:text-center">
           <SectionContent
-            icon={FaFileSignature} // Icon for client survey
+            icon={FaFileSignature}
             tooltrip="Client Survey"
-            tooltripClass="border-yellow-300 bg-yellow-300 text-black" // Customized for premium theme
+            tooltripClass="border-yellow-300 bg-yellow-300 text-black"
             heading="Client Questionnaire"
             hedingClass="heding text-center text-white tracking-tight drop-shadow-lg !mx-auto"
             desCription="Please provide us with some information to better understand your needs and help us tailor our services for you."
@@ -431,7 +432,12 @@ const QuestionnaireForm = () => {
         <div className="mt-16 flex justify-center gap-4">
           {isMobile && currentPage === 0 && (
             <OutlineBtn
-              label="Next"
+              label={
+                <div className="flex items-center gap-2">
+                  <FaArrowRight className="text-amber-400" />
+                  <span>Next</span>
+                </div>
+              }
               type="button"
               onClick={handleNext}
               className="cursor-pointer"
@@ -440,13 +446,23 @@ const QuestionnaireForm = () => {
           {isMobile && currentPage === 1 && (
             <>
               <OutlineBtn
-                label="Previous"
+                label={
+                  <div className="flex items-center gap-2">
+                    <FaArrowLeft className="text-amber-400" />
+                    <span>Previous</span>
+                  </div>
+                }
                 type="button"
                 onClick={handlePrevious}
                 className="cursor-pointer"
               />
               <OutlineBtn
-                label="Submit Form"
+                label={
+                  <div className="flex items-center gap-2">
+                    <FaPaperPlane className="text-amber-400" />
+                    <span>Submit Form</span>
+                  </div>
+                }
                 type="button"
                 onClick={handleSubmit}
                 className="cursor-pointer"
@@ -455,7 +471,12 @@ const QuestionnaireForm = () => {
           )}
           {!isMobile && (
             <OutlineBtn
-              label="Submit Form"
+              label={
+                <div className="flex items-center gap-2">
+                  <FaPaperPlane className="text-amber-400" />
+                  <span>Submit Form</span>
+                </div>
+              }
               type="button"
               onClick={handleSubmit}
               className="cursor-pointer"

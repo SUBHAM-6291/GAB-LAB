@@ -1,7 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { MdGroupAdd } from "react-icons/md"; // Importing the icon for the cooking class
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 
 const marqueeImages = [
@@ -16,18 +16,17 @@ const marqueeImages = [
 
 const contentData = [
   {
-    icon: RiArrowRightDoubleFill,
+    icon: MdGroupAdd, // ✅ Updated icon
     tooltrip: "Immerse Yourself in Barcelona's Premiere Culinary Experience",
     tooltripClass: "bg-yellow-300 text-black border border-yellow-300",
     heading: "Join Our Paella Hands-On Cooking Class",
     hedingClass: "text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]",
     desCription:
-      "Discover our most popular experience - The Ultimate Paella Cooking Class! Start with a visit to La Boqueria market, where our chef will pick the freshest ingredients for your paella. Then back to the kitchen to join our Sangria-Making Workshop to craft the perfect Traditional Spanish drink while enjoying our Tapas Tasting. Then grab your apron for our award-winning Paella Cooking Class. Finish with a family-style meal sharing stories, laughter, and dessert with fellow food enthusiasts.",
+      "Discover our most popular experience - The Ultimate Paella Cooking Class! Start with a visit to La Boqueria market, where our chef will pick the freshest ingredients for your paella. Then back to the kitchen to join our Sangria-Making Workshop to craft the perfect Traditional Spanish drink while enjoying our Tapas Tasting. Then grab your apron for our award-winning Paella Cooking Class. Finish with a family-style meal sharing stories, laughter, and dessert with fellow food enthusiasts. ",
     desCriptionClass: "text-white",
-    desCription2:"Join us for three hours of exploration, discovery, and indulgence. Reserve your spot today and create lasting memories!",
+    desCription2: "Join us for three hours of exploration, discovery, and indulgence. Reserve your spot today and create lasting memories!",
   },
 ];
-
 const PaellaCookingClass = () => {
   return (
     <div className="myContainer topContainer">
@@ -74,9 +73,7 @@ const PaellaCookingClass = () => {
                 desCription={item.desCription}
                 desCriptionClass={item.desCriptionClass}
               />
-              <p className="desc text-white mt-2">
-                {item.desCription2}
-              </p>
+              <p className="desc text-white mt-6">{item.desCription2}</p>
               <div className="mt-4">
                 <BgBtn label="Learn More" type="button" />
               </div>

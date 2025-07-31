@@ -8,6 +8,7 @@ import Testimonial from './testimonial/Testimonial'
 import PaellaCookingClass from './paellaCookingClass/PaellaCookingClass'
 import DelightTheSenses from './delightTheSenses/DelightTheSenses'
 import LeaveUsReview from './leaveUsReview/LeaveUsReview'
+import Course from './course/Course'
 
 const homepage = () => {
   return (
@@ -16,10 +17,11 @@ const homepage = () => {
       <Ranked/>
       <LiveFlamencoShows/>
       <PaellaCookingClass/>
+      <Course/>
       <Discover/>
-      <DelightTheSenses/>
       <LeaveUsReview/>
       <Testimonial/>
+      <DelightTheSenses/>
       <ContactUs/>
       
     </div>

@@ -4,6 +4,7 @@ import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
+import { FiSend } from "react-icons/fi";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -34,7 +35,7 @@ export default function ContactSection() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={staggerContainer}
-      className="bg-[#0f0f0f] myContainer text-white py-20"
+      className="bg-black myContainer text-white py-20"
     >
       <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Left Info */}
@@ -171,11 +172,19 @@ export default function ContactSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <OutlineBtn
-                label="Request a Quote"
-                type="button"
-                onClick={() => console.log("button clicked")}
-              />
+              <motion.button className="pt-2">
+  <OutlineBtn
+    label={
+      <span className="flex items-center gap-2">
+        <FiSend className="inline-block text-yellow-300" />
+        Request a Quote
+      </span>
+    }
+    type="button"
+    onClick={() => console.log("button clicked")}
+  />
+</motion.button>
+
             </motion.div>
           </motion.form>
         </motion.div>

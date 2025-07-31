@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
-import { RiArrowRightDoubleFill } from "react-icons/ri";
+import { MdContacts } from "react-icons/md";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
@@ -18,7 +18,7 @@ const ContactUs = () => {
         {/* Left Side: Contact Form */}
         <div className="mbg rounded-xl p-4 md:p-10">
           <SectionContent
-            icon={RiArrowRightDoubleFill}
+            icon={MdContacts}
             tooltrip="Contact us"
             tooltripClass="border border-yellow-300 bg-yellow-300 text-black"
             heading="Get In Touch"

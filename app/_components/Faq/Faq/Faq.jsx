@@ -105,7 +105,7 @@ export default function FAQ() {
           <SectionContent
             icon={FaQuestionCircle} // Added icon for FAQ theme
             tooltrip="Frequently Asked Questions"
-            tooltripClass="border-blue-300 bg-blue-300 text-black" // Customized for premium theme
+            tooltripClass="border-yellow-300 bg-yellow-300 text-black" // Customized for premium theme
             heading="FAQ"
             hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
             desCription="Here are the most commonly asked questions about our classes and services."

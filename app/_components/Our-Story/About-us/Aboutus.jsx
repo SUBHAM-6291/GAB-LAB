@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaUsers } from "react-icons/fa";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 
 const fadeInUp = {
@@ -21,7 +22,6 @@ const fadeInUp = {
 
 const AboutUs = () => {
   const [showMore, setShowMore] = useState(false);
-
   const toggleShow = () => setShowMore(!showMore);
 
   return (
@@ -36,9 +36,7 @@ const AboutUs = () => {
           variants={fadeInUp}
           custom={0}
         >
-          <div
-            className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] relative rounded-xl overflow-hidden shadow-lg border border-yellow-400/10"
-          >
+          <div className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] relative rounded-xl overflow-hidden shadow-lg border border-yellow-400/10">
             <Image
               src="https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/our%20story/about%20us/Gastronomic-Arts-Barcelona-Paella-Cooking-Experience-aprons.avif"
               alt="About Us Image"
@@ -61,19 +59,17 @@ const AboutUs = () => {
           <SectionContent
             heading="About Us"
             hedingClass="heding text-yellow-400"
-            tooltrip={<><FaUsers className="inline-block mr-1" /> About Us</>}
+            tooltrip={
+              <>
+                <FaUsers className="inline-block mr-1" /> About Us
+              </>
+            }
             tooltripClass="yellow-desc"
             desCription="  Discover Authentic Culinary Experiences in Barcelona"
             desCriptionClass="subHeding"
           />
 
-          <motion.div
-            className="space-y-4 text-gray-300"
-            variants={fadeInUp}
-            custom={2}
-          >
-           
-
+          <motion.div className="space-y-4 text-gray-300" variants={fadeInUp} custom={2}>
             <div className="desc space-y-3">
               <p>
                 Welcome to The GAB LAB – Gastronomic Arts Barcelona. Embark on a flavorful journey through the heart of Barcelona with The GAB LAB. We offer immersive food tours and culinary experiences that celebrate the rich traditions of Spanish cuisine.
@@ -92,9 +88,17 @@ const AboutUs = () => {
               <div className="sm:hidden">
                 <button
                   onClick={toggleShow}
-                  className="text-yellow-400 underline text-sm font-medium"
+                  className="text-yellow-400 underline text-sm font-medium flex items-center gap-1"
                 >
-                  {showMore ? "See Less ▲" : "See More ▼"}
+                  {showMore ? (
+                    <>
+                      See Less <MdKeyboardArrowUp />
+                    </>
+                  ) : (
+                    <>
+                      See More <MdKeyboardArrowDown />
+                    </>
+                  )}
                 </button>
               </div>
             </div>
