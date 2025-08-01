@@ -1,13 +1,13 @@
 import React from 'react'
-import OurClassesBanner from './banner/banner'
-import Courses from './courses/courses'
+import OurClassesBanner from './ourClassesBanner/OurClassesBanner'
+import OurClassesCourses from './ourClassesCourses/OurClassesCourses'
 
 
 const Ourclases = () => {
   return (
     <div>
       <OurClassesBanner/>
-      <Courses/>
+      <OurClassesCourses/>
         
       
     </div>

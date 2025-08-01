@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
 import { OutlineBtn } from "../BtnComponent/MyBtn";
 
 // Menu items as object
 const navData = {
   menu: [
+    { label: "Home", href: "/" },
     { label: "Our Classes", href: "/our-class" },
     { label: "Private Group", href: "/private-group" },
     { label: "Our Story", href: "/our-story" },
@@ -22,6 +24,9 @@ const navData = {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) => pathname === href;
 
   return (
     <header className="bg-black shadow-md">
@@ -44,9 +49,22 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <nav className="hidden lg:flex gap-10 text-white text-[16px] font-medium">
           {navData.menu.map((item, idx) => (
-            <a key={idx} href={item.href} className="hover:text-yellow-400">
+            <Link
+              key={idx}
+              href={item.href}
+              className={`relative group transition-colors duration-200 ${
+                isActive(item.href) ? "text-yellow-300" : "hover:text-yellow-300"
+              }`}
+            >
               {item.label}
-            </a>
+              <span
+                className={`absolute -bottom-1 left-0 h-[2px] bg-yellow-300 transition-all duration-300 ${
+                  isActive(item.href)
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`}
+              />
+            </Link>
           ))}
         </nav>
 
@@ -90,9 +108,22 @@ const Navbar = () => {
         <ul className="space-y-4 text-lg">
           {navData.menu.map((item, idx) => (
             <li key={idx}>
-              <a href={item.href} onClick={() => setMenuOpen(false)}>
+              <Link
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className={`relative block group py-1 ${
+                  isActive(item.href) ? "text-yellow-300" : "hover:text-yellow-300"
+                }`}
+              >
                 {item.label}
-              </a>
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] bg-yellow-300 transition-all duration-300 ${
+                    isActive(item.href)
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
             </li>
           ))}
         </ul>
