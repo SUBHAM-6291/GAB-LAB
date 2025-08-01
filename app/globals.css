@@ -12,7 +12,6 @@ body {
     }
   }
 }
-
 @layer utilities {
   .myContainer {
     @apply max-w-[1820px] mx-auto px-5 md:px-14 lg:px-[80px] xl:px-[100px];
