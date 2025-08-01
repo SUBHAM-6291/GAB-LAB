@@ -6,6 +6,7 @@ import { FaInfoCircle, FaMapMarkerAlt } from "react-icons/fa";
 import { MdHotelClass } from "react-icons/md";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import { CiBookmarkCheck } from "react-icons/ci";
+import Link from "next/link";
 
 const sectionContentProps = {
   icon: MdHotelClass,
@@ -104,13 +105,18 @@ const Course = () => {
         {/* Heading Section */}
         <div className="flex justify-center md:text-center mb-12">
           <SectionContent
-          icon={sectionContentProps.icon}
-          tooltrip={sectionContentProps.tooltrip}
-          tooltripClass={"border border-yellow-300 bg-yellow-300 text-black flex justify-center items-center"}
-          heading={sectionContentProps.heading}
-          hedingClass={"text-white max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"}
-          desCription={sectionContentProps.description}
-          desCriptionClass={"text-white max-w-4xl"}/>
+            icon={sectionContentProps.icon}
+            tooltrip={sectionContentProps.tooltrip}
+            tooltripClass={
+              "border border-yellow-300 bg-yellow-300 text-black flex justify-center items-center"
+            }
+            heading={sectionContentProps.heading}
+            hedingClass={
+              "text-white max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
+            }
+            desCription={sectionContentProps.description}
+            desCriptionClass={"text-white max-w-4xl"}
+          />
         </div>
 
         {/* Course Grid */}
@@ -172,18 +178,23 @@ const Course = () => {
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mt-auto">
-                    {/* Book Now Button with Icon */}
-                    <button className="flex items-center justify-center gap-2 bg-yellow-400 text-black border border-transparent hover:bg-transparent hover:border-yellow-300 hover:text-white text-sm font-semibold px-4 py-2 rounded-lg transition w-full cursor-pointer">
+                  <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mt-auto w-full">
+                    {/* Book Now Button */}
+                    <button className="flex-1 flex items-center justify-center gap-2 bg-yellow-400 text-black border border-transparent hover:bg-transparent hover:border-yellow-300 hover:text-white text-sm font-semibold px-4 py-2 rounded-lg transition w-full cursor-pointer">
                       <CiBookmarkCheck className="text-base" />
                       Book Now
                     </button>
 
-                    {/* Info Button with Icon */}
-                    <button className="flex items-center justify-center gap-2 bg-transparent border border-yellow-300 hover:bg-white hover:border-white text-white hover:text-black text-sm font-semibold px-4 py-2 rounded-lg transition w-full cursor-pointer">
-                      <FaInfoCircle className="text-base" />
-                      Info
-                    </button>
+                    {/* Info Button */}
+                    <Link
+                      href={`/course/${course.slug}`}
+                      className="flex-1 w-full"
+                    >
+                      <button className="flex items-center justify-center gap-2 w-full bg-transparent border border-yellow-300 hover:bg-white hover:border-white text-white hover:text-black text-sm font-semibold px-4 py-2 rounded-lg transition cursor-pointer">
+                        <FaInfoCircle className="text-base" />
+                        Info
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
