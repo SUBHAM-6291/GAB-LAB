@@ -49,7 +49,7 @@ const OurClassesCourses = () => {
             desCriptionClass={"text-white max-w-4xl"}
           />
         </div>
-        <div className="text-white pt-5 pb-8 flex flex-wrap gap-3 sm:space-x-8 sm:flex-nowrap">
+        <div className="text-white pt-5 pb-8 flex flex-wrap gap-3 sm:space-x-4 sm:flex-nowrap">
           {["All", "Paella", "Baking", "Cocktails"].map((cat) => (
             <button
               key={cat}
