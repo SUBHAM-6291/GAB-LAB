@@ -7,7 +7,7 @@ import { OutlineBtn } from '../../Utilites/BtnComponent/MyBtn'; // Adjust the im
 
 const Banner = () => {
   return (
-    <div className="bg-black text-white myContainer mt-8 sm:mt-12   lg:flex lg:items-center lg:justify-between">
+    <div className="bg-black text-white myContainer mt-8 sm:mt-12 lg:flex lg:items-center lg:justify-between lg:gap-x-12">
       {/* Text Section */}
       <div className="lg:w-1/2">
         <SectionContent

@@ -101,17 +101,18 @@ export default function FAQ() {
   return (
     <div className="bg-black text-white myContainer topContainer">
       <div className="box-border">
-        <div className="text-center mb-12 group relative">
-          <SectionContent
-            icon={FaQuestionCircle} // Added icon for FAQ theme
-            tooltrip="Frequently Asked Questions"
-            tooltripClass="border-yellow-300 bg-yellow-300 text-black" // Customized for premium theme
-            heading="FAQ"
-            hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
-            desCription="Here are the most commonly asked questions about our classes and services."
-            desCriptionClass="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300"
-          />
-        </div>
+   <div className="w-full text-left md:text-center">
+  <SectionContent
+    icon={FaQuestionCircle}
+    tooltrip="Frequently Asked Questions"
+    tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+    heading="FAQ"
+    hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
+    desCription="Here are the most commonly asked questions about our classes and services."
+    desCriptionClass="mx-auto text-md md:text-lg leading-relaxed text-gray-300 mb-10"
+  />
+</div>
+
 
         <div className="flex flex-col gap-4">
           {faqData.map((faq, index) => (
