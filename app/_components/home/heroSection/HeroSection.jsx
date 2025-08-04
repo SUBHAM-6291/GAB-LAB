@@ -19,7 +19,7 @@ import {OutlineBtn, BgBtn} from "../../Utilites/BtnComponent/MyBtn";
 
 const NextArrow = ({ onClick }) => (
   <div
-    className="absolute bottom-5 xl:bottom-5 lg:right-15 xl:right-40 md:right-40 z-10 cursor-pointer text-white text-[22px] hidden lg:block"
+    className="absolute bottom-10 right-20 xl:right-60  z-10 cursor-pointer text-white text-[22px] hidden lg:block"
     onClick={onClick}
   >
     <FaArrowRightLong />
@@ -28,7 +28,7 @@ const NextArrow = ({ onClick }) => (
 
 const PrevArrow = ({ onClick }) => (
   <div
-    className="absolute bottom-5 xl:bottom-5 lg:left-15 xl:left-40 md:left-40 z-10 cursor-pointer text-white text-[22px] hidden lg:block"
+    className="absolute bottom-10 right-40 xl:right-80  z-10 cursor-pointer text-white text-[22px] hidden lg:block"
     onClick={onClick}
   >
     <FaArrowLeftLong />

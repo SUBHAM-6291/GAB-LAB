@@ -12,6 +12,17 @@ import { LuMoveLeft, LuMoveRight } from "react-icons/lu";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./outer.css";
+import Course from "@/app/_components/home/course/Course";
+import { FaCheck } from "react-icons/fa";
+
+const included = [
+  "Guided local market visit",
+  "ingredients & cooking tools",
+  "Complimentary beverage",
+  "Easy-to-follow recipe cards",
+  "Fun, friendly atmosphere led by expert chef",
+  "Hands-on cooking experience",
+];
 
 const faqs = [
   {
@@ -72,7 +83,6 @@ const reviews = [
   },
 ];
 
-// Arrow Components
 const PrevArrow = () => (
   <button className="text-white text-2xl hover:text-yellow-300 transition cursor-pointer">
     <LuMoveLeft />
@@ -86,12 +96,11 @@ const NextArrow = () => (
 );
 
 const CourseDetail = () => {
-  const sliderRef = useRef(null);
   const params = useParams();
+  const sliderRef = useRef(null);
   const [course, setCourse] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  const [activeIndex, setActiveIndex] = useState(0); // Default open FAQ index
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFaq = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
@@ -116,17 +125,20 @@ const CourseDetail = () => {
     arrows: false,
   };
 
-  if (isLoading) return;
-  <div className="myContainer py-16 text-white">Loading...</div>;
-  if (!course)
+  if (isLoading) {
+    return <div className="myContainer py-16 text-white">Loading...</div>;
+  }
+
+  if (!course) {
     return <div className="myContainer py-16 text-white">Course not found</div>;
+  }
 
   return (
     <section className="pt-15 slugSlider">
       <div className="myContainer">
         {/* Course Info */}
-        <div className="flex flex-col lg:flex-row gap-8 border rounded-lg border-gray-700 p-8 items-start">
-          <div className="w-full lg:w-1/2 h-[500px]">
+        <div className="flex flex-col xl:flex-row gap-8 border rounded-lg lg:border-gray-700 p-0 lg:p-8 items-start">
+          <div className="w-full xl:w-1/2 h-[200px] md:h-[500px]">
             <Image
               src={course.image}
               alt={course.title}
@@ -135,105 +147,92 @@ const CourseDetail = () => {
               className="w-full h-full object-cover rounded-xl"
             />
           </div>
-          <div className="w-full lg:w-1/2">
-            <h1 className="text-4xl font-bold text-white mb-4">
+          <div className="w-full xl:w-1/2">
+            <h1 className="text-2xl md:text-4xl font-bold text-white mb-4">
               {course.title}
             </h1>
             <p className="desc">{course.description}</p>
-            <div className="text-gray-300 mb-2 text-xl">
-              <span className="text-yellow-300 font-bold">Location: </span>
+            <div className="text-gray-300 mb-2 mt-5 lg:mt-0 text-xl">
+              <span className="text-white font-bold">Location: </span>
               {course.location}
             </div>
             <div className="text-gray-300 mb-2 text-xl">
-              <span className="text-yellow-300 font-bold">Price: </span>
+              <span className="text-white font-bold">Price: </span>
               {course.price}
             </div>
             <div className="text-gray-300 mb-4 text-xl">
-              <span className="text-yellow-300 font-bold">Schedule: </span>
+              <span className="text-white font-bold">Schedule: </span>
               {course.schedule}
             </div>
             <BgBtn label="Book Now" />
           </div>
         </div>
 
-        {/* Love It & Reviews */}
+        {/* Why You'll Love It & Reviews */}
         <div className="topContainer">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Why You'll Love It */}
             <div>
-              <h1 className="text-left text-4xl font-bold text-white mb-6">
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-6">
                 Why You'll Love It
               </h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
                 {loveItCards.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-gray-800 border border-gray-700 rounded-xl p-7 shadow-md hover:shadow-lg transition"
+                    className="bg-[#111] border border-gray-700 rounded-xl p-7 shadow-md hover:shadow-lg transition"
                   >
-                    <h3 className="text-xl font-semibold text-yellow-300 mb-2">
+                    <h3 className="text-xl font-semibold text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300">{item.description}</p>
+                    <p className="text-base text-gray-300">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Reviews Section */}
             <div>
-              <h1 className="text-left text-4xl font-bold text-white mb-6">
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-6">
                 What's Included
               </h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-                {[
-                  "Market Tour",
-                  "Dessert",
-                  "Sangria",
-                  "Recipes",
-                  "Tapas",
-                  "Paella Class",
-                ].map((item, index) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                {included.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-gray-800 border border-gray-700 rounded-xl p-4 text-white shadow-md hover:shadow-lg transition"
+                    className="bg-[#111] border border-gray-700 rounded-xl p-4 text-white shadow-md hover:shadow-lg transition flex items-start gap-3"
                   >
-                    <h3 className="text-lg font-semibold text-yellow-300">
-                      {item}
-                    </h3>
+                    <FaCheck className="text-green-400 mt-1" />
+                    <h3 className="text-base font-semibold text-white">{item}</h3>
                   </div>
                 ))}
               </div>
 
-              <h1 className="text-left text-4xl font-bold text-white mb-4">
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-4">
                 Customer Reviews
               </h1>
-
-              {/* Slider + Arrows */}
               <div className="relative">
-                <div className="absolute -bottom-12 left-6 transform -translate-y-1/2 z-10">
+                <div className="absolute -bottom-12 left-6 z-10">
                   <button onClick={() => sliderRef.current?.slickPrev()}>
                     <PrevArrow />
                   </button>
                 </div>
-                <div className="absolute -bottom-12 right-6 transform -translate-y-1/2 z-10">
+                <div className="absolute -bottom-12 right-6 z-10">
                   <button onClick={() => sliderRef.current?.slickNext()}>
                     <NextArrow />
                   </button>
                 </div>
-
                 <Slider ref={sliderRef} {...sliderSettings}>
                   {reviews.map((review, index) => (
                     <div key={index} className="p-2 h-[180px]">
-                      <div className="h-full bg-gray-800 border border-gray-600 rounded-lg p-4 shadow-md flex flex-col justify-between">
+                      <div className="h-full bg-[#111] border border-gray-600 rounded-lg p-4 shadow-md flex flex-col justify-between">
                         <div>
                           <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center gap-2 text-yellow-300">
+                            <div className="flex items-center gap-2 text-white">
                               <IoChatbubbleEllipsesSharp className="text-2xl" />
                               <p className="font-semibold text-white">
                                 – {review.name}
                               </p>
                             </div>
-                            <div className="flex gap-1 text-yellow-300">
+                            <div className="flex gap-1 text-white">
                               {[...Array(5)].map((_, i) => (
                                 <IoStar key={i} className="text-lg" />
                               ))}
@@ -251,20 +250,20 @@ const CourseDetail = () => {
             </div>
           </div>
 
+          {/* FAQ + Map */}
           <div className="flex flex-col lg:flex-row gap-8 my-16">
-            {/* FAQ Section */}
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
                 Frequently Asked Questions
               </h2>
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
                   <div
                     key={index}
-                    className="bg-gray-800 border border-gray-600 rounded-lg shadow-md"
+                    className="bg-[#111] border border-gray-600 rounded-lg shadow-md"
                   >
                     <button
-                      className="w-full text-left p-4 flex justify-between items-center text-yellow-300 font-semibold"
+                      className="w-full text-left p-4 flex justify-between items-center text-white font-semibold"
                       onClick={() => toggleFaq(index)}
                     >
                       {faq.question}
@@ -282,18 +281,17 @@ const CourseDetail = () => {
               </div>
             </div>
 
-            {/* Map Section */}
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
                 Find Us on the Map
               </h2>
               <div className="w-full h-70 rounded-lg overflow-hidden border border-gray-600 shadow-md">
                 <iframe
                   title="Location Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.268449499384!2d-122.42177828468188!3d37.779026379758294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808b18b7e42f%3A0x46d7f1082e114f2d!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1615596460223!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=..."
                   width="100%"
                   height="100%"
-                  allowFullScreen=""
+                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
@@ -309,6 +307,15 @@ const CourseDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Other Courses */}
+      <Course
+        excludeSlug={params.slug}
+        showSearch={false}
+        showSectionContent={true}
+        fullWidth={true}
+        sectionHeading="Related Experiences"
+      />
     </section>
   );
 };

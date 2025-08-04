@@ -3,11 +3,11 @@
 
 /* Customize React Slick dots */
 .slugSlider .slick-dots li button:before {
-  color: #fcd34d !important; /* Tailwind yellow-300 */
+  color: #ffffff!important; /* Tailwind yellow-300 */
   opacity: 0.5;
 }
 
 .slugSlider .slick-dots li.slick-active button:before {
-  color: #fcd34d !important; /* Tailwind yellow-300 */
+  color: #ffffff !important; /* Tailwind yellow-300 */
   opacity: 1;
 }
