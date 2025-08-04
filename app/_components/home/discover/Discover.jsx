@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import { LiaCcDiscover } from "react-icons/lia";
+import { MdHotelClass } from "react-icons/md";
 
 const content = [
   {
@@ -16,6 +17,8 @@ const content = [
 ];
 
 const Discover = () => {
+  const [showFull, setShowFull] = useState(false);
+
   return (
     <div className="topContainer myContainer relative w-full min-h-[400px] text-black overflow-hidden">
       {content.map((item, index) => (
@@ -25,23 +28,43 @@ const Discover = () => {
             src={item.backgroundImage}
             alt="Discover Background"
             fill
-            className="object-cover grayscale-100 opacity-50 rounded-2xl "
+            className="object-cover grayscale-100 opacity-50 rounded-2xl"
             priority
           />
 
           {/* Content */}
           <div className="relative z-10 grid place-items-center text-center py-4 lg:py-8 px-4 md:px-6 lg:px-10">
             <SectionContent
-            icon={LiaCcDiscover}
+              icon={LiaCcDiscover}
               tooltrip="Discover Choice"
               tooltripClass="border border-yellow-300 text-yellow-300 flex justify-center inline-center"
               heading={item.heading}
               hedingClass="text-yellow-300 max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
-              desCription={item.description}
-              desCriptionClass="text-white max-w-5xl"
+              desCription={
+                <p
+                  className={`text-white max-w-5xl ${
+                    showFull ? "" : "line-clamp-5"
+                  } sm:line-clamp-none`}
+                >
+                  {item.description}
+                </p>
+              }
+              desCriptionClass=""
             />
 
+            {/* Show More button (visible only on small screens) */}
+            <div className="block sm:hidden mt-4">
+              <button
+                onClick={() => setShowFull(!showFull)}
+                className="text-yellow-300 underline hover:text-yellow-400 text-sm font-medium"
+              >
+                {showFull ? "Show Less" : "Show More"}
+              </button>
+            </div>
+
+            {/* CTA Button */}
             <BgBtn
+              icon={MdHotelClass}
               label="Join Our Classes"
               type="button"
               onClick={() => console.log("Join Our Classes")}

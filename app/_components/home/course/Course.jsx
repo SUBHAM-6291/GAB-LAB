@@ -38,7 +38,7 @@ const Course = ({ excludeSlug, showSearch = true, showSectionContent = true, ful
         )}
 
         {/* Course Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-10">
           {filteredCourses.map((course, index) => {
             const isExpanded = expandedCards.includes(index);
             return (
@@ -54,7 +54,7 @@ const Course = ({ excludeSlug, showSearch = true, showSectionContent = true, ful
                     src={course.image}
                     alt={course.title}
                     fill
-                    className="object-cover transform group-hover:scale-110 group-hover:rotate-2 transition duration-300"
+                    className="object-cover transform group-hover:scale-110  transition duration-300"
                   />
                 </div>
 

@@ -5,6 +5,7 @@ import { FiPlay } from "react-icons/fi";
 import { MdLiveTv } from "react-icons/md";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import {OutlineBtn} from "../../Utilites/BtnComponent/MyBtn";
+import { HiMiniCheckBadge } from "react-icons/hi2";
 
 const LiveFlamencoShows = () => {
   return (
@@ -95,9 +96,9 @@ const LiveFlamencoShows = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="mt-5 flex items-center gap-10 flex-wrap">
+          <div className="mt-5 flex items-center gap-5 md:gap-10 flex-wrap">
             {/* Check Availability */}
-            <OutlineBtn label='Check Availability' type='button' onClick={() => console.log("Button clicked!")}/>
+            <OutlineBtn icon={HiMiniCheckBadge } label='Check Availability' type='button' onClick={() => console.log("Button clicked!")}/>
 
             {/* Play Video */}
             <button className="flex items-center gap-2 text-yellow-300 text-[16px] font-medium hover:text-white transition duration-300 group">

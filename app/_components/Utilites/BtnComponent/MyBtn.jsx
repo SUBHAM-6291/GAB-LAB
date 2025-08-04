@@ -36,13 +36,13 @@ export const BgBtn = ({
     <button
       type={type}
       onClick={onClick}
-      className={`relative text-black text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer ${className}`}
+      className={`relative flex items-center justify-center text-black text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 overflow-hidden group cursor-pointer ${className}`}
     >
-      <span className="relative z-10 flex items-center gap-2 transition duration-300 group-hover:text-white">
+      <span className="relative z-10 flex items-center justify-center text-center gap-2 transition-colors duration-300 group-hover:text-white">
         {Icon && <Icon className="text-[18px]" />}
         {label}
       </span>
-      <span className="absolute left-0 top-0 h-full w-full bg-yellow-300 transition-all duration-300 group-hover:w-0 z-0"></span>
+      <span className="absolute inset-0 w-full h-full bg-yellow-300 transition-all duration-300 group-hover:w-0 z-0"></span>
     </button>
   );
 };

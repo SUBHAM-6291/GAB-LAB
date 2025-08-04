@@ -13,6 +13,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./outer.css";
 import Course from "@/app/_components/home/course/Course";
+import { FaCheck } from "react-icons/fa";
+
+const included = [
+  "Guided local market visit",
+  "ingredients & cooking tools",
+  "Complimentary beverage",
+  "Easy-to-follow recipe cards",
+  "Fun, friendly atmosphere led by expert chef",
+  "Hands-on cooking experience",
+];
 
 const faqs = [
   {
@@ -127,8 +137,8 @@ const CourseDetail = () => {
     <section className="pt-15 slugSlider">
       <div className="myContainer">
         {/* Course Info */}
-        <div className="flex flex-col lg:flex-row gap-8 border rounded-lg border-gray-700 p-8 items-start">
-          <div className="w-full lg:w-1/2 h-[500px]">
+        <div className="flex flex-col xl:flex-row gap-8 border rounded-lg lg:border-gray-700 p-0 lg:p-8 items-start">
+          <div className="w-full xl:w-1/2 h-[200px] md:h-[500px]">
             <Image
               src={course.image}
               alt={course.title}
@@ -137,10 +147,12 @@ const CourseDetail = () => {
               className="w-full h-full object-cover rounded-xl"
             />
           </div>
-          <div className="w-full lg:w-1/2">
-            <h1 className="text-4xl font-bold text-white mb-4">{course.title}</h1>
+          <div className="w-full xl:w-1/2">
+            <h1 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              {course.title}
+            </h1>
             <p className="desc">{course.description}</p>
-            <div className="text-gray-300 mb-2 text-xl">
+            <div className="text-gray-300 mb-2 mt-5 lg:mt-0 text-xl">
               <span className="text-white font-bold">Location: </span>
               {course.location}
             </div>
@@ -160,28 +172,43 @@ const CourseDetail = () => {
         <div className="topContainer">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
-              <h1 className="text-4xl font-bold text-white mb-6">Why You'll Love It</h1>
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-6">
+                Why You'll Love It
+              </h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
                 {loveItCards.map((item, index) => (
-                  <div key={index} className="bg-gray-800 border border-gray-700 rounded-xl p-7 shadow-md hover:shadow-lg transition">
-                    <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-                    <p className="text-gray-300">{item.description}</p>
+                  <div
+                    key={index}
+                    className="bg-[#111] border border-gray-700 rounded-xl p-7 shadow-md hover:shadow-lg transition"
+                  >
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-base text-gray-300">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div>
-              <h1 className="text-4xl font-bold text-white mb-6">What's Included</h1>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {["Market Tour", "Dessert", "Sangria", "Recipes", "Tapas", "Paella Class"].map((item, index) => (
-                  <div key={index} className="bg-gray-800 border border-gray-700 rounded-xl p-4 text-white shadow-md hover:shadow-lg transition">
-                    <h3 className="text-lg font-semibold text-white">{item}</h3>
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-6">
+                What's Included
+              </h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                {included.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-[#111] border border-gray-700 rounded-xl p-4 text-white shadow-md hover:shadow-lg transition flex items-start gap-3"
+                  >
+                    <FaCheck className="text-green-400 mt-1" />
+                    <h3 className="text-base font-semibold text-white">{item}</h3>
                   </div>
                 ))}
               </div>
 
-              <h1 className="text-4xl font-bold text-white mb-4">Customer Reviews</h1>
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-4">
+                Customer Reviews
+              </h1>
               <div className="relative">
                 <div className="absolute -bottom-12 left-6 z-10">
                   <button onClick={() => sliderRef.current?.slickPrev()}>
@@ -196,12 +223,14 @@ const CourseDetail = () => {
                 <Slider ref={sliderRef} {...sliderSettings}>
                   {reviews.map((review, index) => (
                     <div key={index} className="p-2 h-[180px]">
-                      <div className="h-full bg-gray-800 border border-gray-600 rounded-lg p-4 shadow-md flex flex-col justify-between">
+                      <div className="h-full bg-[#111] border border-gray-600 rounded-lg p-4 shadow-md flex flex-col justify-between">
                         <div>
                           <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center gap-2 text-white">
                               <IoChatbubbleEllipsesSharp className="text-2xl" />
-                              <p className="font-semibold text-white">– {review.name}</p>
+                              <p className="font-semibold text-white">
+                                – {review.name}
+                              </p>
                             </div>
                             <div className="flex gap-1 text-white">
                               {[...Array(5)].map((_, i) => (
@@ -209,7 +238,9 @@ const CourseDetail = () => {
                               ))}
                             </div>
                           </div>
-                          <p className="text-gray-200 italic line-clamp-4">“{review.quote}”</p>
+                          <p className="text-gray-200 italic line-clamp-4">
+                            “{review.quote}”
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -222,16 +253,28 @@ const CourseDetail = () => {
           {/* FAQ + Map */}
           <div className="flex flex-col lg:flex-row gap-8 my-16">
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+                Frequently Asked Questions
+              </h2>
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="bg-gray-800 border border-gray-600 rounded-lg shadow-md">
-                    <button className="w-full text-left p-4 flex justify-between items-center text-white font-semibold" onClick={() => toggleFaq(index)}>
+                  <div
+                    key={index}
+                    className="bg-[#111] border border-gray-600 rounded-lg shadow-md"
+                  >
+                    <button
+                      className="w-full text-left p-4 flex justify-between items-center text-white font-semibold"
+                      onClick={() => toggleFaq(index)}
+                    >
                       {faq.question}
-                      <span className="text-xl">{activeIndex === index ? "−" : "+"}</span>
+                      <span className="text-xl">
+                        {activeIndex === index ? "−" : "+"}
+                      </span>
                     </button>
                     {activeIndex === index && (
-                      <div className="px-4 pb-4 text-gray-200">{faq.answer}</div>
+                      <div className="px-4 pb-4 text-gray-200">
+                        {faq.answer}
+                      </div>
                     )}
                   </div>
                 ))}
@@ -239,7 +282,9 @@ const CourseDetail = () => {
             </div>
 
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl font-bold text-white mb-6">Find Us on the Map</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+                Find Us on the Map
+              </h2>
               <div className="w-full h-70 rounded-lg overflow-hidden border border-gray-600 shadow-md">
                 <iframe
                   title="Location Map"
@@ -255,7 +300,9 @@ const CourseDetail = () => {
                 <MdLocationOn className="text-yellow-300 text-2xl" />
                 Cooking School Barcelona
               </h2>
-              <p className="text-white text-lg">Carrer de la Boqueria, 25, 08002 Barcelona, Spain</p>
+              <p className="text-white text-lg">
+                Carrer de la Boqueria, 25, 08002 Barcelona, Spain
+              </p>
             </div>
           </div>
         </div>

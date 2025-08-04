@@ -7,6 +7,7 @@ import { IoStar } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { OutlineBtn } from "../../Utilites/BtnComponent/MyBtn";
+import { MdVerified } from "react-icons/md";
 
 const Rivew = [
   {
@@ -133,7 +134,7 @@ const LeaveUsReview = () => {
               href="https://www.mango-digital.com/google-reviews-slider-wix-app"
               target="_blank"
             >
-              <OutlineBtn label="Verified Reviews" />
+              <OutlineBtn icon={MdVerified} label="Verified Reviews" />
             </Link>
           </div>
         </div>
