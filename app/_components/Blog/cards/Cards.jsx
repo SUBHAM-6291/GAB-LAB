@@ -1,37 +1,73 @@
 'use client';
 
-import React, { useState } from 'react';
-import { FaArrowsAltV } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaArrowsAltV, FaUtensils } from 'react-icons/fa';
 import { OutlineBtn } from '@/app/_components/Utilites/BtnComponent/MyBtn';
+import SectionContent from '@/app/_components/Utilites/SectionContent/SectionContent';
 import cardData from './cardData';
 import Link from 'next/link';
 
 const Cards = ({
   showSearch = true,
   excludeSlug = null,
+  showSectionContent = true,
 }) => {
   const [showAll, setShowAll] = useState(false);
+  const [cardsToShow, setCardsToShow] = useState(4);
 
   const filteredCards = cardData
     .filter((card) => (excludeSlug ? card.slug !== excludeSlug : true))
     .sort((a, b) => a.id - b.id);
 
-  const displayedCards = showAll ? filteredCards : filteredCards.slice(0, 3);
+  // Dynamically determine how many cards to show by default
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1536) {
+        setCardsToShow(4); // 2xl
+      } else if (width >= 1024) {
+        setCardsToShow(3); // lg and xl
+      } else {
+        setCardsToShow(4); // sm and md (show 4 in two rows of 2)
+      }
+    };
 
-  const shortenDescription = (text) => {
-    return text.length > 100 ? `${text.slice(0, 100)}...` : text;
-  };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const displayedCards = showAll ? filteredCards : filteredCards.slice(0, cardsToShow);
+
+  const shortenDescription = (text) =>
+    text.length > 100 ? `${text.slice(0, 100)}...` : text;
 
   return (
     <div className="bg-black text-white myContainer transition-all duration-300 mt-12">
+      {/* Section Header */}
+      {showSectionContent && (
+        <div className="w-full text-left md:text-center">
+          <SectionContent
+            icon={FaUtensils}
+            tooltrip="Explore Our Blog"
+            tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+            heading="Discover Culinary Insights"
+            hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
+            desCription="Dive into our collection of articles, tips, and stories about Spanish and Mediterranean cuisine, from paella secrets to market adventures."
+            desCriptionClass="mx-auto text-md md:text-lg leading-relaxed text-gray-300 mb-10"
+          />
+        </div>
+      )}
+
+      {/* Search Filter UI */}
       {showSearch && (
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-16  mx-auto">
-          <select
-            className="bg-[#1a1a1a] text-white border cursor-pointer border-yellow-300 rounded-lg p-3 w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-yellow-300 transition-all duration-300"
-          >
+        <div className="flex flex-col md:flex-row justify-start items-start gap-4 mb-16">
+          <select className="bg-[#1a1a1a] text-white border cursor-pointer border-yellow-300 rounded-lg p-3 w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-yellow-300 transition-all duration-300">
             <option value="All">All</option>
             {[...new Set(cardData.map((card) => card.category))].map((category) => (
-              <option key={category} value={category}>{category}</option>
+              <option key={category} value={category}>
+                {category}
+              </option>
             ))}
           </select>
           <input
@@ -42,14 +78,10 @@ const Cards = ({
         </div>
       )}
 
-      {/* Grid with stretch for equal height */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-stretch">
+      {/* Card Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6  items-stretch">
         {displayedCards.map((card) => (
-          <Link
-            key={card.id}
-            href={`/blog/${card.slug}`}
-            className="block transform transition-transform duration-300 hover:scale-[1.02]"
-          >
+          <Link key={card.id} href={`/blog/${card.slug}`} className="block">
             <div className="bg-[#0f0f0f] rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:border-yellow-300/50 transition-all duration-300 h-full flex flex-col justify-between">
               <div className="relative overflow-hidden">
                 <img
@@ -71,7 +103,11 @@ const Cards = ({
                 </p>
                 <p
                   className="text-gray-400 text-sm mt-2 overflow-hidden"
-                  style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
+                  style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                  }}
                 >
                   {shortenDescription(card.shortDescription)}
                 </p>
@@ -90,7 +126,8 @@ const Cards = ({
         ))}
       </div>
 
-      {filteredCards.length > 3 && (
+      {/* Show More / Show Less Button */}
+      {filteredCards.length > cardsToShow && (
         <div className="flex justify-end mt-12">
           <OutlineBtn
             label={
