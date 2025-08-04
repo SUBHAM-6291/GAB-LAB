@@ -106,22 +106,22 @@ const ThankYou = () => (
       />
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
     </div>
-    <div className="relative z-10 text-center">
+    <div className="relative z-10 sm:text-left">
       <Image
         src="/Gastronmic_Arts_Barcelona_Logo.avif"
         alt="Gastronomic Arts Barcelona Logo"
         width={140}
         height={60}
-        className="mx-auto mb-6"
+        className="mx-auto mb-6 sm:mx-0"
       />
       <SectionContent
         icon={FaCheckCircle}
         tooltrip="Thank You!"
         tooltripClass="border-blue-300 bg-blue-300 text-black"
         heading="Submission Successful"
-        hedingClass="heding text-center text-white tracking-tight drop-shadow-lg !mx-auto"
+        hedingClass="heding text-white tracking-tight drop-shadow-lg sm:text-left mb-2"
         desCription="Thank you for completing the client questionnaire. We'll review your information and get back to you soon!"
-        desCriptionClass="desc max-w-4xl mx-auto text-center mb-14"
+        desCriptionClass="desc max-w-4xl sm:text-left mb-6"
       />
       <div className="mt-8 flex justify-center">
         <OutlineBtn
@@ -260,15 +260,15 @@ const QuestionnaireForm = () => {
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       </div>
       <div className="relative z-10">
-        <div className="flex justify-center w-full sm:flex sm:justify-center sm:text-center">
+        <div className="w-full sm:text-left md:text-center">
           <SectionContent
             icon={FaFileSignature}
             tooltrip="Client Survey"
             tooltripClass="border-yellow-300 bg-yellow-300 text-black"
             heading="Client Questionnaire"
-            hedingClass="heding text-center text-white tracking-tight drop-shadow-lg !mx-auto"
+            hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
             desCription="Please provide us with some information to better understand your needs and help us tailor our services for you."
-            desCriptionClass="desc max-w-4xl mx-auto text-center mb-14"
+            desCriptionClass="mx-auto text-md md:text-lg leading-relaxed text-gray-300 mb-10"
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">

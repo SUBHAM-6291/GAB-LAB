@@ -23,7 +23,7 @@ const CulinaryPartnershipSection = () => {
               tooltrip="Crafted Experiences"
               tooltripClass="border-yellow-300 bg-yellow-300 text-black"
               heading="Culinary Journeys Designed for Your Clients"
-              hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
+              hedingClass="text-2xl md:text-3xl font-bold leading-tight mb-6"
               desCription="Unlock a variety of hands-on cooking adventures rooted in authentic Spanish and Mediterranean cuisine — all tailored to delight your clients.\nFrom the award-winning Paella Class to sweet baking escapes and vibrant market-to-plate experiences, every journey is chef-led and unforgettable."
               desCriptionClass="text-base md:text-lg text-gray-300 leading-relaxed mb-6"
             />
@@ -59,7 +59,7 @@ const CulinaryPartnershipSection = () => {
               tooltrip="Let’s Collaborate"
               tooltripClass="border-yellow-300 bg-yellow-300 text-black"
               heading="Why Partner with Gastronomic Arts?"
-              hedingClass="text-3xl md:text-4xl font-bold leading-tight mb-6"
+              hedingClass="text-2xl md:text-3xl font-bold leading-tight mb-6"
               desCription="Offer your clients more than just a meal — deliver curated culinary moments they’ll never forget. Our partnerships help you create tailored, cultural, chef-led experiences."
               desCriptionClass="text-gray-300 text-base md:text-lg leading-relaxed mb-10"
             />
@@ -80,7 +80,7 @@ const CulinaryPartnershipSection = () => {
                 },
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-yellow-400 text-yellow-400 font-bold">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-full border border-yellow-400 text-yellow-400 font-bold shrink-0">
                     {index + 1}
                   </div>
                   <div>

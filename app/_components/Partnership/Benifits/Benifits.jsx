@@ -9,15 +9,18 @@ const Benifits = () => {
   return (
     <div className="bg-black text-white myContainer topContainer text-center">
       {/* Heading */}
-      <SectionContent
-        icon={FaHandshake}
-        tooltrip="Partner Benefits"
-        tooltripClass="border-yellow-300 bg-yellow-300 text-black" 
-        heading="Partnership Benefits"
-        hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
-        desCription="Perfect for solo travelers, couples, and private groups looking for a hands-on culinary adventure in the heart of Barcelona."
-        desCriptionClass="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300"
-      />
+<div className="w-full text-left md:text-center">
+  <SectionContent
+    icon={FaHandshake}
+    tooltrip="Partner Benefits"
+    tooltripClass="bg-yellow-300 text-black border border-yellow-400"
+    heading="Partnership Benefits"
+    hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
+    desCription="Perfect for solo travelers, couples, and private groups looking for a hands-on culinary adventure in the heart of Barcelona."
+    desCriptionClass="max-w-3xl mx-auto text-md md:text-lg leading-relaxed mb-12 text-gray-300"
+  />
+</div>
+
 
       {/* First Row of Cards */}
       <div className="grid md:grid-cols-3 gap-6 mb-6 px-4">
