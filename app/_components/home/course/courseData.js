@@ -3,10 +3,10 @@
 const generateSlug = (title) => {
   return title
     .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+    .replace(/[^a-z0-9\s-]/g, "")
     .trim()
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/-+/g, "-"); // Replace multiple hyphens with a single hyphen
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 };
 
 const courses = [
@@ -14,6 +14,8 @@ const courses = [
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/Hands-On%20Sangria%20%26%20Tapas%20Cooking%20Class.avif",
     title: "Hands-On Sangria & Tapas Cooking Class with Local Beer Tasting",
+    category: "Baking",
+
     slug: generateSlug(
       "Hands-On Sangria & Tapas Cooking Class with Local Beer Tasting"
     ),
@@ -27,6 +29,7 @@ const courses = [
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/La%20Boqueria%20Market%20Tour.avif",
     title: "La Boqueria Market Tour & Food Tasting Experience",
+    category: "Baking",
     slug: generateSlug("La Boqueria Market Tour & Food Tasting Experience"),
     description:
       "Discover the heart of Barcelona through its most iconic market on this intimate La Boqueria Tour & Tasting experience. Led by expert local guides from the city’s top-rated culinary academy, you’ll sample over 5 traditional bites from freshly squeezed juice and Iberian ham to artisanal cheeses and olives while exploring the hidden stories, secrets, and flavors of this legendary market. With a maximum of 6 guests per tour, this immersive 2-hour experience is perfect for curious travelers who want to go beyond sightseeing and truly discover the world famous La Boqueria Market .",
@@ -38,6 +41,7 @@ const courses = [
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/Premium%20Cocktail%20Experience%20%26%20Masterclass%20(presented%20by%20SACSEJAR).avif",
     title: "Ultimate Paella Cooking Class Experience",
+    category: "Paella",
     slug: generateSlug("Ultimate Paella Cooking Class Experience"),
     description:
       "Discover the heart of Spanish cuisine in our most popular culinary adventure! Start with a guided visit to La Boqueria Market, followed by a fun sangria workshop and a delicious tapas tasting. Then, roll up your sleeves for a hands-on paella cooking class led by expert instructors. Wrap it all up with dessert, a farewell toast, and take home all the recipes plus unforgettable memories.",
@@ -49,6 +53,7 @@ const courses = [
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/Private%20Paella%20Cooking%20Class%20%26%20Market%20Tour.avif",
     title: "Private Paella Cooking Class & Market Tour with Personal Chef",
+    category: "Paella",
     slug: generateSlug(
       "Private Paella Cooking Class & Market Tour with Personal Chef"
     ),
@@ -62,6 +67,7 @@ const courses = [
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/Private%20Paella%20Cooking%20Class%20%26%20Market%20Tour.avif",
     title: "Sweet Escape: Bake and Take Workshop",
+    category: "Baking",
     slug: generateSlug("Sweet Escape: Bake and Take Workshop"),
     description:
       "Learn new desserts each month and take home your delicious creations in our small group workshops!",
@@ -75,6 +81,7 @@ const courses = [
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/Sweet%20Escape%20Bake%20and%20Take%20Workshops.avif",
     title:
       "Barcelona Nights: Premium Cocktail Experience & Masterclass (presented by SACSEJAR)",
+    category: "Cocktails",
     slug: generateSlug(
       "Barcelona Nights: Premium Cocktail Experience & Masterclass (presented by SACSEJAR)"
     ),
@@ -88,6 +95,8 @@ const courses = [
     image:
       "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Class%20photos/Ultimate%20Paella%20Cooking%20Class%20Experience.avif",
     title: "Rhythm & Taste: Paella Cooking Class & Flamenco Show (14:00-18:30)",
+    category: "paella",
+
     slug: generateSlug(
       "Rhythm & Taste: Paella Cooking Class & Flamenco Show (14:00-18:30)"
     ),

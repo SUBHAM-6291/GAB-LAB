@@ -17,6 +17,34 @@ const awards = [
   "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Awards/awards-five.avif",
   "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Awards/awards-five.avif",
 ];
+
+const reviewLogos = [
+  {
+    href: "https://www.tripadvisor.com/",
+    src: "/tripadvisorfivestarrating.avif",
+    alt: "tripadvisor",
+  },
+  {
+    href: "https://www.viator.com/",
+    src: "/viator.avif",
+    alt: "viator",
+  },
+  {
+    href: "https://www.google.com/maps",
+    src: "/5stargooglewhitemin.avif",
+    alt: "google reviews",
+  },
+  {
+    href: "https://www.airbnb.com/",
+    src: "/aribnb.avif",
+    alt: "airbnb",
+  },
+  {
+    href: "https://www.cookly.me/",
+    src: "/cookly.png",
+    alt: "cookly",
+  },
+];
 const StarRating = ({ rating = 5 }) => {
   return (
     <div className="flex items-center gap-2 lg:gap-6">
@@ -91,64 +119,29 @@ const Ranked = () => {
       </div>
       <div className="">
         <Marquee
-          speed={30}
           gradient={true}
           gradientColor="black"
-          autoFill={true}
+          speed={50}
           pauseOnHover={true}
+          loop={0}
+          autoFill={true}
+          style={{ display: "flex", zIndex: 0 }}
         >
-          <Link
-            href="https://www.tripadvisor.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            asChild
-          >
-            <img
-              className="px-8 h-[60px]"
-              src="/tripadvisorfivestarrating.avif"
-              alt="tripadvisor"
-            />
-          </Link>
-
-          <Link
-            href="https://www.viator.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            asChild
-          >
-            <img className="px-8 h-[60px]" src="/viator.avif" alt="viator" />
-          </Link>
-
-          <Link
-            href="https://www.google.com/maps"
-            target="_blank"
-            rel="noopener noreferrer"
-            asChild
-          >
-            <img
-              className="px-8 h-[60px]"
-              src="/5stargooglewhitemin.avif"
-              alt="google reviews"
-            />
-          </Link>
-
-          <Link
-            href="https://www.airbnb.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            asChild
-          >
-            <img className="px-8 h-[60px]" src="/aribnb.avif" alt="airbnb" />
-          </Link>
-
-          <Link
-            href="https://www.cookly.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-            asChild
-          >
-            <img className="px-8 h-[60px]" src="/cookly.png" alt="cookly" />
-          </Link>
+          {reviewLogos.map((logo, index) => (
+            <div
+              key={index}
+              className="mx-2 bg-white/5 p-3 rounded-lg flex items-center justify-center min-w-[90px] h-[70px] backdrop-blur-sm border border-white/10 shadow transition-transform duration-300"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={100}
+                height={40}
+                unoptimized
+                className="object-contain max-h-full w-full"
+              />
+            </div>
+          ))}
         </Marquee>
       </div>
     </div>

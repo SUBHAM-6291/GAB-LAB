@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Utilites/Navbar/Navbar";
 import Footer from "./_components/shared/Footer/footer";
+import BackToTop from "./_components/Utilites/BackToTop/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar/>
         {children}
+        <BackToTop/>
         <Footer/>        
       </body>
     </html>

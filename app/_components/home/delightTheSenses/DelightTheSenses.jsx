@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import { GiCampCookingPot } from "react-icons/gi";
+import { BiArrowFromLeft } from "react-icons/bi";
 import { BgBtn } from "../../Private_Group/Tell_us_More_Here/Tell_us_More_Here";
 
 const DelightTheSenses = () => {
@@ -20,8 +21,8 @@ const DelightTheSenses = () => {
         From selecting the finest ingredients to mastering secret techniques,
         this immersive experience is a journey through flavors, aromas, and joy.
         <br /> <br />
-        Relish vibrant colors, aromatic spices, and the art of sharing an
-        iconic dish with fellow food enthusiasts.
+        Relish vibrant colors, aromatic spices, and the art of sharing an iconic
+        dish with fellow food enthusiasts.
       </>
     ),
     buttonText: "Make a Reservation",
@@ -80,7 +81,7 @@ const DelightTheSenses = () => {
           />
 
           <div className="mt-6">
-            <BgBtn label={leftContent.buttonText} />
+            <BgBtn icon={BiArrowFromLeft} label={leftContent.buttonText} />
           </div>
         </div>
 

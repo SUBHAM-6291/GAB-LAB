@@ -35,9 +35,9 @@ body {
     @apply block mb-2 text-[18px] font-medium text-gray-100;
   }
   .formInput {
-    @apply w-full  bg-[#484848] border-1 outline-0 text-white border-gray-400 rounded-md px-4 py-3 focus:outline-none;
+    @apply w-full  bg-[#111111] border border-yellow-800/30 outline-0 text-white rounded-md px-4 py-2 md:py-3 focus:outline-none;
   }
-  .mbg{
+  .mbg {
     @apply bg-[#1b1b1b];
   }
 }
@@ -159,7 +159,7 @@ body {
 }
 
 .custom-rgb-bar::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -150%;
@@ -195,4 +195,16 @@ body {
     transform: skewX(-20deg);
   }
 }
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
 
+.animate-zoom-in-out {
+  animation: zoomInOut 1.5s ease-in-out infinite;
+}

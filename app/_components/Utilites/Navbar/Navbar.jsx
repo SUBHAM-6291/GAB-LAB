@@ -29,9 +29,9 @@ const Navbar = () => {
   const isActive = (href) => pathname === href;
 
   return (
-    <header className="bg-black shadow-md">
+    <header className="bg-[#111]">
       {/* Top Nav */}
-      <div className="myContainer pt-6 md:pt-8 pb-2 flex justify-between items-center">
+      <div className="myContainer py-4 md:py-6 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/">
@@ -47,21 +47,21 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden lg:flex gap-10 text-white text-[16px] font-medium">
+        <nav className="hidden xl:flex gap-10 text-white text-[16px] font-medium">
           {navData.menu.map((item, idx) => (
             <Link
               key={idx}
               href={item.href}
               className={`relative group transition-colors duration-200 ${
-                isActive(item.href) ? "text-yellow-300" : "hover:text-yellow-300"
+                isActive(item.href)
+                  ? "text-yellow-300"
+                  : "hover:text-yellow-300"
               }`}
             >
               {item.label}
               <span
                 className={`absolute -bottom-1 left-0 h-[2px] bg-yellow-300 transition-all duration-300 ${
-                  isActive(item.href)
-                    ? "w-full"
-                    : "w-0 group-hover:w-full"
+                  isActive(item.href) ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
             </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Icon */}
         <button
-          className="lg:hidden text-3xl text-white"
+          className="xl:hidden text-3xl text-white"
           onClick={() => setMenuOpen(true)}
         >
           <HiMenu />
@@ -92,16 +92,19 @@ const Navbar = () => {
 
       {/* Slide-out Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-3/4 sm:w-1/2 bg-black text-white p-6 z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-full md:w-[50%] bg-black/60 backdrop-blur-md text-white p-6 z-50 transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Top Bar in Menu */}
-        <div className="flex justify-between items-center mb-6">
-          <Image src={logo} alt="Logo" width={100} height={0} priority />
-          <button onClick={() => setMenuOpen(false)} className="text-2xl">
-            <HiX />
-          </button>
+        <div className="mb-6">
+          <div className="flex justify-between items-center">
+            <Image src={logo} alt="Logo" width={100} height={0} priority />
+            <button onClick={() => setMenuOpen(false)} className="text-2xl">
+              <HiX />
+            </button>
+          </div>
+          <div className="mt-4 border-b border-yellow-300/50" />
         </div>
 
         {/* Mobile Links */}
@@ -112,15 +115,15 @@ const Navbar = () => {
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className={`relative block group py-1 ${
-                  isActive(item.href) ? "text-yellow-300" : "hover:text-yellow-300"
+                  isActive(item.href)
+                    ? "text-yellow-300"
+                    : "hover:text-yellow-300"
                 }`}
               >
                 {item.label}
                 <span
                   className={`absolute bottom-0 left-0 h-[2px] bg-yellow-300 transition-all duration-300 ${
-                    isActive(item.href)
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                    isActive(item.href) ? "w-10" : "w-0 group-hover:w-full"
                   }`}
                 />
               </Link>

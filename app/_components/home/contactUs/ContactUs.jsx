@@ -8,6 +8,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { IoIosSend } from "react-icons/io";
 
 const ContactUs = () => {
   const [phone, setPhone] = useState("");
@@ -16,7 +17,7 @@ const ContactUs = () => {
     <section className="myContainer topContainer">
       <div className="grid lg:grid-cols-2 gap-[20px] lg:gap-[60px] xl:gap-[80px]">
         {/* Left Side: Contact Form */}
-        <div className="mbg rounded-xl p-4 md:p-10">
+        <div className="bg-[#1a1a1a] border border-yellow-800/30 rounded-xl p-4 md:p-10">
           <SectionContent
             icon={MdContacts}
             tooltrip="Contact us"
@@ -51,8 +52,8 @@ const ContactUs = () => {
                 value={phone}
                 onChange={setPhone}
                 containerClass="!w-full"
-                inputClass="!bg-[#484848] !text-white !w-full !rounded-lg !pl-12 !h-12 !border-1 !border-gray-400 !outline-none !shadow-none focus:!outline-none focus:!ring-0"
-                buttonClass="!bg-yellow-300 !rounded-l-lg !border-none !outline-none  !hover:bg-yellow-300 !focus:outline-none"
+                inputClass="!bg-[#111111] !text-white !w-full !rounded-lg !pl-12 !h-10 !md:h-12 !border !border-yellow-800/30 !outline-none !shadow-none focus:!outline-none focus:!ring-0"
+                buttonClass="!bg-white !rounded-l-lg !border-none !outline-none  !hover:bg-yellow-300 !focus:outline-none"
               />
             </div>
 
@@ -65,7 +66,7 @@ const ContactUs = () => {
               ></textarea>
             </div>
 
-            <BgBtn type="submit" label="Send Now" className="w-full" />
+            <BgBtn icon={IoIosSend } type="submit" label="Send Now" className="w-full" />
           </form>
         </div>
 
@@ -79,7 +80,7 @@ const ContactUs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-6">
             {/* Phone */}
             <div
-              className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              className="flex flex-col items-center text-center gap-2 bg-[#1a1a1a] rounded-2xl p-6 border border-yellow-800/30 hover:border-yellow-500 shadow-md hover:shadow-[0_0_30px_#fde68a] transition-all duration-300 cursor-pointer"
               onClick={() => (window.location.href = "tel:+1234567890")}
             >
               <FiPhone className="text-yellow-500 text-[32px]" />
@@ -93,7 +94,7 @@ const ContactUs = () => {
 
             {/* Email */}
             <div
-              className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              className="flex flex-col items-center text-center gap-2 bg-[#1a1a1a] rounded-2xl p-6 border border-yellow-800/30 hover:border-yellow-500 shadow-md hover:shadow-[0_0_30px_#fde68a] transition-all duration-300 cursor-pointer"
               onClick={() =>
                 (window.location.href = "mailto:contact@example.com")
               }
@@ -109,7 +110,7 @@ const ContactUs = () => {
 
             {/* WhatsApp */}
             <div
-              className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300 cursor-pointer"
+              className="flex flex-col items-center text-center gap-2 bg-[#1a1a1a] rounded-2xl p-6 border border-yellow-800/30 hover:border-yellow-500 shadow-md hover:shadow-[0_0_30px_#fde68a] transition-all duration-300 cursor-pointer"
               onClick={() =>
                 (window.location.href = "https://wa.me/19876543210")
               }
@@ -122,7 +123,7 @@ const ContactUs = () => {
             </div>
 
             {/* Office */}
-            <div className="flex flex-col items-center text-center gap-2 mbg p-4 rounded-lg shadow transition-shadow duration-300 hover:shadow-md hover:shadow-yellow-300">
+            <div className="flex flex-col items-center text-center gap-2 bg-[#1a1a1a] rounded-2xl p-6 border border-yellow-800/30 hover:border-yellow-500 shadow-md hover:shadow-[0_0_30px_#fde68a] transition-all duration-300 cursor-pointer">
               <FiMapPin className="text-yellow-500 text-[32px]" />
               <div>
                 <h5 className="font-semibold text-white text-xl">Our Office</h5>

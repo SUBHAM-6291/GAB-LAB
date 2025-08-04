@@ -1,57 +1,50 @@
 "use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaInfoCircle, FaMapMarkerAlt } from "react-icons/fa";
-import { MdHotelClass } from "react-icons/md";
-import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import { CiBookmarkCheck } from "react-icons/ci";
 import courses from "./courseData";
 
-const sectionContentProps = {
-  icon: MdHotelClass,
-  tooltrip: "Cooking Courses",
-  heading: "Discover Our Cooking Courses",
-  description:
-    "Dive into the world of Spanish cuisine with our interactive and immersive cooking classes. From sangria to paella, each course is crafted for unforgettable memories.",
-};
-
-const Course = () => {
+const Course = ({ excludeSlug, showSearch = true, showSectionContent = true, fullWidth = false }) => {
   const [expandedCards, setExpandedCards] = useState([]);
 
   const toggleCard = (index) => {
     setExpandedCards((prev) => (prev[0] === index ? [] : [index]));
   };
 
+  const filteredCourses = excludeSlug
+    ? courses.filter((course) => course.slug !== excludeSlug)
+    : courses;
+
   return (
-    <section className="topContainer py-16">
+    <section className={`topContainer py-16 ${fullWidth ? "w-full" : ""}`}>
       <div className="myContainer">
-        {/* Heading Section */}
-        <div className="flex justify-center md:text-center mb-12">
-          <SectionContent
-            icon={sectionContentProps.icon}
-            tooltrip={sectionContentProps.tooltrip}
-            tooltripClass={
-              "border border-yellow-300 bg-yellow-300 text-black flex justify-center items-center"
-            }
-            heading={sectionContentProps.heading}
-            hedingClass={
-              "text-white max-w-5xl drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"
-            }
-            desCription={sectionContentProps.description}
-            desCriptionClass={"text-white max-w-4xl"}
-          />
-        </div>
+        {/* Optional Section Heading */}
+        {showSectionContent && (
+          <div className="flex justify-center md:text-center mb-12">
+            <div>
+              <div className="flex justify-center items-center border border-yellow-300 bg-yellow-300 text-black rounded-full px-4 py-2 mb-4 text-sm font-medium w-fit mx-auto">
+                Cooking Courses
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white text-center max-w-5xl mx-auto drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]">
+                Discover Our Cooking Courses
+              </h2>
+              <p className="text-white text-center max-w-4xl mx-auto mt-4">
+                Dive into the world of Spanish cuisine with our interactive and immersive cooking classes. From sangria to paella, each course is crafted for unforgettable memories.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Course Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {courses.map((course, index) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-10">
+          {filteredCourses.map((course, index) => {
             const isExpanded = expandedCards.includes(index);
             return (
               <div
                 key={index}
-                className={`bg-zinc-800 rounded-xl shadow-md hover:shadow-yellow-500/20 transition duration-300 overflow-hidden flex flex-col group  ${
+                className={`bg-zinc-800 rounded-xl shadow-md hover:shadow-yellow-500/20 transition duration-300 overflow-hidden flex flex-col group ${
                   isExpanded ? "h-auto" : "h-[550px]"
                 }`}
               >
@@ -61,7 +54,7 @@ const Course = () => {
                     src={course.image}
                     alt={course.title}
                     fill
-                    className="object-cover transform group-hover:scale-110 group-hover:rotate-2 transition duration-300"
+                    className="object-cover transform group-hover:scale-110  transition duration-300"
                   />
                 </div>
 
@@ -78,6 +71,7 @@ const Course = () => {
                   >
                     {course.description}
                   </p>
+
                   {course.description.length > 100 && (
                     <div>
                       <button
@@ -88,12 +82,13 @@ const Course = () => {
                       </button>
                     </div>
                   )}
+
                   <div className="flex justify-between text-base text-gray-300 mb-2 mt-4">
                     <span className="flex items-center gap-1">
                       <FaMapMarkerAlt className="text-yellow-400" />
                       {course.location}
                     </span>
-                    <span className=" text-yellow-400 font-semibold">
+                    <span className="text-yellow-400 font-semibold">
                       {course.price}
                     </span>
                   </div>
@@ -104,15 +99,12 @@ const Course = () => {
 
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mt-auto">
-                    {/* Book Now Button with Icon */}
                     <div className="w-full sm:flex-1">
                       <button className="flex items-center justify-center gap-2 bg-yellow-400 text-black border border-transparent hover:bg-transparent hover:border-yellow-300 hover:text-white text-sm font-semibold px-4 py-2 rounded-lg transition w-full cursor-pointer">
                         <CiBookmarkCheck className="text-base" />
                         Book Now
                       </button>
                     </div>
-
-                    {/* Info Button with Icon */}
                     <div className="w-full sm:flex-1">
                       <Link href={`/courses/${course.slug}`}>
                         <button className="flex items-center justify-center gap-2 bg-transparent border border-yellow-300 hover:bg-white hover:border-white text-white hover:text-black text-sm font-semibold px-4 py-2 rounded-lg transition w-full cursor-pointer">

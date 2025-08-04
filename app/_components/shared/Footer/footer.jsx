@@ -10,6 +10,7 @@ import Link from "next/link";
 import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
 import "./footer.css";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
+import { IoIosSend } from "react-icons/io";
 
 // Quick Links Array
 const quickLinks = [
@@ -105,7 +106,7 @@ const Footer = () => {
               placeholder="Enter your email"
               className="w-full px-4 py-3 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-300"
             />
-            <BgBtn label="Subscribe" type="submit" className="w-full" />
+            <BgBtn icon={IoIosSend} label="Subscribe" type="submit" className="w-full" />
           </form>
         </div>
       </div>
