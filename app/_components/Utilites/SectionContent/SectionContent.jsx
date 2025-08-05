@@ -20,7 +20,7 @@ const SectionContent = ({
         </div>
       </div>
       <h2
-        className={`text-[28px] md:text-[35px] lg:text-[35px] xl:text-[45px] 2xl:text-[50px] font-bold mt-5 mb-7 ${hedingClass}`}
+        className={`text-[28px] md:text-[35px] lg:text-[35px] xl:text-[45px] 2xl:text-[50px] font-bold mt-5 mb-5 ${hedingClass}`}
       >
         {heading}
       </h2>
