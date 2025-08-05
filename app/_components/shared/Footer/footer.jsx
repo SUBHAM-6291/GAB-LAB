@@ -14,11 +14,11 @@ import { IoIosSend } from "react-icons/io";
 
 // Quick Links Array
 const quickLinks = [
-  { label: "Our Classes", href: "#" },
-  { label: "Private Group", href: "#" },
-  { label: "FAQ", href: "#" },
+  { label: "Our Classes", href: "/our-class" },
+  { label: "Private Group", href: "/private-group" },
+  { label: "FAQ", href: "/our-story" },
+    { label: "Blog", href: "/blog" },
   { label: "Terms and Conditions", href: "#" },
-  { label: "Blog", href: "#" },
   { label: "Privacy Policy", href: "#" },
 ];
 
