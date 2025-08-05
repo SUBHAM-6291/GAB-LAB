@@ -58,7 +58,7 @@ const AboutUs = () => {
         >
           <SectionContent
             heading="About Us"
-            hedingClass="heding text-yellow-400"
+            hedingClass=" text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)] text-yellow-400"
             tooltrip={
               <>
                 <FaUsers className="inline-block mr-1" /> About Us

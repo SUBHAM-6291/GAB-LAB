@@ -6,18 +6,18 @@ import {
   FaYoutube,
   FaLinkedinIn,
 } from "react-icons/fa";
-import { MdHotelClass } from "react-icons/md";
-import { BsBookmarkHeartFill } from "react-icons/bs";
-import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { FaHandsHelping } from "react-icons/fa";
 import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
+import { FaBlog } from "react-icons/fa";
 
 const bannerData = [
   {
-    heading: "Barcelona Cooking Classes",
+    heading: "Barcelona Cooking Blog: Recipes, Tips & Chef Insights",
     description:
-      "Discover authentic Spanish cuisine through our hands-on cooking classes led by expert local chefs. Learn traditional recipes and techniques in the heart of Barcelona.",
+      "Stay updated with our curated blog filled with traditional Spanish recipes, kitchen hacks, culinary techniques, and behind-the-scenes stories from our expert chefs.",
     image:
-      "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/Banner/b35a91_edb1140c53e04abfb3f50d64bea6d744~mv2.avif",
+      "https://pub-f2300dc39d77486db13ba83d33a85773.r2.dev/gab%20lab/Home%20page/LIVE%20Flamenco%20Show/gab-lab-slide-three.png",
   },
 ];
 
@@ -48,14 +48,16 @@ const socialLinks = [
   },
 ];
 
-const OurClassesBanner = () => {
+const BlogBanner = () => {
   return (
     <>
       {bannerData.map((banner, index) => (
         <div
           key={index}
           className="relative w-full h-[80vh] bg-cover bg-center text-white"
-          style={{ backgroundImage: `url('${banner.image}')` }}
+          style={{
+            backgroundImage: `url('${banner.image}')`,
+          }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/50 z-0" />
@@ -64,23 +66,29 @@ const OurClassesBanner = () => {
           <div className="myContainer relative z-10 h-full flex items-center">
             <div className="space-y-6">
               <SectionContent
-                icon={MdHotelClass}
-                tooltrip="Our Classes"
-                tooltripClass="bg-yellow-300 text-black"
-                heading={banner.heading}
-                hedingClass="text-white"
-                desCription={banner.description}
-                desCriptionClass="text-gray-200 max-w-xl"
+                icon={FaBlog}
+                tooltrip={"Our Blog"}
+                tooltripClass={"bg-yellow-300 text-black"}
+                heading={bannerData[0].heading}
+                hedingClass={
+                  "text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)] max-w-2xl"
+                }
+                desCription={bannerData[0].description}
+                desCriptionClass={"text-gray-200 md:max-w-xl lg:max-w-2xl"}
               />
-              <BgBtn icon={BsBookmarkHeartFill} label="Book Now" />
+              <BgBtn
+                icon={FaHandsHelping}
+                label="Join Event"
+                type="button"
+                onClick={() => console.log("button clicked")}
+              />
             </div>
 
-            {/* Social Bar */}
-            <div className="hidden md:flex w-[60px] h-[350px] backdrop-blur-2xl bg-yellow-300 flex-col justify-between items-center rounded-full absolute md:right-[40px] lg:right-[60px] xl:right-[6.75rem] top-1/2 -translate-y-1/2 border border-white/20">
+            <div className="hidden md:flex w-[60px] h-[350px] backdrop-blur-2xl bg-yellow-300 flex-col justify-between items-center rounded-full absolute md:right-[40px]  lg:right-[60px] xl:right-[6.75rem] top-1/2 -translate-y-1/2 border border-white/20">
               <div className="rotate-90 whitespace-nowrap pl-[9rem] font-bold text-black text-[18px]">
                 Follow now
               </div>
-              <div className="flex flex-col items-center gap-5 py-4">
+              <div className="flex flex-col items-center gap-5 py-4 ">
                 {socialLinks.map((link) => (
                   <a
                     key={link.id}
@@ -102,4 +110,4 @@ const OurClassesBanner = () => {
   );
 };
 
-export default OurClassesBanner;
+export default BlogBanner;

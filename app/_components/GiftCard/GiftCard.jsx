@@ -1,9 +1,9 @@
 import React from 'react'
-import Giftcard from './GiftCard/Giftcard'
+import GiftCardBanner from './GiftCardBanner/GiftCardBanner'
 const GiftCard = () => {
   return (
     <div>
-   <Giftcard/>
+   <GiftCardBanner/>
     </div>
   )
 }
