@@ -51,7 +51,7 @@ const Footer = () => {
               <a
                 href={href}
                 key={idx}
-                className="hover:text-yellow-300"
+                className="p-3 rounded-full bg-[#29282d] hover:text-yellow-300 hover:bg-shadow-lg transition-shadow duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >

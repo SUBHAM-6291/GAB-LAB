@@ -4,8 +4,8 @@ import React from "react";
 import Image from "next/image";
 import SectionContent from "../../Utilites/SectionContent/SectionContent";
 import { GiCampCookingPot } from "react-icons/gi";
-import { BiArrowFromLeft } from "react-icons/bi";
-import { BgBtn } from "../../Private_Group/Tell_us_More_Here/Tell_us_More_Here";
+import { GiCook } from "react-icons/gi";
+import { BgBtn } from "../../Utilites/BtnComponent/MyBtn";
 
 const DelightTheSenses = () => {
   const leftContent = {
@@ -81,7 +81,7 @@ const DelightTheSenses = () => {
           />
 
           <div className="mt-6">
-            <BgBtn icon={BiArrowFromLeft} label={leftContent.buttonText} />
+            <BgBtn icon={GiCook} label={leftContent.buttonText} />
           </div>
         </div>
 
