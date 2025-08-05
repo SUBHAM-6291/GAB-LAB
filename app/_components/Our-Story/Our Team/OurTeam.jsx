@@ -79,38 +79,30 @@ export default function OurTeam() {
 
   return (
     <section className="myContainer topContainer">
-      <div className=" mx-auto text-center mb-12">
+     <div className="mx-auto sm:text-center mb-12">
+  <motion.div>
+    <SectionContent
+      hedingClass="hidden"
+      heading="hidden"
+      desCription="hidden"
+      desCriptionClass="hidden"
+      tooltrip={
+        <span className="flex items-center gap-2">
+          <FaUsers className="text-base" /> Our Team
+        </span>
+      }
+      tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+    />
+  </motion.div>
 
+  <h2 className="heding text-yellow-400 text-left mt-5 sm:text-center">
+    Our Team
+  </h2>
 
-
-
-
-
-<motion.div >
-  <SectionContent
-    hedingClass="hidden"
-    heading="hidden"
-    desCription="hidden"
-    desCriptionClass="hidden"
-    tooltrip={
-      <span className="flex items-center gap-2">
-        <FaUsers className="text-base" /> Our Team
-      </span>
-    }
-    tooltripClass="bg-yellow-300 text-black border border-yellow-300"
-  />
-</motion.div>
-
-
-
-
-        <h2 className="heding text-yellow-400">
-          Our Team
-        </h2>
-        <p className="text-gray-200 max-w-2xl mx-auto text-base md:text-lg">
-          From culinary innovators to precision-focused engineers, our diverse team shares one goal — crafting the smartest, sleekest, and most reliable modern kitchen solutions.
-        </p>
-      </div>
+  <p className="text-gray-200 max-w-2xl text-left sm:text-center text-base md:text-lg sm:mx-auto">
+    From culinary innovators to precision-focused engineers, our diverse team shares one goal — crafting the smartest, sleekest, and most reliable modern kitchen solutions.
+  </p>
+</div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {team.map((member, index) => {
