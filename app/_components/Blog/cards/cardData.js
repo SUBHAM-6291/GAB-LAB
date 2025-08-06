@@ -249,6 +249,8 @@ Dummy text is text that is used in the publishing industry or by web designers t
 Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with content. This is required when, for example, the final text is not yet available. Dummy text is also known as . It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.`,
     image: 'https://static.wixstatic.com/media/45a33e_08b4fdc86dd44c43b501e2d7bb0b8df1~mv2.avif/v1/fill/w_960,h_720,al_c,q_90,enc_avif,quality_auto/45a33e_08b4fdc86dd44c43b501e2d7bb0b8df1~mv2.avif',
     slug: 'live-culinary-shows-1',
+      date: '2025-01-15',
+    author: 'Isabella Torres',
   },
   {
     id: 13,
@@ -269,6 +271,8 @@ Dummy text is text that is used in the publishing industry or by web designers t
 Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with content. This is required when, for example, the final text is not yet available. Dummy text is also known as . It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.`,
     image: 'https://static.wixstatic.com/media/45a33e_8a7bc44d71394abf90a561d9f26c1f38~mv2.png/v1/fill/w_964,h_720,fp_0.50_0.50,q_95,enc_avif,quality_auto/45a33e_8a7bc44d71394abf90a561d9f26c1f38~mv2.png',
     slug: 'live-culinary-shows-2',
+      date: '2025-01-15',
+    author: 'Isabella Torres',
   },
   {
     id: 14,
@@ -289,6 +293,8 @@ Dummy text is text that is used in the publishing industry or by web designers t
 Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with content. This is required when, for example, the final text is not yet available. Dummy text is also known as . It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.`,
     image: 'https://static.wixstatic.com/media/45a33e_506c6978e7c94f0497dcf5a2c7cd07b9~mv2.png/v1/fill/w_858,h_641,fp_0.50_0.50,q_95,enc_avif,quality_auto/45a33e_506c6978e7c94f0497dcf5a2c7cd07b9~mv2.png',
     slug: 'live-culinary-shows-3',
+      date: '2025-01-15',
+    author: 'Isabella Torres',
   },
   {
     id: 15,
@@ -309,6 +315,8 @@ Dummy text is text that is used in the publishing industry or by web designers t
 Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with content. This is required when, for example, the final text is not yet available. Dummy text is also known as . It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.`,
     image: 'https://static.wixstatic.com/media/45a33e_99104ffdb3d44a978d8180905b433fa3~mv2.png/v1/fill/w_960,h_720,fp_0.50_0.50,q_95,enc_avif,quality_auto/45a33e_99104ffdb3d44a978d8180905b433fa3~mv2.png',
     slug: 'live-culinary-shows-4',
+      date: '2025-01-15',
+    author: 'Isabella Torres',
   },
   {
     id: 16,
@@ -329,6 +337,8 @@ Dummy text is text that is used in the publishing industry or by web designers t
 Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with content. This is required when, for example, the final text is not yet available. Dummy text is also known as . It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.`,
     image: 'https://static.wixstatic.com/media/45a33e_db2802f83bad4381a0fe31a958a29e4e~mv2.png/v1/fill/w_964,h_720,fp_0.50_0.50,q_95,enc_avif,quality_auto/45a33e_db2802f83bad4381a0fe31a958a29e4e~mv2.png',
     slug: 'live-culinary-shows-5',
+      date: '2025-01-15',
+    author: 'Isabella Torres',
   },
   {
     id: 17,
@@ -349,6 +359,8 @@ Dummy text is text that is used in the publishing industry or by web designers t
 Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with content. This is required when, for example, the final text is not yet available. Dummy text is also known as . It is said that song composers of the past used dummy texts as lyrics when writing melodies in order to have a 'ready-made text to sing with the melody. Dummy texts have been in use by typesetters since the 16th century.`,
     image: 'https://static.wixstatic.com/media/45a33e_89efcaf6d363461e89914bee43e3b082~mv2.webp/v1/fill/w_964,h_720,al_c,q_90,enc_avif,quality_auto/45a33e_89efcaf6d363461e89914bee43e3b082~mv2.webp',
     slug: 'live-culinary-shows-6',
+      date: '2025-01-15',
+    author: 'Isabella Torres',
   },
 ];
 

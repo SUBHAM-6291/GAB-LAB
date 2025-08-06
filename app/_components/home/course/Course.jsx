@@ -5,6 +5,15 @@ import Link from "next/link";
 import { FaInfoCircle, FaMapMarkerAlt } from "react-icons/fa";
 import { CiBookmarkCheck } from "react-icons/ci";
 import courses from "./courseData";
+import { GiCampCookingPot } from "react-icons/gi";
+import SectionContent from "../../Utilites/SectionContent/SectionContent";
+
+
+const courseTopData={
+  tooltrip:"Cooking Courses",
+  heding:"Discover Our Cooking Courses",
+  description:"Dive into the world of Spanish cuisine with our interactive and immersive cooking classes. From sangria to paella, each course is crafted for unforgettable memories.",
+}
 
 const Course = ({ excludeSlug, showSearch = true, showSectionContent = true, fullWidth = false }) => {
   const [expandedCards, setExpandedCards] = useState([]);
@@ -23,17 +32,15 @@ const Course = ({ excludeSlug, showSearch = true, showSectionContent = true, ful
         {/* Optional Section Heading */}
         {showSectionContent && (
           <div className="flex justify-center md:text-center mb-12">
-            <div>
-              <div className="flex justify-center items-center border border-yellow-300 bg-yellow-300 text-black rounded-full px-4 py-2 mb-4 text-sm font-medium w-fit mx-auto">
-                Cooking Courses
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white text-center max-w-5xl mx-auto drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]">
-                Discover Our Cooking Courses
-              </h2>
-              <p className="text-white text-center max-w-4xl mx-auto mt-4">
-                Dive into the world of Spanish cuisine with our interactive and immersive cooking classes. From sangria to paella, each course is crafted for unforgettable memories.
-              </p>
-            </div>
+            <SectionContent
+            icon={GiCampCookingPot}
+            tooltrip={courseTopData.tooltrip}
+            tooltripClass={"bg-yellow-300 text-black"}
+            heading={courseTopData.heding}
+            hedingClass={"text-white drop-shadow-[0_2px_10px_rgba(255,215,0,0.4)]"}
+            desCription={courseTopData.description}
+            desCriptionClass={"text-gray-200 max-w-4xl"}
+            />
           </div>
         )}
 

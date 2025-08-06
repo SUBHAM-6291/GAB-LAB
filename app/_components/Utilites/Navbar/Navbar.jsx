@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "@/public/Gastronmic_Arts_Barcelona_Logo.avif";
 import { OutlineBtn } from "../BtnComponent/MyBtn";
+import { RiContactsLine } from "react-icons/ri";
 
 // Menu items as object
 const navData = {
@@ -70,7 +71,7 @@ const Navbar = () => {
 
         {/* Desktop Contact Us Button */}
         <Link href="/contact-us" className="hidden xl:block">
-          <OutlineBtn label="Contact Us" type="button" />
+          <OutlineBtn icon={RiContactsLine} label="Contact Us" type="button" />
         </Link>
 
         {/* Mobile Menu Icon */}

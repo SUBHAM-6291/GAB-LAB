@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaAngleDown } from 'react-icons/fa6';
-import { FaQuestionCircle } from 'react-icons/fa'; // Added for FAQ icon
+import { FaQuestionCircle } from 'react-icons/fa';
 import SectionContent from '../../Utilites/SectionContent/SectionContent'; // Adjust the import path as needed
 
 const faqData = [
@@ -101,24 +101,23 @@ export default function FAQ() {
   return (
     <div className="bg-black text-white myContainer topContainer">
       <div className="box-border">
-   <div className="w-full text-left md:text-center">
-  <SectionContent
-    icon={FaQuestionCircle}
-    tooltrip="Frequently Asked Questions"
-    tooltripClass="bg-yellow-300 text-black border border-yellow-300"
-    heading="FAQ"
-    hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
-    desCription="Here are the most commonly asked questions about our classes and services."
-    desCriptionClass="mx-auto text-md md:text-lg leading-relaxed text-gray-300 mb-10"
-  />
-</div>
-
+        <div className="w-full text-left md:text-center">
+          <SectionContent
+            icon={FaQuestionCircle}
+            tooltrip="Frequently Asked Questions"
+            tooltripClass="bg-yellow-300 text-black border border-yellow-300"
+            heading="FAQ"
+            hedingClass="text-4xl md:text-5xl font-bold mb-4 text-white"
+            desCription="Here are the most commonly asked questions about our classes and services."
+            desCriptionClass="mx-auto text-md md:text-lg leading-relaxed text-gray-300 mb-10"
+          />
+        </div>
 
         <div className="flex flex-col gap-4">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="bg-[#1A1A1A] rounded-xl p-4 sm:p-6 lg:p-6"
+              className="bg-[#1A1A1A] rounded-xl p-4 sm:p-6 lg:p-6 min-h-[80px]" // Added min-h-[80px] for consistent height
             >
               <div
                 onClick={() => toggleSection(index)}

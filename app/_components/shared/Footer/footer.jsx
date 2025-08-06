@@ -14,11 +14,11 @@ import { IoIosSend } from "react-icons/io";
 
 // Quick Links Array
 const quickLinks = [
-  { label: "Our Classes", href: "#" },
-  { label: "Private Group", href: "#" },
-  { label: "FAQ", href: "#" },
+  { label: "Our Classes", href: "/our-class" },
+  { label: "Private Group", href: "/private-group" },
+  { label: "FAQ", href: "/our-story" },
+    { label: "Blog", href: "/blog" },
   { label: "Terms and Conditions", href: "#" },
-  { label: "Blog", href: "#" },
   { label: "Privacy Policy", href: "#" },
 ];
 
@@ -51,7 +51,7 @@ const Footer = () => {
               <a
                 href={href}
                 key={idx}
-                className="hover:text-yellow-300"
+                className="p-3 rounded-full bg-[#29282d] hover:text-yellow-300 hover:bg-shadow-lg transition-shadow duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
