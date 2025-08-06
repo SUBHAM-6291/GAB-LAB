@@ -158,11 +158,11 @@ const QuestionnaireForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isSingleColumn, setIsSingleColumn] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth >= 640 && window.innerWidth < 768);
+      setIsSingleColumn(window.innerWidth < 1024); // Single column for < lg (1024px)
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -271,8 +271,8 @@ const QuestionnaireForm = () => {
             desCriptionClass="mx-auto text-md md:text-lg leading-relaxed text-gray-300 mb-10"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-          {(currentPage === 0 || !isMobile) && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full">
+          {(currentPage === 0 || !isSingleColumn) && (
             <div className="p-8 bg-[#1a1a1ad9] border border-[#2b2b2b] rounded-2xl shadow-lg space-y-8 transition hover:shadow-[#2a2a2a]">
               <h2 className="subHeding text-amber-400 border-b border-amber-400/30 pb-3">
                 Personal Information
@@ -341,7 +341,7 @@ const QuestionnaireForm = () => {
               />
             </div>
           )}
-          {(currentPage === 1 || !isMobile) && (
+          {(currentPage === 1 || !isSingleColumn) && (
             <div className="p-8 bg-[#1a1a1ad9] border border-[#2b2b2b] rounded-2xl shadow-lg space-y-8 transition hover:shadow-[#2a2a2a]">
               <h2 className="subHeding text-amber-400 border-b border-amber-400/30 pb-3">
                 Business Details
@@ -430,7 +430,7 @@ const QuestionnaireForm = () => {
           )}
         </div>
         <div className="mt-16 flex justify-center gap-4">
-          {isMobile && currentPage === 0 && (
+          {isSingleColumn && currentPage === 0 && (
             <OutlineBtn
               label={
                 <div className="flex items-center gap-2">
@@ -443,7 +443,7 @@ const QuestionnaireForm = () => {
               className="cursor-pointer"
             />
           )}
-          {isMobile && currentPage === 1 && (
+          {isSingleColumn && currentPage === 1 && (
             <>
               <OutlineBtn
                 label={
@@ -469,7 +469,7 @@ const QuestionnaireForm = () => {
               />
             </>
           )}
-          {!isMobile && (
+          {!isSingleColumn && (
             <OutlineBtn
               label={
                 <div className="flex items-center gap-2">
