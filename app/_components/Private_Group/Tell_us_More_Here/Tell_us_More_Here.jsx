@@ -78,10 +78,10 @@ export const OutlineBtn = ({
       onClick={onClick}
       className={`relative text-white text-[16px] font-medium px-6 py-3 rounded-md border border-yellow-300 hover:border-yellow-300 overflow-hidden group cursor-pointer ${className}`}
     >
-      <span className="relative z-10 transition duration-300 group-hover:text-black flex items-center gap-2">
-        {label === "Next" && <FaArrowRight />}
-        {label === "Back" && <FaArrowLeft />}
-        {label === "Back to Home" && <FaHome />}
+      <span className="relative z-10 transition duration-300 group-hover:text-black flex items-center justify-center gap-2">
+        {label === "Next" && <FaArrowRight className="h-5 w-5" />}
+        {label === "Back" && <FaArrowLeft className="h-5 w-5" />}
+        {label === "Back to Home" && <FaHome className="h-5 w-5" />}
         {label}
       </span>
       <span className="absolute left-0 top-0 h-full w-0 bg-yellow-300 transition-all duration-300 group-hover:w-full z-0"></span>
